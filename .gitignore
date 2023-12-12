@@ -1,0 +1,15 @@
+.vscode
+.idea
+.git
+.env
+
+/app
+/node_modules
+/dist
+/webpack-dist
+src/**/*.js
+src/**/*.jsx
+src/**/*.d.ts
+src/**/*.map
+
+!src/typings.d.ts

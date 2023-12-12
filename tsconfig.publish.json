@@ -1,0 +1,22 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "target": "ES5",
+    "lib": ["ES2020", "DOM"],
+    "strict": true,
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "jsx": "react-jsx",
+    "strictPropertyInitialization": false,
+    "sourceMap": false,
+    "declaration": true,
+    "declarationMap": false,
+    "esModuleInterop": true,
+    "noResolve": false,
+    "outDir": "dist",
+    "skipLibCheck": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
