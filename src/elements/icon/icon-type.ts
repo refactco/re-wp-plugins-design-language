@@ -39,7 +39,7 @@ export enum IconId {
 }
 
 export interface IIconProps extends IBaseVoidProps {
-  id: string;
+  id: IconId;
   size?: IconSize;
   fill?: string;
 }
