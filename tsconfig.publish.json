@@ -15,8 +15,14 @@
     "esModuleInterop": true,
     "noResolve": false,
     "outDir": "dist",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@base/*": ["base/*"],
+      "@elements/*": ["elements/*"],
+      "@components/*": ["components/*"]
+    }
   },
-  "include": ["src"],
+  "include": ["src", "./types.d.ts"],
   "exclude": ["node_modules"]
 }

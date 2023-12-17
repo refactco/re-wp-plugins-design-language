@@ -1,4 +1,4 @@
-import { IBaseVoidProps } from '../../base/base-interface';
+import { IBaseVoidProps } from '@base/base-interface';
 
 export enum IconSize {
   TINY = '16',

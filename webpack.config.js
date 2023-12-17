@@ -22,13 +22,22 @@ module.exports = {
       {
         test: /\.svg/,
         exclude: /node_modules/,
-        use: [{ loader: 'url-loader' }]
+        use: [{ loader: 'file-loader' }]
+      },
+      {
+        test: /\.(css)/,
+        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }]
       }
     ]
   },
   watch: true,
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx']
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    alias: {
+      '@elements': join(__dirname, './src/elements'),
+      '@base': join(__dirname, './src/base'),
+      '@components': join(__dirname, './src/components')
+    }
   },
   plugins: [
     new ProvidePlugin({

@@ -1,17 +1,16 @@
 {
   "name": "@refactco/ui-kit",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "UI kit is a sets of react components which is going to be used in the wordpress plugins",
   "main": "./dist/ui-kit-expose.js",
   "types": "./dist/ui-kit-types.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "wp": "wp-scripts build",
+    "cp:assets": "cp -r ./src/elements/icon/sprites/ ./dist/elements/icon",
     "tsc": "rm -rf dist && tsc --project ./tsconfig.publish.json",
     "dts:bundle": "dts-bundle-generator --external-imports react @wordpress/components -o ./dist/ui-kit-types.d.ts ./src/ui-kit-expose.ts",
-    "dts:publish": "npm run tsc && npm run dts:bundle",
+    "dts:publish": "npm run tsc && npm run cp:assets && npm run dts:bundle",
     "prepublishOnly": "npm run dts:publish",
     "dev": "webpack-dev-server",
     "lint": "eslint",
@@ -29,16 +28,15 @@
       "url": "http://hramini.ir"
     }
   ],
-  "keywords": [
-    "react",
-    "typescript",
-    "wordpress"
-  ],
+  "keywords": ["react", "typescript", "wordpress"],
   "license": "MIT",
   "dependencies": {
     "@wordpress/components": "25.13.0",
+    "css-loader": "6.8.1",
+    "file-loader": "6.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "style-loader": "3.3.3",
     "styled-components": "6.1.1",
     "url-loader": "4.1.1"
   },
@@ -59,6 +57,8 @@
     "eslint-plugin-react": "7.33.2",
     "eslint-plugin-react-hooks": "4.6.0",
     "raw-loader": "4.0.2",
+    "react-router": "6.21.0",
+    "react-router-dom": "6.21.0",
     "ts-loader": "9.5.1",
     "typescript": "5.3.3",
     "webpack": "5.89.0",

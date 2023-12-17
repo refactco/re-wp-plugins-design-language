@@ -1,18 +1,13 @@
+import { Button } from '@elements/button/button';
+import { ButtonColor, ButtonIconPosition, ButtonSize, ButtonVariant } from '@elements/button/button-type';
+import { IconManager } from '@elements/icon/icon';
+import { IconId, IconSize } from '@elements/icon/icon-type';
 import { ReactElement } from 'react';
-import { Button } from '../../src/elements/button/button';
-import { ButtonColor, ButtonIconPosition, ButtonSize, ButtonVariant } from '../../src/elements/button/button-type';
-import { IconManager } from '../../src/elements/icon/icon';
-import { IconId, IconSize } from '../../src/elements/icon/icon-type';
+import Layout from '../layout/layout';
 
-export default function Main(): ReactElement {
+export default function Buttons(): ReactElement {
   return (
-    <div>
-      <p>hello</p>
-      <IconManager id={IconId.CHEVRON_DOWN} fill="green" size={IconSize.LARGE} />
-      <IconManager id={IconId.CARET_UP} fill="green" size={IconSize.LARGE} />
-      <IconManager id={IconId.CARET_UP} fill="green" size={IconSize.LARGE} />
-      <IconManager id={IconId.NOTIFICATIONS_OUTLINED} fill="#ff00ff" size={IconSize.MEDIUM} />
-
+    <Layout>
       <Button
         size={ButtonSize.LARGE}
         color={ButtonColor.GREEN}
@@ -34,9 +29,8 @@ export default function Main(): ReactElement {
         variant={ButtonVariant.SECONDARY}
         icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
         iconPosition={ButtonIconPosition.END}
-      >
-        hello world
-      </Button>
+        text="hello world"
+      />
       <Button
         size={ButtonSize.SMALL}
         variant={ButtonVariant.SECONDARY}
@@ -56,6 +50,6 @@ export default function Main(): ReactElement {
       >
         hello world
       </Button>
-    </div>
+    </Layout>
   );
 }

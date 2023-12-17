@@ -1,10 +1,12 @@
-import sprite16 from '../../assets/sprite-16.svg';
-import sprite24 from '../../assets/sprite-24.svg';
-import sprite32 from '../../assets/sprite-32.svg';
-import sprite48 from '../../assets/sprite-48.svg';
-import sprite72 from '../../assets/sprite-72.svg';
+/// <reference path="../../../types.d.ts" />
+
 import { StyledSvg } from './icon-style';
 import { IIconProps, IconSize } from './icon-type';
+import sprite16 from './sprites/sprite-16.svg';
+import sprite24 from './sprites/sprite-24.svg';
+import sprite32 from './sprites/sprite-32.svg';
+import sprite48 from './sprites/sprite-48.svg';
+import sprite72 from './sprites/sprite-72.svg';
 
 export function IconManager(props: IIconProps) {
   const { id, size = IconSize.SMALL, fill = 'black' } = props;
