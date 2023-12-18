@@ -13,7 +13,13 @@
     "declarationMap": false,
     "esModuleInterop": true,
     "noResolve": false,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@base/*": ["base/*"],
+      "@elements/*": ["elements/*"],
+      "@components/*": ["components/*"]
+    }
   },
   "include": ["./example", "./src", "./types.d.ts"],
   "exclude": ["node_modules"]

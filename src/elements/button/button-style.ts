@@ -14,108 +14,112 @@ export function sizeHandler(size: ButtonSize, values: IButtonSizeHandlerValues):
 }
 
 export const StyledButton = styled(Button)<IButtonProps>`
-  border-radius: 12px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  align-items: center;
-  display: ${(props) => (props.iconPosition === ButtonIconPosition.END ? 'inline-flex' : undefined)};
-  background-color: ${(props) => {
-    if (props.variant === ButtonVariant.SECONDARY) {
-      return 'transparent';
-    }
-
-    return props.color === ButtonColor.RED ? '#D83C2B' : '#2E9E62';
-  }};
-  border: ${(props) => {
-    if (props.variant === ButtonVariant.PRIMARY) {
-      return 'none';
-    }
-
-    return props.color === ButtonColor.RED ? '1px solid #D83C2B' : '1px solid #2E9E62';
-  }};
-  color: ${(props) => (props.variant === ButtonVariant.PRIMARY ? '#fff' : '#002729')};
-  padding-inline: ${(props) => {
-    const { size = ButtonSize.MEDIUM, children } = props;
-
-    if (!children) {
-      return sizeHandler(size, {
-        default: '15px',
-        large: '15px',
-        medium: '12.5px',
-        small: '13px',
-        xSmall: '9px',
-        xxSmall: '6px'
-      });
-    }
-
-    return sizeHandler(size, {
-      default: '24px',
-      small: '16px',
-      xSmall: '12px',
-      xxSmall: '12px'
-    });
-  }};
-  height: ${(props) => {
-    const { size = ButtonSize.MEDIUM } = props;
-
-    return sizeHandler(size, {
-      large: '54px',
-      medium: '49px',
-      small: '42px',
-      xSmall: '34px',
-      xxSmall: '28px'
-    });
-  }};
-  & > svg {
-    margin-inline: ${(props) => {
-      const { children, iconPosition } = props;
-
-      if (!children) {
-        return undefined;
+  &&& {
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    align-items: center;
+    box-shadow: none;
+    display: ${(props) => (props.iconPosition === ButtonIconPosition.END ? 'inline-flex' : 'inline-block')};
+    background-color: ${(props) => {
+      if (props.variant === ButtonVariant.SECONDARY) {
+        return 'transparent';
       }
 
-      return props.iconPosition === ButtonIconPosition.END ? '10px 0' : '0 10px';
+      return props.color === ButtonColor.RED ? '#D83C2B' : '#2E9E62';
     }};
-    order: ${(props) => (props.iconPosition === ButtonIconPosition.END ? '1' : undefined)};
-    width: ${(props) => {
-      const { size = ButtonSize.MEDIUM } = props;
+    border: ${(props) => {
+      if (props.variant === ButtonVariant.PRIMARY) {
+        return 'none';
+      }
+
+      return props.color === ButtonColor.RED ? '1px solid #D83C2B' : '1px solid #2E9E62';
+    }};
+    color: ${(props) => (props.variant === ButtonVariant.PRIMARY ? '#fff' : '#002729')};
+    padding-inline: ${(props) => {
+      const { size = ButtonSize.MEDIUM, children } = props;
+
+      if (!children) {
+        return sizeHandler(size, {
+          default: '15px',
+          large: '15px',
+          medium: '12.5px',
+          small: '13px',
+          xSmall: '9px',
+          xxSmall: '6px'
+        });
+      }
 
       return sizeHandler(size, {
-        default: '16px',
-        large: '24px',
-        medium: '24px'
+        default: '24px',
+        small: '16px',
+        xSmall: '12px',
+        xxSmall: '12px'
       });
     }};
     height: ${(props) => {
       const { size = ButtonSize.MEDIUM } = props;
 
       return sizeHandler(size, {
-        default: '24px',
-        xSmall: '16px',
-        xxSmall: '16px'
+        large: '54px',
+        medium: '49px',
+        small: '42px',
+        xSmall: '34px',
+        xxSmall: '28px'
       });
     }};
-    fill: ${(props) => {
-      const { variant = ButtonVariant.PRIMARY } = props;
+    & > svg {
+      margin-inline: ${(props) => {
+        const { text, children, iconPosition } = props;
 
-      return variant === ButtonVariant.PRIMARY ? '#fff' : '#002729';
-    }};
-  }
-  &:hover {
-    background-color: ${(props) => (props.color === ButtonColor.RED ? '#D83C2B' : '#268250')};
-    color: #fff;
-    & > svg {
-      fill: #fff;
+        if (!children && !text) {
+          return undefined;
+        }
+
+        return iconPosition === ButtonIconPosition.END ? '10px 0' : '0 10px';
+      }};
+      order: ${(props) => (props.iconPosition === ButtonIconPosition.END ? '1' : undefined)};
+      width: ${(props) => {
+        const { size = ButtonSize.MEDIUM } = props;
+
+        return sizeHandler(size, {
+          default: '16px',
+          large: '24px',
+          medium: '24px'
+        });
+      }};
+      height: ${(props) => {
+        const { size = ButtonSize.MEDIUM } = props;
+
+        return sizeHandler(size, {
+          default: '24px',
+          xSmall: '16px',
+          xxSmall: '16px'
+        });
+      }};
+      fill: ${(props) => {
+        const { variant = ButtonVariant.PRIMARY } = props;
+
+        return variant === ButtonVariant.PRIMARY ? '#fff' : '#002729';
+      }};
     }
-  }
-  &[disabled] {
-    cursor: not-allowed;
-    background-color: ${(props) => (props.variant === ButtonVariant.PRIMARY ? '#798686' : 'transparent')};
-    border: ${(props) => (props.variant === ButtonVariant.PRIMARY ? 'none' : '1px solid #798686')};
-    color: ${(props) => (props.variant === ButtonVariant.PRIMARY ? '#fff' : '#798686')};
-    & > svg {
-      fill: ${(props) => (props.variant === ButtonVariant.PRIMARY ? '#fff' : '#798686')};
+    &:hover {
+      box-shadow: none;
+      background-color: ${(props) => (props.color === ButtonColor.RED ? '#D83C2B' : '#268250')};
+      color: #fff;
+      & > svg {
+        fill: #fff;
+      }
+    }
+    &[disabled] {
+      cursor: not-allowed;
+      background-color: ${(props) => (props.variant === ButtonVariant.PRIMARY ? '#798686' : 'transparent')};
+      border: ${(props) => (props.variant === ButtonVariant.PRIMARY ? 'none' : '1px solid #798686')};
+      color: ${(props) => (props.variant === ButtonVariant.PRIMARY ? '#fff' : '#798686')};
+      & > svg {
+        fill: ${(props) => (props.variant === ButtonVariant.PRIMARY ? '#fff' : '#798686')};
+      }
     }
   }
 `;
