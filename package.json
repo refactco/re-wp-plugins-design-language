@@ -13,7 +13,7 @@
     "dts:publish": "npm run tsc && npm run cp:assets && npm run dts:bundle",
     "prepublishOnly": "npm run dts:publish",
     "dev": "webpack-dev-server --watch",
-    "build": "npm ci && webpack-cli && cp ./example/index-build.html ./webpack-dist/index.html",
+    "build": "npm ci && webpack-cli",
     "lint": "eslint"
   },
   "author": {
