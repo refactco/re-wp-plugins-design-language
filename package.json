@@ -38,9 +38,7 @@
     "react-dom": "18.2.0",
     "style-loader": "3.3.3",
     "styled-components": "6.1.1",
-    "url-loader": "4.1.1"
-  },
-  "devDependencies": {
+    "url-loader": "4.1.1",
     "@babel/preset-env": "7.23.5",
     "@babel/preset-react": "7.23.3",
     "@babel/preset-typescript": "7.23.3",
@@ -64,5 +62,6 @@
     "webpack": "5.89.0",
     "webpack-cli": "5.1.4",
     "webpack-dev-server": "4.15.1"
-  }
+  },
+  "devDependencies": {}
 }
