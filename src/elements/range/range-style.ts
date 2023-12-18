@@ -28,6 +28,8 @@ export const StyledRange = styled(RangeControl)<IRangeProps>`
       border-radius: 8px;
 
       &:focus {
+        border: 1px solid #2e9e62;
+
         & + .components-input-control__backdrop {
           border: none;
         }

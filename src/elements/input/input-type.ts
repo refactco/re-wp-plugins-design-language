@@ -13,6 +13,5 @@ export enum InputType {
 
 export interface IInputProps extends InputControlProps {
   hasError?: boolean;
-  hasFocused?: boolean;
   type?: InputType;
 }

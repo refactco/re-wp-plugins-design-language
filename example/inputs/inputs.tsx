@@ -5,6 +5,7 @@ import { Input } from '@elements/input/input';
 import { InputType } from '@elements/input/input-type';
 import { Radio } from '@elements/radio/radio';
 import { Range } from '@elements/range/range';
+import { Select } from '@elements/select/select';
 import { Toggle } from '@elements/toggle/toggle';
 import { ReactElement, useState } from 'react';
 import Layout from '../layout/layout';
@@ -13,6 +14,7 @@ export function Inputs(): ReactElement {
   const [checkboxState, setCheckboxState] = useState(false);
   const [toggleState, setToggleState] = useState(false);
   const [rangeState, setRangeState] = useState(0);
+  const [radioState, setRadioState] = useState('no-data');
 
   return (
     <Layout>
@@ -54,14 +56,15 @@ export function Inputs(): ReactElement {
       />
       <hr />
       <Radio
-        onChange={(value: string) => {}}
+        onChange={(value: string) => {
+          setRadioState(value);
+        }}
         label="data type"
-        value="no-data"
         options={[
           { label: 'no data', value: 'no-data' },
           { label: 'with data', value: 'with-data' }
         ]}
-        selected="with-data"
+        selected={radioState}
       />
       <hr />
       <Toggle
@@ -87,6 +90,22 @@ export function Inputs(): ReactElement {
         onChange={(value?: number) => {
           setRangeState(value ?? 0);
         }}
+        help="px"
+      />
+      <hr />
+      <Select
+        label="Select one"
+        help="this is hint"
+        options={[
+          {
+            value: 'val1',
+            label: 'this is first label'
+          },
+          {
+            value: 'val2',
+            label: 'this is second label'
+          }
+        ]}
       />
     </Layout>
   );
