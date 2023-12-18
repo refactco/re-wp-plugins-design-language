@@ -13,7 +13,7 @@
     "dts:publish": "npm run tsc && npm run cp:assets && npm run dts:bundle",
     "prepublishOnly": "npm run dts:publish",
     "dev": "webpack-dev-server --watch",
-    "build": "webpack-cli",
+    "build": "npm ci && webpack-cli",
     "lint": "eslint"
   },
   "author": {
@@ -38,7 +38,9 @@
     "react-dom": "18.2.0",
     "style-loader": "3.3.3",
     "styled-components": "6.1.1",
-    "url-loader": "4.1.1",
+    "url-loader": "4.1.1"
+  },
+  "devDependencies": {
     "@babel/preset-env": "7.23.5",
     "@babel/preset-react": "7.23.3",
     "@babel/preset-typescript": "7.23.3",
@@ -62,6 +64,5 @@
     "webpack": "5.89.0",
     "webpack-cli": "5.1.4",
     "webpack-dev-server": "4.15.1"
-  },
-  "devDependencies": {}
+  }
 }
