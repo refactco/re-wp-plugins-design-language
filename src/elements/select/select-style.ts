@@ -30,3 +30,34 @@ export const StyledSelect = styled(SelectControl)<ISelectProps>`
     }
   }
 `;
+
+export const StyledMultipleSelectBox = styled.div<ISelectProps>`
+  height: 48px;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 8px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: ${(props) => {
+    if (props.disabled) {
+      return '#798686';
+    }
+
+    if (props.hasError) {
+      return 'rgba(229, 57, 53, 0.90)';
+    }
+
+    return '#003233';
+  }};
+
+  &:focus {
+    border: 1px solid #2e9e62;
+  }
+
+  &::placeholder {
+    font-size: 14px;
+    font-weight: 400;none
+    color: #798686;
+  }
+`;

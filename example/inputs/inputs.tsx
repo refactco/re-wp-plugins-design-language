@@ -90,7 +90,7 @@ export function Inputs(): ReactElement {
         onChange={(value?: number) => {
           setRangeState(value ?? 0);
         }}
-        help="px"
+        help="px data"
       />
       <hr />
       <Select
@@ -103,6 +103,25 @@ export function Inputs(): ReactElement {
           },
           {
             value: 'val2',
+            label: 'this is second label'
+          }
+        ]}
+      />
+      <Select
+        multiple
+        label="Select one"
+        help="this is hint"
+        options={[
+          {
+            value: 'val1',
+            label: 'this is first label'
+          },
+          {
+            value: 'val2',
+            label: 'this is second label'
+          },
+          {
+            value: 'val3',
             label: 'this is second label'
           }
         ]}

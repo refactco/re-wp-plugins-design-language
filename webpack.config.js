@@ -10,7 +10,7 @@ module.exports = {
   entry: join(__dirname, './example/index.tsx'),
   output: {
     filename: 'bundle.js',
-    path: join(__dirname, 'dist')
+    path: join(__dirname, 'public')
   },
   module: {
     rules: [
@@ -51,7 +51,7 @@ module.exports = {
     },
     port: 5000,
     devMiddleware: {
-      publicPath: '/dist/'
+      publicPath: '/public/'
     },
     hot: 'only',
     historyApiFallback: { index: '/', disableDotRule: true }

@@ -4,6 +4,8 @@ import { IRangeProps } from './range-type';
 
 export const StyledRange = styled(RangeControl)<IRangeProps>`
   &&& {
+    position: relative;
+
     & .components-range-control__root {
       gap: 25px;
     }
@@ -26,6 +28,7 @@ export const StyledRange = styled(RangeControl)<IRangeProps>`
     & .components-input-control__input {
       border: 1px solid #003233;
       border-radius: 8px;
+      width: 102px;
 
       &:focus {
         border: 1px solid #2e9e62;
@@ -43,6 +46,22 @@ export const StyledRange = styled(RangeControl)<IRangeProps>`
 
     & .components-range-control__thumb-wrapper > span {
       background-color: #2e9e62;
+    }
+
+    & .components-base-control__field {
+      margin-bottom: 0;
+    }
+
+    & .components-base-control__help {
+      margin-block: 4px 0;
+
+      // position: absolute;
+      // margin: 0;
+      // bottom: 4px;
+      // left: 40px;
+      // background-color: #fff;
+      // width: 20px;
+      // height: 20px;
     }
   }
 `;
