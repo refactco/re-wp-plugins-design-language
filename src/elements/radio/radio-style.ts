@@ -19,6 +19,10 @@ export const StyledRadio = styled(RadioControl)<IRadioProps>`
       gap: 20px;
     }
 
+    & label {
+      text-transform: capitalize;
+    }
+
     & input {
       appearance: none;
       width: 24px;

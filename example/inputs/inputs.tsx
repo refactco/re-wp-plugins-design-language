@@ -21,6 +21,9 @@ export function Inputs(): ReactElement {
 
   return (
     <Layout>
+      <h1>Inputs</h1>
+      <Input help="this is help" label="this is a simple input" placeholder="this is placeholder" />
+      <Input label="this is a simple input without hint" placeholder="this is placeholder" />
       <Input
         help="this is help"
         label="this is label"
@@ -33,7 +36,7 @@ export function Inputs(): ReactElement {
         disabled
         value="this is value"
         help="this is help"
-        label="this is label"
+        label="this is a disabled input"
         placeholder="this is placeholder"
         suffix={<IconManager id={IconId.CHECK_MARK_CIRCLE_FILLED} />}
         prefix={<IconManager id={IconId.CHECK_MARK_CIRCLE_FILLED} />}
@@ -42,22 +45,42 @@ export function Inputs(): ReactElement {
         hasError
         value="this is value"
         help="this is help"
-        label="this is label"
+        label="this is an input with error"
         placeholder="this is placeholder"
         suffix={<IconManager id={IconId.CHECK_MARK_CIRCLE_FILLED} />}
         prefix={<IconManager id={IconId.CHECK_MARK_CIRCLE_FILLED} />}
       />
       <hr />
-      <Checkbox onChange={(value: boolean) => {}} label="disabled" checked={false} disabled />
-      <Checkbox
-        onChange={(value: boolean) => {
-          console.log(value);
-          setCheckboxState(value);
-        }}
-        label="text"
-        checked={checkboxState}
-      />
+      <h1>Checkboxes (horizontal)</h1>
+      <div style={{ display: 'flex', gap: '10px' }}>
+        <Checkbox onChange={(value: boolean) => {}} label="disabled" checked={false} disabled />
+        <Checkbox
+          onChange={(value: boolean) => {
+            console.log(value);
+            setCheckboxState(value);
+          }}
+          label="text"
+          checked={checkboxState}
+        />
+      </div>
+      <h1>Checkboxes (vertical)</h1>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
+        <div style={{ width: '100%' }}>
+          <Checkbox onChange={(value: boolean) => {}} label="disabled" checked={false} disabled />
+        </div>
+        <div style={{ width: '100%' }}>
+          <Checkbox
+            onChange={(value: boolean) => {
+              console.log(value);
+              setCheckboxState(value);
+            }}
+            label="text"
+            checked={checkboxState}
+          />
+        </div>
+      </div>
       <hr />
+      <h1>Radio buttons</h1>
       <Radio
         onChange={(value: string) => {
           setRadioState(value);
@@ -70,21 +93,24 @@ export function Inputs(): ReactElement {
         selected={radioState}
       />
       <hr />
-      <Toggle
-        label="this is toggle"
-        onChange={(value: boolean) => {
-          setToggleState(value);
-        }}
-        checked={toggleState}
-      />
-      <Toggle
-        label="this is toggle"
-        help="this is hint"
-        onChange={(value: boolean) => {
-          setToggleState(value);
-        }}
-        checked={toggleState}
-      />
+      <h1>Toggle buttons</h1>
+      <div style={{ display: 'flex', gap: '10px' }}>
+        <Toggle
+          label="this is toggle"
+          onChange={(value: boolean) => {
+            setToggleState(value);
+          }}
+          checked={toggleState}
+        />
+        <Toggle
+          label="this is toggle"
+          help="this is hint"
+          onChange={(value: boolean) => {
+            setToggleState(value);
+          }}
+          checked={toggleState}
+        />
+      </div>
       <hr />
       <Range
         label="Adjust gap"

@@ -37,6 +37,7 @@ export const StyledRange = styled(RangeControl)<IRangeProps>`
       font-weight: 600;
       line-height: 24px;
       margin-bottom: 4px;
+      text-transform: capitalize;
     }
 
     & .components-input-control__input {

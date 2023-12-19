@@ -7,6 +7,10 @@ export const StyledCheckbox = styled(CheckboxControl)<ICheckboxProps>`
   &&& {
     display: inline-block;
 
+    & .components-base-control__field {
+      margin: 0;
+    }
+
     & svg {
       left: 0;
       top: 0;
@@ -17,6 +21,7 @@ export const StyledCheckbox = styled(CheckboxControl)<ICheckboxProps>`
       font-size: 14px;
       font-weight: 600;
       vertical-align: middle;
+      text-transform: capitalize;
     }
 
     & input {

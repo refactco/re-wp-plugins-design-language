@@ -6,10 +6,22 @@ import Layout from '../layout/layout';
 export default function Icons(): ReactElement {
   return (
     <Layout>
-      <IconManager id={IconId.CHEVRON_DOWN} fill="green" size={IconSize.LARGE} />
-      <IconManager id={IconId.CARET_UP} fill="green" size={IconSize.LARGE} />
-      <IconManager id={IconId.CARET_UP} fill="green" size={IconSize.LARGE} />
-      <IconManager id={IconId.NOTIFICATIONS_OUTLINED} fill="#ff00ff" size={IconSize.MEDIUM} />
+      <div>
+        <h1>Drag</h1>
+        <IconManager id={IconId.DRAG} fill="green" size={IconSize.X_LARGE} />
+        <IconManager id={IconId.DRAG} fill="green" size={IconSize.LARGE} />
+        <IconManager id={IconId.DRAG} fill="green" size={IconSize.MEDIUM} />
+        <IconManager id={IconId.DRAG} fill="green" size={IconSize.SMALL} />
+        <IconManager id={IconId.DRAG} fill="green" size={IconSize.TINY} />
+      </div>
+      <div>
+        <h1>Notifications Outlined</h1>
+        <IconManager id={IconId.NOTIFICATIONS_OUTLINED} fill="green" size={IconSize.X_LARGE} />
+        <IconManager id={IconId.NOTIFICATIONS_OUTLINED} fill="blue" size={IconSize.LARGE} />
+        <IconManager id={IconId.NOTIFICATIONS_OUTLINED} fill="red" size={IconSize.MEDIUM} />
+        <IconManager id={IconId.NOTIFICATIONS_OUTLINED} fill="black" size={IconSize.SMALL} />
+        <IconManager id={IconId.NOTIFICATIONS_OUTLINED} fill="pink" size={IconSize.TINY} />
+      </div>
     </Layout>
   );
 }

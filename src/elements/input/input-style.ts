@@ -46,7 +46,7 @@ export const commonInputStyles = css<any>`
     font-size: 13px !important;
     font-weight: 600 !important;
     line-height: 24px !important;
-    text-transform: unset !important;
+    text-transform: capitalize !important;
     color: #002729;
   }
 
