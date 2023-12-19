@@ -1,6 +1,20 @@
 import { RangeControl } from '@wordpress/components';
-import styled from 'styled-components';
-import { IRangeProps } from './range-type';
+import styled, { css } from 'styled-components';
+import { IRangeProps, RangeHelpPosition } from './range-type';
+
+const helpPositionBottom = css`
+  margin-block: 4px 0;
+`;
+
+const helpPositionInside = css`
+  position: absolute;
+  margin: 0;
+  bottom: 4px;
+  left: 78px;
+  background-color: #fff;
+  width: 20px;
+  height: 20px;
+`;
 
 export const StyledRange = styled(RangeControl)<IRangeProps>`
   &&& {
@@ -28,7 +42,6 @@ export const StyledRange = styled(RangeControl)<IRangeProps>`
     & .components-input-control__input {
       border: 1px solid #003233;
       border-radius: 8px;
-      width: 102px;
 
       &:focus {
         border: 1px solid #2e9e62;
@@ -52,16 +65,12 @@ export const StyledRange = styled(RangeControl)<IRangeProps>`
       margin-bottom: 0;
     }
 
-    & .components-base-control__help {
-      margin-block: 4px 0;
+    & .components-input-control__container {
+      width: 102px;
+    }
 
-      // position: absolute;
-      // margin: 0;
-      // bottom: 4px;
-      // left: 40px;
-      // background-color: #fff;
-      // width: 20px;
-      // height: 20px;
+    & .components-base-control__help {
+      ${(props) => (props.helpPosition === RangeHelpPosition.BOTTOM ? helpPositionBottom : helpPositionInside)}
     }
   }
 `;

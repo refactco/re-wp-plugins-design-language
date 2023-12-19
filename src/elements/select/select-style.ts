@@ -7,6 +7,11 @@ export const StyledSelect = styled(SelectControl)<ISelectProps>`
   &&& {
     ${commonInputStyles}
 
+    & .components-input-control__container {
+      padding-inline-start: ${(props) => (props.prefix ? undefined : '0')};
+      padding-inline-end: ${(props) => (props.suffix ? undefined : '0')};
+    }
+
     gap: 4px;
 
     &[class*='rootFocusedStyles'] {
@@ -17,9 +22,10 @@ export const StyledSelect = styled(SelectControl)<ISelectProps>`
 
     & select {
       height: 48px !important;
-      padding: 0 !important;
       font-size: 14px;
       font-weight: 400;
+      padding-inline-start: ${(props) => (props.prefix ? '0' : '16px')};
+      padding-inline-end: ${(props) => (props.suffix ? '0' : '16px')};
       color: ${(props) => (props.disabled ? '#798686' : '#002729')};
 
       &::placeholder {
@@ -28,36 +34,5 @@ export const StyledSelect = styled(SelectControl)<ISelectProps>`
         color: #798686;
       }
     }
-  }
-`;
-
-export const StyledMultipleSelectBox = styled.div<ISelectProps>`
-  height: 48px;
-  padding: 0;
-  font-size: 14px;
-  font-weight: 400;
-  border-radius: 8px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: ${(props) => {
-    if (props.disabled) {
-      return '#798686';
-    }
-
-    if (props.hasError) {
-      return 'rgba(229, 57, 53, 0.90)';
-    }
-
-    return '#003233';
-  }};
-
-  &:focus {
-    border: 1px solid #2e9e62;
-  }
-
-  &::placeholder {
-    font-size: 14px;
-    font-weight: 400;none
-    color: #798686;
   }
 `;

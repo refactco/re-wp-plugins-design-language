@@ -3,8 +3,10 @@ import { IconManager } from '@elements/icon/icon';
 import { IconId } from '@elements/icon/icon-type';
 import { Input } from '@elements/input/input';
 import { InputType } from '@elements/input/input-type';
+import { MultiSelect } from '@elements/multi-select/multi-select';
 import { Radio } from '@elements/radio/radio';
 import { Range } from '@elements/range/range';
+import { RangeHelpPosition } from '@elements/range/range-type';
 import { Select } from '@elements/select/select';
 import { Toggle } from '@elements/toggle/toggle';
 import { ReactElement, useState } from 'react';
@@ -15,6 +17,7 @@ export function Inputs(): ReactElement {
   const [toggleState, setToggleState] = useState(false);
   const [rangeState, setRangeState] = useState(0);
   const [radioState, setRadioState] = useState('no-data');
+  const [multiSelectState, setMultiSelectState] = useState<string[]>([]);
 
   return (
     <Layout>
@@ -87,10 +90,21 @@ export function Inputs(): ReactElement {
         label="Adjust gap"
         value={rangeState}
         max={100}
+        helpPosition={RangeHelpPosition.BOTTOM}
         onChange={(value?: number) => {
           setRangeState(value ?? 0);
         }}
         help="px data"
+      />
+      <Range
+        label="Adjust gap"
+        value={rangeState}
+        max={100}
+        // helpPosition={RangeHelpPosition.BOTTOM}
+        onChange={(value?: number) => {
+          setRangeState(value ?? 0);
+        }}
+        help="px"
       />
       <hr />
       <Select
@@ -107,24 +121,14 @@ export function Inputs(): ReactElement {
           }
         ]}
       />
-      <Select
-        multiple
-        label="Select one"
-        help="this is hint"
-        options={[
-          {
-            value: 'val1',
-            label: 'this is first label'
-          },
-          {
-            value: 'val2',
-            label: 'this is second label'
-          },
-          {
-            value: 'val3',
-            label: 'this is second label'
-          }
-        ]}
+      <MultiSelect
+        label="Select multi"
+        suggestions={['data', 'value', 'mine']}
+        value={multiSelectState}
+        placeholder="salam"
+        onChange={(changedValue: any) => {
+          setMultiSelectState([...changedValue]);
+        }}
       />
     </Layout>
   );
