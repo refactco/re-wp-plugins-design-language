@@ -13,7 +13,7 @@
     "dts:publish": "npm run tsc && npm run cp:assets && npm run dts:bundle",
     "prepublishOnly": "npm run dts:publish",
     "dev": "webpack-dev-server --watch",
-    "build": "webpack-cli",
+    "build": "npm ci && webpack-cli",
     "deploy": "netlify deploy",
     "lint": "eslint"
   },
