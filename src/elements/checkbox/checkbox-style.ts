@@ -1,3 +1,4 @@
+import { elementTransition } from '@styles/animation';
 import { CheckboxControl } from '@wordpress/components';
 import { styled } from 'styled-components';
 import { ICheckboxProps } from './checkbox-type';
@@ -23,6 +24,9 @@ export const StyledCheckbox = styled(CheckboxControl)<ICheckboxProps>`
       height: 24px;
       border-radius: 8px;
       border: 1px solid #002729;
+      ${elementTransition({
+        attrs: 'background-color'
+      })}
 
       &[disabled] {
         border: 1px solid #d7dbdb;

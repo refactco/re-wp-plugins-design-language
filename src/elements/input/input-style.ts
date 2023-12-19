@@ -1,3 +1,4 @@
+import { elementTransition } from '@styles/animation';
 import { __experimentalInputControl as WordpressInput } from '@wordpress/components';
 import { css, styled } from 'styled-components';
 import { IInputProps } from './input-type';
@@ -35,6 +36,9 @@ export const commonInputStyles = css<any>`
 
         return '#003233';
       }} !important;
+      ${elementTransition({
+        attrs: 'border-color'
+      })}
     }
   }
 

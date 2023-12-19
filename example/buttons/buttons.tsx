@@ -21,6 +21,9 @@ export default function Buttons(): ReactElement {
           color={ButtonColor.GREEN}
           icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
           iconPosition={ButtonIconPosition.END}
+          onClick={() => {
+            console.log('here');
+          }}
         >
           hello world
         </Button>

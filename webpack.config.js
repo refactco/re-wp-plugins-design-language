@@ -25,7 +25,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.svg/,
+        test: /\.(svg|ttf)/,
         exclude: /node_modules/,
         use: [{ loader: 'file-loader' }]
       },
@@ -41,7 +41,8 @@ module.exports = {
     alias: {
       '@elements': join(__dirname, './src/elements'),
       '@base': join(__dirname, './src/base'),
-      '@components': join(__dirname, './src/components')
+      '@components': join(__dirname, './src/components'),
+      '@styles': join(__dirname, './src/styles')
     }
   },
   plugins: [

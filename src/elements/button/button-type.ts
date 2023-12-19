@@ -45,3 +45,7 @@ export interface IButtonSizeHandlerValues {
   xSmall?: string;
   xxSmall?: string;
 }
+
+export interface IMiddleAlignedSpanProps {
+  size: ButtonSize;
+}

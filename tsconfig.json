@@ -18,7 +18,8 @@
     "paths": {
       "@base/*": ["base/*"],
       "@elements/*": ["elements/*"],
-      "@components/*": ["components/*"]
+      "@components/*": ["components/*"],
+      "@styles/*": ["styles/*"]
     }
   },
   "include": ["./example", "./src", "./types.d.ts"],

@@ -6,7 +6,8 @@ import {
   ButtonSize,
   ButtonVariant,
   IButtonProps,
-  IButtonSizeHandlerValues
+  IButtonSizeHandlerValues,
+  IMiddleAlignedSpanProps
 } from './button-type';
 
 export function sizeHandler(size: ButtonSize, values: IButtonSizeHandlerValues): string {
@@ -21,6 +22,8 @@ export const StyledButton = styled(Button)<IButtonProps>`
     cursor: pointer;
     align-items: center;
     box-shadow: none;
+    padding-block: 0;
+
     display: ${(props) => (props.iconPosition === ButtonIconPosition.END ? 'inline-flex' : 'inline-block')};
     background-color: ${(props) => {
       if (props.variant === ButtonVariant.SECONDARY) {
@@ -93,9 +96,9 @@ export const StyledButton = styled(Button)<IButtonProps>`
         const { size = ButtonSize.MEDIUM } = props;
 
         return sizeHandler(size, {
-          default: '24px',
-          xSmall: '16px',
-          xxSmall: '16px'
+          default: '16px',
+          large: '24px',
+          medium: '24px'
         });
       }};
       fill: ${(props) => {
@@ -104,14 +107,19 @@ export const StyledButton = styled(Button)<IButtonProps>`
         return variant === ButtonVariant.PRIMARY ? '#fff' : '#002729';
       }};
     }
+
     &:hover {
       box-shadow: none;
-      background-color: ${(props) => (props.color === ButtonColor.RED ? '#D83C2B' : '#268250')};
       color: #fff;
       & > svg {
         fill: #fff;
       }
     }
+
+    &:focus {
+      box-shadow: none;
+    }
+
     &[disabled] {
       cursor: not-allowed;
       background-color: ${(props) => (props.variant === ButtonVariant.PRIMARY ? '#798686' : 'transparent')};
@@ -131,4 +139,36 @@ export const StyledButton = styled(Button)<IButtonProps>`
       min-width: unset;
     }
   }
+
+  &.ripple:not([disabled]) {
+    background-position: center;
+    transition: background 0.8s !important;
+
+    &:hover {
+      background: ${(props) =>
+        props.color === ButtonColor.RED
+          ? '#D83C2B radial-gradient(circle, transparent 1%, #D83C2B 1%) center/15000% !important'
+          : '#268250 radial-gradient(circle, transparent 1%, #268250 1%) center/15000% !important'};
+    }
+
+    &:active {
+      background-color: ${(props) => (props.color === ButtonColor.RED ? '#E37164' : '#37be74')} !important;
+      background-size: 100% !important;
+      transition: background 0s !important;
+    }
+  }
+`;
+
+export const MiddleAlignedSpan = styled.span<IMiddleAlignedSpanProps>`
+  vertical-align: middle;
+  display: inline-block;
+  line-height: ${(props) => {
+    return sizeHandler(props.size, {
+      large: '52px',
+      medium: '47px',
+      small: '40px',
+      xSmall: '32px',
+      xxSmall: '26px'
+    });
+  }};
 `;

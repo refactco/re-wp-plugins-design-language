@@ -1,3 +1,4 @@
+import { elementTransition } from '@styles/animation';
 import { RadioControl } from '@wordpress/components';
 import { styled } from 'styled-components';
 import { IRadioProps } from './radio-type';
@@ -25,6 +26,9 @@ export const StyledRadio = styled(RadioControl)<IRadioProps>`
       border: 1px solid #002729;
       box-shadow: none;
       margin: 0;
+      ${elementTransition({
+        attrs: 'background-color'
+      })}
 
       &:checked {
         background-color: #2e9e62;

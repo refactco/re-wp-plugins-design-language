@@ -100,7 +100,6 @@ export function Inputs(): ReactElement {
         label="Adjust gap"
         value={rangeState}
         max={100}
-        // helpPosition={RangeHelpPosition.BOTTOM}
         onChange={(value?: number) => {
           setRangeState(value ?? 0);
         }}
