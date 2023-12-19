@@ -42,12 +42,12 @@ export const StyledButton = styled(Button)<IButtonProps>`
 
       if (!children) {
         return sizeHandler(size, {
-          default: '15px',
-          large: '15px',
-          medium: '12.5px',
-          small: '13px',
-          xSmall: '9px',
-          xxSmall: '6px'
+          default: '14px',
+          large: '14px',
+          medium: '11.5px',
+          small: '12px',
+          xSmall: '8px',
+          xxSmall: '5px'
         });
       }
 
@@ -120,6 +120,15 @@ export const StyledButton = styled(Button)<IButtonProps>`
       & > svg {
         fill: ${(props) => (props.variant === ButtonVariant.PRIMARY ? '#fff' : '#798686')};
       }
+    }
+
+    &.is-small.has-icon:not(.has-text) {
+      padding-inline: 12px;
+      width: unset;
+    }
+
+    &.has-icon {
+      min-width: unset;
     }
   }
 `;
