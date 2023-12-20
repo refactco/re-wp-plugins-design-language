@@ -9,13 +9,13 @@ import Layout from '../layout/layout';
 export default function Sections(): ReactElement {
   return (
     <Layout backgroundColor="lightgray">
-      <SectionHeader title="Title of section" description="Description goes here" infoText="salam kako" />
+      <SectionHeader title="Title of section" description="Description goes here" infoText="Hello Man" />
       <br />
       <Section
         headerProps={{
           title: 'Title of section',
           description: 'Description goes here',
-          infoText: 'salam kako'
+          infoText: 'Hello Man'
         }}
       >
         <p>this is body</p>
