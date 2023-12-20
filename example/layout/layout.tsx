@@ -19,7 +19,7 @@ export default function Layout(props: ILayoutProps): ReactElement {
             <Link to="/inputs">Inputs</Link>
           </li>
           <li>
-            <Link to="/alerts">Alerts</Link>
+            <Link to="/alerts">Alerts & Tooltips</Link>
           </li>
         </ul>
       </nav>

@@ -1,0 +1,23 @@
+.components-tooltip {
+  background-color: #fff;
+  color: #002729;
+  padding: 8px;
+  width: 307px;
+  border-radius: 4px;
+  position: relative;
+  text-align: start;
+  line-height: 22px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.components-tooltip::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -8px;
+  left: 18px;
+  transform: rotate(45deg);
+}

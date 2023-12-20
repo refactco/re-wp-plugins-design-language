@@ -7,6 +7,9 @@ export default function Icons(): ReactElement {
   return (
     <Layout>
       <div>
+        {/* <Tooltip text="mor info" hideOnClick placement="bottom-start">
+          <div>Hello worlds</div>
+        </Tooltip> */}
         <h1>Drag</h1>
         <IconManager id={IconId.DRAG} fill="green" size={IconSize.X_LARGE} />
         <IconManager id={IconId.DRAG} fill="green" size={IconSize.LARGE} />

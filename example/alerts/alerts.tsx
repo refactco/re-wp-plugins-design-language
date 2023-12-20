@@ -1,6 +1,7 @@
 import { AlertList } from '@components/alert-list/alert-list';
 import { Alert } from '@components/alert/alert';
 import { AlertStatus } from '@components/alert/alert-type';
+import { Tooltip } from '@components/tooltip/tooltip';
 import { IconManager } from '@elements/icon/icon';
 import { IconId } from '@elements/icon/icon-type';
 import { ReactElement } from 'react';
@@ -24,6 +25,9 @@ export default function alerts(): ReactElement {
           <Alert status={AlertStatus.INFO} explicitDismiss>
             Hello guys
           </Alert>
+          <Tooltip text="This is the tooltip">
+            <div>Hover to show the tooltip</div>
+          </Tooltip>
         </div>
       </div>
       <AlertList
