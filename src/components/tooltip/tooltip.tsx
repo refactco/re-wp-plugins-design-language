@@ -4,5 +4,7 @@ import { ITooltipProps } from './tooltip-type';
 import './tooltip.css';
 
 export function Tooltip(props: ITooltipProps): ReactElement {
-  return <WordpressTooltip {...props} />;
+  const { placement = 'top-start', delay = 0, ...restProps } = props;
+
+  return <WordpressTooltip {...restProps} placement={placement} delay={delay} />;
 }
