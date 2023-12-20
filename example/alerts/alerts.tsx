@@ -10,7 +10,7 @@ import { Select } from '@elements/select/select';
 import { ReactElement, useState } from 'react';
 import Layout from '../layout/layout';
 
-export default function alerts(): ReactElement {
+export default function Alerts(): ReactElement {
   const [tooltipPlacement, setTooltipPlacement] = useState<string>('top-start');
   const [delay, setDelay] = useState<number>(0);
 

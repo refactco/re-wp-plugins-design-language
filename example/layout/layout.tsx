@@ -21,6 +21,9 @@ export default function Layout(props: ILayoutProps): ReactElement {
           <li>
             <Link to="/alerts">Alerts & Tooltips</Link>
           </li>
+          <li>
+            <Link to="/sections">Sections</Link>
+          </li>
         </ul>
       </nav>
       <div style={{ paddingInline: '10px' }}>{children}</div>
