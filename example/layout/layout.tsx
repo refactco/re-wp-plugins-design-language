@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import { ILayoutProps } from './layout-type';
 
 export default function Layout(props: ILayoutProps): ReactElement {
-  const { children } = props;
+  const { children, backgroundColor = '#fff' } = props;
 
   return (
-    <div>
+    <div style={{ backgroundColor, minHeight: '100vh' }}>
       <nav>
-        <ul>
+        <ul style={{ margin: 0, paddingBlock: '10px' }}>
           <li>
             <Link to="/icons">Icons</Link>
           </li>
@@ -18,9 +18,12 @@ export default function Layout(props: ILayoutProps): ReactElement {
           <li>
             <Link to="/inputs">Inputs</Link>
           </li>
+          <li>
+            <Link to="/alerts">Alerts</Link>
+          </li>
         </ul>
       </nav>
-      <div>{children}</div>
+      <div style={{ paddingInline: '10px' }}>{children}</div>
     </div>
   );
 }

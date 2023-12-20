@@ -1,3 +1,5 @@
 import { IBaseProps } from '@base/base-interface';
 
-export interface ILayoutProps extends IBaseProps {}
+export interface ILayoutProps extends IBaseProps {
+  backgroundColor?: string;
+}
