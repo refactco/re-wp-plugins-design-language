@@ -24,6 +24,9 @@ export default function Layout(props: ILayoutProps): ReactElement {
           <li>
             <Link to="/sections">Sections</Link>
           </li>
+          <li>
+            <Link to="/tab-panel-menu">Tab Panels</Link>
+          </li>
         </ul>
       </nav>
       <div style={{ paddingInline: '10px' }}>{children}</div>

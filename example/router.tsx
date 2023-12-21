@@ -5,6 +5,7 @@ import Buttons from './buttons/buttons';
 import Icons from './icons/icons';
 import { Inputs } from './inputs/inputs';
 import Sections from './sections/sections';
+import TabPanels from './tab-panels/tab-panels';
 
 export default function Router(): ReactElement {
   return (
@@ -16,6 +17,7 @@ export default function Router(): ReactElement {
         <Route path="/inputs" Component={Inputs} />
         <Route path="/alerts" Component={Alerts} />
         <Route path="/sections" Component={Sections} />
+        <Route path="/tab-panel-menu" Component={TabPanels} />
       </Routes>
     </BrowserRouter>
   );
