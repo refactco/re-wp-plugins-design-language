@@ -6,8 +6,6 @@ import { IMultiSelectProps } from './multi-select-type';
 export function MultiSelect(props: IMultiSelectProps): ReactElement {
   const { suggestions = [], renderItem, showHelp = true, ...restProps } = props;
 
-  console.log('value: ', props.value);
-
   return (
     <StyledMultiSelect
       {...restProps}
@@ -15,15 +13,17 @@ export function MultiSelect(props: IMultiSelectProps): ReactElement {
       __experimentalAutoSelectFirstMatch
       __experimentalExpandOnFocus
       __experimentalShowHowTo={showHelp}
-      __experimentalRenderItem={(value) => {
+      __experimentalRenderItem={(suggestionValue) => {
         if (renderItem) {
-          return renderItem(value);
+          return renderItem(suggestionValue);
         }
 
-        let newValue: ReactNode = value.item;
+        const { item } = suggestionValue;
+
+        let newValue: ReactNode = item;
 
         suggestions.forEach((suggestion: string) => {
-          if (suggestion === value.item) {
+          if (suggestion === item) {
             newValue = (
               <div>
                 <strong>{suggestion}</strong>

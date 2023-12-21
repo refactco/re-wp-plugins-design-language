@@ -58,6 +58,11 @@ export const StyledMultiSelect = styled(FormTokenField)<IMultiSelectProps>`
       background-color: #fff;
       position: absolute;
       width: 100%;
+      display: ${(props) => {
+        const { value, suggestions } = props;
+
+        return value?.length === suggestions?.length ? 'none' : 'block';
+      }};
     }
 
     & .components-form-token-field__suggestion {

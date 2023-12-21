@@ -150,11 +150,13 @@ export function Inputs(): ReactElement {
         label="Select multi"
         suggestions={['data', 'value', 'mine']}
         value={multiSelectState}
-        placeholder="salam"
+        placeholder="Placeholder"
         onChange={(changedValue: any) => {
           setMultiSelectState([...changedValue]);
         }}
       />
+      <br />
+      <br />
     </Layout>
   );
 }
