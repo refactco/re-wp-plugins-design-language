@@ -102,7 +102,7 @@ export default function Alerts(): ReactElement {
           />
           <br />
           <Tooltip text="This is the tooltip" placement={tooltipPlacement as any} delay={delay}>
-            <div>Hover to show the tooltip</div>
+            <div style={{ textAlign: 'center', backgroundColor: 'green' }}>Hover to show the tooltip</div>
           </Tooltip>
         </div>
       </div>

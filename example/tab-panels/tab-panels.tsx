@@ -32,28 +32,30 @@ export default function TabPanels(): ReactElement {
       </TabPanelMenu>
       <br />
       <h3>Tab Panel Menu with min-width item size</h3>
-      <TabPanelMenu
-        tabs={[
-          {
-            name: 'hello',
-            title: 'First Item Long Title'
-          },
-          {
-            name: 'bye',
-            title: 'Bye'
-          },
-          {
-            name: 'data',
-            title: 'Data'
-          },
-          {
-            name: 'hwy',
-            title: 'Item Name'
-          }
-        ]}
-      >
-        {(tab) => <p>{tab.title}</p>}
-      </TabPanelMenu>
+      <div style={{ backgroundColor: 'lightgray', padding: '10px' }}>
+        <TabPanelMenu
+          tabs={[
+            {
+              name: 'hello',
+              title: 'First Item Long Title'
+            },
+            {
+              name: 'bye',
+              title: 'Bye'
+            },
+            {
+              name: 'data',
+              title: 'Data'
+            },
+            {
+              name: 'hwy',
+              title: 'Item Name'
+            }
+          ]}
+        >
+          {(tab) => <p>{tab.title}</p>}
+        </TabPanelMenu>
+      </div>
     </Layout>
   );
 }

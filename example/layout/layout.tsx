@@ -27,6 +27,9 @@ export default function Layout(props: ILayoutProps): ReactElement {
           <li>
             <Link to="/tab-panel-menu">Tab Panels</Link>
           </li>
+          <li>
+            <Link to="/sortable-cards">Sortable Cards</Link>
+          </li>
         </ul>
       </nav>
       <div style={{ paddingInline: '10px' }}>{children}</div>

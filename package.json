@@ -4,7 +4,9 @@
   "description": "UI kit is a sets of react components which is going to be used in the wordpress plugins",
   "main": "./dist/ui-kit-expose.js",
   "types": "./dist/ui-kit-types.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "wp": "wp-scripts build",
     "cp:assets": "cp -r ./src/elements/icon/sprites/ ./dist/elements/icon",
@@ -29,13 +31,19 @@
       "url": "http://hramini.ir"
     }
   ],
-  "keywords": ["react", "typescript", "wordpress"],
+  "keywords": [
+    "react",
+    "typescript",
+    "wordpress"
+  ],
   "license": "MIT",
   "dependencies": {
+    "@types/react-beautiful-dnd": "13.1.7",
     "@wordpress/components": "25.13.0",
     "css-loader": "6.8.1",
     "file-loader": "6.2.0",
     "react": "18.2.0",
+    "react-beautiful-dnd": "13.1.1",
     "react-dom": "18.2.0",
     "style-loader": "3.3.3",
     "styled-components": "6.1.1",
