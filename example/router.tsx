@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Accordions from './accordions/accordions';
 import Alerts from './alerts/alerts';
 import Buttons from './buttons/buttons';
 import Icons from './icons/icons';
@@ -20,6 +21,7 @@ export default function Router(): ReactElement {
         <Route path="/sections" Component={Sections} />
         <Route path="/tab-panel-menu" Component={TabPanels} />
         <Route path="/sortable-cards" Component={SortableCardsPage} />
+        <Route path="/accordions" Component={Accordions} />
       </Routes>
     </BrowserRouter>
   );

@@ -32,7 +32,7 @@ export default function TabPanels(): ReactElement {
       </TabPanelMenu>
       <br />
       <h3>Tab Panel Menu with min-width item size</h3>
-      <div style={{ backgroundColor: 'lightgray', padding: '10px' }}>
+      <div style={{ backgroundColor: 'lightgray' }}>
         <TabPanelMenu
           tabs={[
             {

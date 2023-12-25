@@ -9,7 +9,7 @@ import sprite48 from './sprites/sprite-48.svg';
 import sprite72 from './sprites/sprite-72.svg';
 
 export function IconManager(props: IIconProps) {
-  const { id, size = IconSize.SMALL, fill = 'black' } = props;
+  const { id, size = IconSize.SMALL, fill = 'black', className } = props;
 
   let spriteUrl: string = sprite24;
 
@@ -24,7 +24,7 @@ export function IconManager(props: IIconProps) {
   }
 
   return (
-    <StyledSvg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill={fill}>
+    <StyledSvg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill={fill} className={className}>
       <use xlinkHref={`${spriteUrl}#${id}`}></use>
     </StyledSvg>
   );
