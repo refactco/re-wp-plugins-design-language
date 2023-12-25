@@ -14,7 +14,7 @@ export function SectionHeader(props: ISectionHeaderProps): ReactElement {
       <StyledSectionHeaderTitle>
         {title}{' '}
         {infoText ? (
-          <Tooltip place={TooltipPlace.TOP_START} id="section-header-id" content={infoText} mode={TooltipMode.DARK}>
+          <Tooltip place={TooltipPlace.TOP} id="section-header-id" content={infoText} mode={TooltipMode.DARK}>
             <span>
               <IconManager id={IconId.INFO_FILLED} fill="#798686" />
             </span>
