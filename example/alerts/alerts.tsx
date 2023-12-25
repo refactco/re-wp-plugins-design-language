@@ -5,15 +5,12 @@ import { Tooltip } from '@components/tooltip/tooltip';
 import { TooltipMode, TooltipPlace } from '@components/tooltip/tooltip-type';
 import { IconManager } from '@elements/icon/icon';
 import { IconId } from '@elements/icon/icon-type';
-import { Input } from '@elements/input/input';
-import { InputType } from '@elements/input/input-type';
 import { Select } from '@elements/select/select';
 import { ReactElement, useState } from 'react';
 import Layout from '../layout/layout';
 
 export default function Alerts(): ReactElement {
   const [tooltipPlacement, setTooltipPlacement] = useState<TooltipPlace>(TooltipPlace.TOP);
-  const [delay, setDelay] = useState<number>(0);
 
   return (
     <Layout backgroundColor="lightgray">
@@ -91,15 +88,6 @@ export default function Alerts(): ReactElement {
                 value: 'right-start'
               }
             ]}
-          />
-          <Input
-            label="Tooltip Delay"
-            value={delay.toString()}
-            type={InputType.NUMBER}
-            help="In milliseconds"
-            onChange={(value: string | undefined) => {
-              setDelay(Number(value ?? '0'));
-            }}
           />
           <br />
           <Tooltip content="Hello from inside the tooltip" id="my-tooltip-1" place={tooltipPlacement} mode={TooltipMode.DARK}>
