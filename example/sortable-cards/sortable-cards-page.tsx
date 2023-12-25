@@ -22,20 +22,12 @@ export default function SortableCardsPage(): ReactElement {
           label: 'hello',
           controls: [
             {
-              title: 'Up',
-              onClick: () => console.log('up')
+              title: 'Edit',
+              onClick: () => console.log('edit')
             },
             {
-              title: 'Right',
-              onClick: () => console.log('right')
-            },
-            {
-              title: 'Down',
-              onClick: () => console.log('down')
-            },
-            {
-              title: 'Left',
-              onClick: () => console.log('left')
+              title: 'Delete',
+              onClick: () => console.log('delete')
             }
           ]
         }}

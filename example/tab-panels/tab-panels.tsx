@@ -53,7 +53,7 @@ export default function TabPanels(): ReactElement {
             }
           ]}
         >
-          {(tab) => <p>{tab.title}</p>}
+          {(tab) => null}
         </TabPanelMenu>
       </div>
     </Layout>

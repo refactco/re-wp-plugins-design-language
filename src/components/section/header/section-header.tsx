@@ -1,4 +1,5 @@
 import { Tooltip } from '@components/tooltip/tooltip';
+import { TooltipMode, TooltipPlace } from '@components/tooltip/tooltip-type';
 import { IconManager } from '@elements/icon/icon';
 import { IconId } from '@elements/icon/icon-type';
 import { ReactElement } from 'react';
@@ -13,7 +14,7 @@ export function SectionHeader(props: ISectionHeaderProps): ReactElement {
       <StyledSectionHeaderTitle>
         {title}{' '}
         {infoText ? (
-          <Tooltip text={infoText}>
+          <Tooltip place={TooltipPlace.TOP_START} id="section-header-id" content={infoText} mode={TooltipMode.DARK}>
             <span>
               <IconManager id={IconId.INFO_FILLED} fill="#798686" />
             </span>

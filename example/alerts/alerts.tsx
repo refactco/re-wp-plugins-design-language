@@ -2,6 +2,7 @@ import { AlertList } from '@components/alert-list/alert-list';
 import { Alert } from '@components/alert/alert';
 import { AlertStatus } from '@components/alert/alert-type';
 import { Tooltip } from '@components/tooltip/tooltip';
+import { TooltipMode, TooltipPlace } from '@components/tooltip/tooltip-type';
 import { IconManager } from '@elements/icon/icon';
 import { IconId } from '@elements/icon/icon-type';
 import { Input } from '@elements/input/input';
@@ -11,7 +12,7 @@ import { ReactElement, useState } from 'react';
 import Layout from '../layout/layout';
 
 export default function Alerts(): ReactElement {
-  const [tooltipPlacement, setTooltipPlacement] = useState<string>('top-start');
+  const [tooltipPlacement, setTooltipPlacement] = useState<TooltipPlace>(TooltipPlace.TOP);
   const [delay, setDelay] = useState<number>(0);
 
   return (
@@ -38,7 +39,7 @@ export default function Alerts(): ReactElement {
             label="Tooltip Placement"
             value={tooltipPlacement}
             onChange={(value: string) => {
-              setTooltipPlacement(value);
+              setTooltipPlacement(value as TooltipPlace);
             }}
             options={[
               {
@@ -101,8 +102,14 @@ export default function Alerts(): ReactElement {
             }}
           />
           <br />
-          <Tooltip text="This is the tooltip" placement={tooltipPlacement as any} delay={delay}>
-            <div style={{ textAlign: 'center', backgroundColor: 'green' }}>Hover to show the tooltip</div>
+          <Tooltip content="Hello from inside the tooltip" id="my-tooltip-1" place={tooltipPlacement} mode={TooltipMode.DARK}>
+            <div style={{ backgroundColor: 'green' }}>dark mode tooltip (hover me)</div>
+          </Tooltip>
+          <br />
+          <br />
+          <br />
+          <Tooltip content="Hello from inside the tooltip" id="my-tooltip-2" place={tooltipPlacement}>
+            <div style={{ backgroundColor: 'green', display: 'inline-block' }}>light mode tooltip (hover me)</div>
           </Tooltip>
         </div>
       </div>

@@ -1,3 +1,32 @@
-import { TooltipProps } from '@wordpress/components/build-types/tooltip/types';
+import { IBaseProps } from '@base/base-interface';
 
-export interface ITooltipProps extends TooltipProps {}
+export enum TooltipMode {
+  LIGHT,
+  DARK
+}
+
+export enum TooltipPlace {
+  TOP = 'top',
+  TOP_END = 'top_end',
+  TOP_START = 'top-start',
+  BOTTOM = 'bottom',
+  BOTTOM_END = 'bottom-end',
+  BOTTOM_START = 'bottom-start',
+  RIGHT = 'right',
+  RIGHT_END = 'right-end',
+  RIGHT_START = 'right-start',
+  LEFT = 'left',
+  LEFT_END = 'left-end',
+  LEFT_START = 'left-start'
+}
+
+export interface IStyledTooltipProps {
+  mode?: TooltipMode;
+  id: string;
+  place: TooltipPlace;
+  content: string;
+}
+
+export interface ITooltipProps extends IBaseProps, IStyledTooltipProps {
+  children: any;
+}
