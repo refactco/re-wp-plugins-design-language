@@ -1,4 +1,6 @@
 import { elementTransition } from '@styles/animation';
+import { border } from '@styles/border';
+import { fontSizeCalc, sizeCalc } from '@utils/size-calculator';
 import { CheckboxControl } from '@wordpress/components';
 import { styled } from 'styled-components';
 import { ICheckboxProps } from './checkbox-type';
@@ -17,30 +19,30 @@ export const StyledCheckbox = styled(CheckboxControl)<ICheckboxProps>`
     }
 
     & label {
-      line-height: 22px;
-      font-size: 14px;
+      line-height: ${sizeCalc(22, 14)};
+      font-size: ${fontSizeCalc(14)};
       font-weight: 600;
       vertical-align: middle;
       text-transform: capitalize;
     }
 
     & input {
-      width: 24px;
-      height: 24px;
-      border-radius: 8px;
-      border: 1px solid #002729;
+      width: ${sizeCalc(24)};
+      height: ${sizeCalc(24)};
+      border-radius: ${sizeCalc(8)};
+      border: ${border('#002729')};
       ${elementTransition({
         attrs: 'background-color'
       })}
 
       &[disabled] {
-        border: 1px solid #d7dbdb;
+        border: ${border('#d7dbdb')};
         cursor: not-allowed;
       }
 
       &:checked {
         background-color: #2e9e62;
-        border: 1px solid #2e9e62;
+        border: ${border('#2e9e62')};
         outline: none;
       }
 
@@ -51,9 +53,9 @@ export const StyledCheckbox = styled(CheckboxControl)<ICheckboxProps>`
     }
 
     & .components-checkbox-control__input-container {
-      width: 24px;
-      height: 24px;
-      margin-inline-end: 8px;
+      width: ${sizeCalc(24)};
+      height: ${sizeCalc(24)};
+      margin-inline-end: ${sizeCalc(8)};
     }
   }
 `;

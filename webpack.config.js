@@ -42,7 +42,8 @@ module.exports = {
       '@elements': join(__dirname, './src/elements'),
       '@base': join(__dirname, './src/base'),
       '@components': join(__dirname, './src/components'),
-      '@styles': join(__dirname, './src/styles')
+      '@styles': join(__dirname, './src/styles'),
+      '@utils': join(__dirname, './src/utils')
     }
   },
   plugins: [

@@ -2,7 +2,7 @@ import { AccordionItemProps, AccordionProps } from '@szhsin/react-accordion';
 import { ReactNode } from 'react';
 
 export interface IAccordionItem {
-  header: string;
+  header: ReactNode;
   content: ReactNode;
 }
 

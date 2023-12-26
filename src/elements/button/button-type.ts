@@ -38,12 +38,12 @@ export interface IButtonProps
 }
 
 export interface IButtonSizeHandlerValues {
-  default?: string;
-  large?: string;
-  medium?: string;
-  small?: string;
-  xSmall?: string;
-  xxSmall?: string;
+  default?: number;
+  large?: number;
+  medium?: number;
+  small?: number;
+  xSmall?: number;
+  xxSmall?: number;
 }
 
 export interface IMiddleAlignedSpanProps {

@@ -34,6 +34,10 @@ export const FontStyles = createGlobalStyle`
   ${createFontFace(200, interExtraLight)}
   ${createFontFace(100, interThin)}
 
+  html {
+    font-size: 16px;
+  }
+
   * {
     font-family: Inter !important;
   }

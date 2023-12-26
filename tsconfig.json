@@ -19,7 +19,8 @@
       "@base/*": ["base/*"],
       "@elements/*": ["elements/*"],
       "@components/*": ["components/*"],
-      "@styles/*": ["styles/*"]
+      "@styles/*": ["styles/*"],
+      "@utils/*": ["utils/*"]
     }
   },
   "include": ["./example", "./src", "./types.d.ts"],

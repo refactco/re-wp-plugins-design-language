@@ -33,6 +33,9 @@ export default function Layout(props: ILayoutProps): ReactElement {
           <li>
             <Link to="/accordions">Accordions</Link>
           </li>
+          <li>
+            <Link to="/tables">Tables</Link>
+          </li>
         </ul>
       </nav>
       <div style={{ paddingInline: '10px' }}>{children}</div>

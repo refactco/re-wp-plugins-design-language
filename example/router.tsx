@@ -8,6 +8,7 @@ import { Inputs } from './inputs/inputs';
 import Sections from './sections/sections';
 import SortableCardsPage from './sortable-cards/sortable-cards-page';
 import TabPanels from './tab-panels/tab-panels';
+import Tables from './tables/tables';
 
 export default function Router(): ReactElement {
   return (
@@ -22,6 +23,7 @@ export default function Router(): ReactElement {
         <Route path="/tab-panel-menu" Component={TabPanels} />
         <Route path="/sortable-cards" Component={SortableCardsPage} />
         <Route path="/accordions" Component={Accordions} />
+        <Route path="/tables" Component={Tables} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,3 +1,4 @@
+import { fontSizeCalc, sizeCalc } from '@utils/size-calculator';
 import { Button } from '@wordpress/components';
 import styled from 'styled-components';
 import {
@@ -10,14 +11,24 @@ import {
   IMiddleAlignedSpanProps
 } from './button-type';
 
-export function sizeHandler(size: ButtonSize, values: IButtonSizeHandlerValues): string {
-  return values[size] ?? values.default ?? '';
+export function sizeHandler(
+  size: ButtonSize,
+  values: IButtonSizeHandlerValues,
+  baseFontSize: number = 16,
+  isFont: boolean = false
+): string {
+  if (isFont) {
+    return fontSizeCalc(values[size] ?? values.default ?? 0);
+  }
+
+  return sizeCalc(values[size] ?? values.default ?? 0, baseFontSize);
+  // return values[size] ?? values.default ?? '';
 }
 
 export const StyledButton = styled(Button)<IButtonProps>`
   &&& {
-    border-radius: 12px;
-    font-size: 14px;
+    border-radius: ${sizeCalc(12, 14)};
+    font-size: ${fontSizeCalc(14)};
     font-weight: 600;
     cursor: pointer;
     align-items: center;
@@ -37,41 +48,54 @@ export const StyledButton = styled(Button)<IButtonProps>`
         return 'none';
       }
 
-      return props.color === ButtonColor.RED ? '1px solid #D83C2B' : '1px solid #2E9E62';
+      return props.color === ButtonColor.RED ? `${sizeCalc(1, 14)} solid #D83C2B` : `${sizeCalc(1, 14)} solid #2E9E62`;
     }};
     color: ${(props) => (props.variant === ButtonVariant.PRIMARY ? '#fff' : '#002729')};
     padding-inline: ${(props) => {
       const { size = ButtonSize.MEDIUM, children } = props;
 
       if (!children) {
-        return sizeHandler(size, {
-          default: '14px',
-          large: '14px',
-          medium: '11.5px',
-          small: '12px',
-          xSmall: '8px',
-          xxSmall: '5px'
-        });
+        return sizeHandler(
+          size,
+          {
+            default: 14,
+            large: 14,
+            medium: 11.5,
+            small: 12,
+            xSmall: 8,
+            xxSmall: 5
+          },
+          14
+        );
       }
 
-      return sizeHandler(size, {
-        default: '24px',
-        small: '16px',
-        xSmall: '12px',
-        xxSmall: '12px'
-      });
+      return sizeHandler(
+        size,
+        {
+          default: 24,
+          small: 16,
+          xSmall: 12,
+          xxSmall: 12
+        },
+        14
+      );
     }};
     height: ${(props) => {
       const { size = ButtonSize.MEDIUM } = props;
 
-      return sizeHandler(size, {
-        large: '54px',
-        medium: '49px',
-        small: '42px',
-        xSmall: '34px',
-        xxSmall: '28px'
-      });
+      return sizeHandler(
+        size,
+        {
+          large: 54,
+          medium: 49,
+          small: 42,
+          xSmall: 34,
+          xxSmall: 28
+        },
+        14
+      );
     }};
+
     & > svg {
       margin-inline: ${(props) => {
         const { text, children, iconPosition } = props;
@@ -80,25 +104,25 @@ export const StyledButton = styled(Button)<IButtonProps>`
           return undefined;
         }
 
-        return iconPosition === ButtonIconPosition.END ? '10px 0' : '0 10px';
+        return iconPosition === ButtonIconPosition.END ? `${sizeCalc(10)} 0` : `0 ${sizeCalc(10)}`;
       }};
       order: ${(props) => (props.iconPosition === ButtonIconPosition.END ? '1' : undefined)};
       width: ${(props) => {
         const { size = ButtonSize.MEDIUM } = props;
 
         return sizeHandler(size, {
-          default: '16px',
-          large: '24px',
-          medium: '24px'
+          default: 16,
+          large: 24,
+          medium: 24
         });
       }};
       height: ${(props) => {
         const { size = ButtonSize.MEDIUM } = props;
 
         return sizeHandler(size, {
-          default: '16px',
-          large: '24px',
-          medium: '24px'
+          default: 16,
+          large: 24,
+          medium: 24
         });
       }};
       fill: ${(props) => {
@@ -111,6 +135,7 @@ export const StyledButton = styled(Button)<IButtonProps>`
     &:hover {
       box-shadow: none;
       color: #fff;
+
       & > svg {
         fill: #fff;
       }
@@ -123,15 +148,16 @@ export const StyledButton = styled(Button)<IButtonProps>`
     &[disabled] {
       cursor: not-allowed;
       background-color: ${(props) => (props.variant === ButtonVariant.PRIMARY ? '#798686' : 'transparent')};
-      border: ${(props) => (props.variant === ButtonVariant.PRIMARY ? 'none' : '1px solid #798686')};
+      border: ${(props) => (props.variant === ButtonVariant.PRIMARY ? 'none' : `${sizeCalc(1, 14)} solid #798686`)};
       color: ${(props) => (props.variant === ButtonVariant.PRIMARY ? '#fff' : '#798686')};
+
       & > svg {
         fill: ${(props) => (props.variant === ButtonVariant.PRIMARY ? '#fff' : '#798686')};
       }
     }
 
     &.is-small.has-icon:not(.has-text) {
-      padding-inline: 12px;
+      padding-inline: ${sizeCalc(12, 14)};
       width: unset;
     }
 
@@ -164,11 +190,11 @@ export const MiddleAlignedSpan = styled.span<IMiddleAlignedSpanProps>`
   display: inline-block;
   line-height: ${(props) => {
     return sizeHandler(props.size, {
-      large: '52px',
-      medium: '47px',
-      small: '40px',
-      xSmall: '32px',
-      xxSmall: '26px'
+      large: 52,
+      medium: 47,
+      small: 40,
+      xSmall: 32,
+      xxSmall: 26
     });
   }};
 `;
