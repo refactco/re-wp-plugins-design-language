@@ -2,7 +2,15 @@ import { Accordion, AccordionItem } from '@szhsin/react-accordion';
 import styled from 'styled-components';
 import { IAccordionItemProps, IAccordionProps } from './accordion-type';
 
-export const StyledAccordion = styled(Accordion)<IAccordionProps>``;
+export const StyledAccordion = styled(Accordion)<IAccordionProps>`
+  & .draggable-container {
+    &:not(:last-of-type) {
+      & > .szh-accordion__item {
+        border-bottom: none;
+      }
+    }
+  }
+`;
 
 export const StyledAccordionItem = styled(AccordionItem)<IAccordionItemProps>`
   border-radius: 4px;

@@ -1,8 +1,9 @@
+import { DragContainer } from '@components/drag-container/drag-container';
+import { DraggableBox } from '@components/drag-container/draggable-box/draggable-box';
 import { IconManager } from '@elements/icon/icon';
 import { IconId } from '@elements/icon/icon-type';
 import { DropdownMenu } from '@wordpress/components';
 import { ReactElement, useState } from 'react';
-import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import { StyledListContainer, StyledListItem, StyledListItemBadge, StyledListItemTitle } from './sortable-cards-style';
 import { ISortableCardItem, ISortableCardsProps } from './sortable-cards-type';
 
@@ -25,49 +26,31 @@ export function SortableCards(props: ISortableCardsProps): ReactElement {
   };
 
   return (
-    <DragDropContext onDragEnd={onDragEnd}>
-      <Droppable droppableId="droppable">
-        {(droppableProvided: any) => {
-          const { droppableProps, innerRef, placeholder } = droppableProvided;
+    <DragContainer droppableId="droppable" onDragEnd={onDragEnd}>
+      <StyledListContainer>
+        {stateItems.map((item: ISortableCardItem, index) => {
+          const { id, title, badge } = item;
+          const isSelected: boolean = selectedItemId === id;
 
           return (
-            <StyledListContainer {...droppableProps} ref={innerRef}>
-              {stateItems.map((item: ISortableCardItem, index) => {
-                const { id, title, badge } = item;
-                const isSelected: boolean = selectedItemId === id;
-
-                return (
-                  <Draggable key={id} draggableId={id} index={index}>
-                    {(draggableProvided: any) => {
-                      const { innerRef, draggableProps, dragHandleProps } = draggableProvided;
-
-                      return (
-                        <StyledListItem
-                          ref={innerRef}
-                          selected={isSelected}
-                          {...draggableProps}
-                          {...dragHandleProps}
-                          onClick={(): void => {
-                            onSelectedItemChange?.(id);
-                          }}
-                        >
-                          <IconManager id={IconId.DRAG} />
-                          <StyledListItemTitle>{title}</StyledListItemTitle>
-                          {badge ? <StyledListItemBadge selected={isSelected}>{badge}</StyledListItemBadge> : null}
-                          {menuItems ? (
-                            <DropdownMenu {...menuItems} icon={<IconManager id={IconId.MORE_VERTICAL} />} on></DropdownMenu>
-                          ) : null}
-                        </StyledListItem>
-                      );
-                    }}
-                  </Draggable>
-                );
-              })}
-              {placeholder}
-            </StyledListContainer>
+            <DraggableBox key={id} draggableId={id} index={index}>
+              <StyledListItem
+                selected={isSelected}
+                onClick={(): void => {
+                  onSelectedItemChange?.(id);
+                }}
+              >
+                <IconManager id={IconId.DRAG} />
+                <StyledListItemTitle>{title}</StyledListItemTitle>
+                {badge ? <StyledListItemBadge selected={isSelected}>{badge}</StyledListItemBadge> : null}
+                {menuItems ? (
+                  <DropdownMenu {...menuItems} icon={<IconManager id={IconId.MORE_VERTICAL} />} on></DropdownMenu>
+                ) : null}
+              </StyledListItem>
+            </DraggableBox>
           );
-        }}
-      </Droppable>
-    </DragDropContext>
+        })}
+      </StyledListContainer>
+    </DragContainer>
   );
 }

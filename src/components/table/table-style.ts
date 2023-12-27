@@ -36,9 +36,3 @@ export const StyledTableHeader = styled(TableRow)`
   background-color: #e5f7e3;
   height: 48px;
 `;
-
-export const StyledTableBody = styled.div`
-  display: flex;
-  width: 100%;
-  flex-wrap: wrap;
-`;

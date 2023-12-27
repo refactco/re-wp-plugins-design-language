@@ -8,4 +8,6 @@ export interface ITableProps extends IStyledTableProps, IBaseVoidProps {
   headers: string[];
   dataRows: ReactNode[][];
   actions?: ITableAction[];
+  noDraggable?: boolean;
+  onDragItemEnd?(result: any): void;
 }

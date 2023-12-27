@@ -8,6 +8,9 @@ export interface IAccordionItem {
 
 export interface IAccordionProps extends AccordionProps {
   items: IAccordionItem[];
+  noDraggable?: boolean;
+  dragId?: string;
+  onDragItemEnd?(result: any): void;
 }
 
 export interface IAccordionItemProps extends AccordionItemProps {

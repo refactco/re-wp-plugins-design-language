@@ -1,4 +1,6 @@
 import { IAccordionItem } from '@components/accordion/accordion-type';
+import { IconManager } from '@elements/icon/icon';
+import { IconId } from '@elements/icon/icon-type';
 import { ReactElement, ReactNode } from 'react';
 import { TableCell } from '../cell/table-cell';
 import { ITableProps } from '../table-type';
@@ -12,7 +14,7 @@ import {
 } from './mobile-table-style';
 
 export function MobileTable(props: ITableProps): ReactElement {
-  const { headers, dataRows, actions } = props;
+  const { headers, dataRows, actions, noDraggable, onDragItemEnd } = props;
 
   return (
     <StyledMobileTable className="mobile-table">
@@ -21,11 +23,20 @@ export function MobileTable(props: ITableProps): ReactElement {
       </StyledMobileTableHeader>
       <StyledMobileTableBody>
         <StyledMobileTableAccordion
+          noDraggable={noDraggable}
+          dragId="mobile-table-id"
+          onDragItemEnd={(result: any) => {
+            onDragItemEnd?.(result);
+          }}
           items={dataRows.map((row: ReactNode[], rowIndex): IAccordionItem => {
             const [firstRow, ...restRow] = row;
 
             return {
-              header: firstRow,
+              header: (
+                <>
+                  {noDraggable ? null : <IconManager id={IconId.DRAG} fill="#798686" />} {firstRow}
+                </>
+              ),
               content: (
                 <>
                   <StyledMobileTableAction actions={actions} rowIndex={rowIndex} />

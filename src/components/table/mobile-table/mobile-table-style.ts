@@ -19,13 +19,21 @@ export const StyledMobileTableBody = styled.div`
 `;
 
 export const StyledMobileTableAccordion = styled(Accordion)`
+  & .draggable-container {
+    &:not(:last-of-type) {
+      & > .szh-accordion__item {
+        border-bottom: 1px solid #d7dbdb;
+      }
+    }
+  }
+
   & .szh-accordion__item {
     border-radius: 0;
     border: none;
 
-    &:not(:last-of-type) {
-      border-bottom: 1px solid #d7dbdb;
-    }
+    // &:not(:last-of-type) {
+    //   border-bottom: 1px solid #d7dbdb;
+    // }
 
     &-btn {
       padding: 12px;
