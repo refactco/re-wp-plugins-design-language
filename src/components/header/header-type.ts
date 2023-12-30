@@ -16,4 +16,7 @@ export interface IHeaderProps extends Omit<IStyledHeaderProps, 'children'> {
   logoSource: ReactNode;
   logoType?: HeaderLogoType;
   activeItemIndex?: number;
+  // activeSubItemIndex?: number;
+  onSelectItem?(index: number): void;
+  // onSelectSubItem?(index: number): void;
 }

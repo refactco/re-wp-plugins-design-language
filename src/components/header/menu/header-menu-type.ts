@@ -30,5 +30,7 @@ export interface IHeaderGroupProps extends NavigationGroupProps, IBaseVoidProps 
 export interface IHeaderMenuProps extends Omit<NavigationMenuProps, 'title' | 'children'>, IBaseVoidProps {
   items: IHeaderItemProps[];
   activeItemIndex?: number;
+  activeSubItemIndex?: number;
   onSelectItem?(index: number): void;
+  onSelectSubItem?(index: number): void;
 }

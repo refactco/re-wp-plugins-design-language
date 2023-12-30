@@ -4,7 +4,7 @@ import { StyledHeaderGroup, StyledHeaderItem, StyledHeaderMenu } from './header-
 import { IHeaderItemProps, IHeaderMenuProps } from './header-menu-type';
 
 export function HeaderMenu(props: IHeaderMenuProps): ReactElement {
-  const { items, activeItemIndex = 0, onSelectItem } = props;
+  const { items, activeItemIndex = 0, onSelectItem, onSelectSubItem, activeSubItemIndex } = props;
   const { subHeaderItems, subHeaderType } = items[activeItemIndex] ?? {};
 
   return (
@@ -25,7 +25,14 @@ export function HeaderMenu(props: IHeaderMenuProps): ReactElement {
             </>
           );
         })}
-        <SubHeader subHeaderItems={subHeaderItems} subHeaderType={subHeaderType} />
+        <SubHeader
+          subHeaderItems={subHeaderItems}
+          subHeaderType={subHeaderType}
+          activeItemIndex={activeSubItemIndex}
+          onSubItemClick={(index: number): void => {
+            onSelectSubItem?.(index);
+          }}
+        />
       </StyledHeaderGroup>
     </StyledHeaderMenu>
   );

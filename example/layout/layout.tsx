@@ -56,6 +56,16 @@ export default function Layout(props: ILayoutProps): ReactElement {
     {
       item: 'inputs',
       title: 'Input',
+      subHeaderItems: [
+        {
+          name: 'text',
+          title: 'Text Input'
+        },
+        {
+          name: 'number',
+          title: 'Number Input'
+        }
+      ],
       onClick: () => {
         navigate('/inputs');
       }

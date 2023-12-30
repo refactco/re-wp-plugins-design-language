@@ -8,7 +8,7 @@ import { StyledSubHeader, StyledTitleButtonItem, StyledTitleButtonItemTitle } fr
 import { ISubHeaderProps } from './sub-header-type';
 
 export function SubHeader(props: ISubHeaderProps): ReactNode {
-  const { subHeaderItems, subHeaderType = SubHeaderType.TAB_PANEL } = props;
+  const { subHeaderItems, subHeaderType = SubHeaderType.TAB_PANEL, activeItemIndex, onSubItemClick } = props;
 
   function innerSubHeader() {
     if (subHeaderType === SubHeaderType.TITLE_BUTTON) {
@@ -24,7 +24,15 @@ export function SubHeader(props: ISubHeaderProps): ReactNode {
       );
     }
 
-    return <TabPanelMenu tabs={subHeaderItems as ITabPanelItem[]} />;
+    return (
+      <TabPanelMenu
+        tabs={subHeaderItems as ITabPanelItem[]}
+        activeIndex={activeItemIndex}
+        onTabClick={(tabIndex: number): void => {
+          onSubItemClick?.(tabIndex);
+        }}
+      />
+    );
   }
 
   return <StyledSubHeader>{subHeaderItems ? innerSubHeader() : null}</StyledSubHeader>;
