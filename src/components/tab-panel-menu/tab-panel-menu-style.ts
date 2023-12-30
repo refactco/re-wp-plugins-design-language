@@ -1,21 +1,37 @@
-import { TabPanel } from '@wordpress/components';
 import styled from 'styled-components';
 import { ITabPanelMenuProps, TabItemSize } from './tab-panel-menu-type';
 
-export const StyledTabPanel = styled(TabPanel)<ITabPanelMenuProps>`
+export const StyledTabPanel = styled.div<ITabPanelMenuProps>`
   &&& {
     & > .components-tab-panel__tabs {
-      gap: 24px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
     }
 
     & .components-tab-panel__tabs-item {
+      display: flex;
+      padding: 26px 0 0 0;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      text-align: center;
+      height: 44px;
+
       color: #798686;
       font-size: 14px;
       font-weight: 600;
-      line-height: 22px;
-      padding: 0;
       min-width: ${(props) => (props.tabItemSize === TabItemSize.WITH_MIN_WIDTH ? props.tabItemMinWidth : undefined)};
-      display: inline-block;
+      line-height: 22px;
+
+      &::before {
+        content: unset;
+      }
+
+      // & > span {
+      //   display: inline-flex;
+      //   line-height: 22px;
+      // }
 
       &.is-active {
         color: #002729;
