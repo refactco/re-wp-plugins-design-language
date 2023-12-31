@@ -15,13 +15,15 @@
     "esModuleInterop": true,
     "noResolve": false,
     "outDir": "dist",
-    "skipLibCheck": true,
-    "baseUrl": "./src",
-    "paths": {
-      "@base/*": ["base/*"],
-      "@elements/*": ["elements/*"],
-      "@components/*": ["components/*"]
-    }
+    "skipLibCheck": true
+    // "baseUrl": "./src",
+    // "paths": {
+    //   "@base/*": ["base/*"],
+    //   "@elements/*": ["elements/*"],
+    //   "@components/*": ["components/*"],
+    //   "@styles/*": ["styles/*"],
+    //   "@utils/*": ["utils/*"]
+    // }
   },
   "include": ["src", "./types.d.ts"],
   "exclude": ["node_modules"]

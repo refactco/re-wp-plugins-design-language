@@ -13,16 +13,16 @@
     "declarationMap": false,
     "esModuleInterop": true,
     "noResolve": false,
-    "skipLibCheck": true,
-    "baseUrl": "./src",
-    "paths": {
-      "@base/*": ["base/*"],
-      "@elements/*": ["elements/*"],
-      "@components/*": ["components/*"],
-      "@styles/*": ["styles/*"],
-      "@utils/*": ["utils/*"]
-    }
+    "skipLibCheck": true
+    // "baseUrl": "./src",
+    // "paths": {
+    //   "@base/*": ["base/*"],
+    //   "@elements/*": ["elements/*"],
+    //   "@components/*": ["components/*"],
+    //   "@styles/*": ["styles/*"],
+    //   "@utils/*": ["utils/*"]
+    // }
   },
   "include": ["./example", "./src", "./types.d.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "./src/ui-kit-expose.ts"]
 }

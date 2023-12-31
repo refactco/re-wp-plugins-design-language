@@ -1,4 +1,4 @@
-import { IBaseVoidProps } from '@base/base-interface';
+import { IBaseVoidProps } from '../../../base/base-interface';
 
 export interface IDraggableBoxProps extends IBaseVoidProps {
   children: any;

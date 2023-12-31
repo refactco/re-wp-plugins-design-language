@@ -1,8 +1,8 @@
-import { Tooltip } from '@components/tooltip/tooltip';
-import { TooltipMode, TooltipPlace } from '@components/tooltip/tooltip-type';
-import { IconManager } from '@elements/icon/icon';
-import { IconId } from '@elements/icon/icon-type';
 import { ReactElement } from 'react';
+import { Icon } from '../../../elements/icon/icon';
+import { IconName } from '../../../elements/icon/icon-type';
+import { Tooltip } from '../../tooltip/tooltip';
+import { TooltipMode, TooltipPlace } from '../../tooltip/tooltip-type';
 import { StyledSectionHeader, StyledSectionHeaderDescription, StyledSectionHeaderTitle } from './section-header-style';
 import { ISectionHeaderProps } from './section-header-type';
 
@@ -16,7 +16,7 @@ export function SectionHeader(props: ISectionHeaderProps): ReactElement {
         {infoText ? (
           <Tooltip place={TooltipPlace.TOP} id="section-header-id" content={infoText} mode={TooltipMode.DARK}>
             <span>
-              <IconManager id={IconId.INFO_FILLED} fill="#798686" />
+              <Icon iconName={IconName.INFO_FILLED} fill="#798686" />
             </span>
           </Tooltip>
         ) : null}

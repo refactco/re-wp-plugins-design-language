@@ -1,6 +1,6 @@
-import { IBaseVoidProps } from '@base/base-interface';
-import { ButtonColor, ButtonSize, ButtonVariant } from '@elements/button/button-type';
 import { HTMLAttributes } from 'react';
+import { IBaseVoidProps } from '../../../base/base-interface';
+import { ButtonColor, ButtonSize, ButtonVariant } from '../../../elements/button/button-type';
 
 export interface ITableAction {
   text: string;

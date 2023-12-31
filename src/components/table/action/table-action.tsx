@@ -1,6 +1,6 @@
-import { Button } from '@elements/button/button';
-import { ButtonSize } from '@elements/button/button-type';
 import { ReactElement, ReactNode } from 'react';
+import { Button } from '../../../elements/button/button';
+import { ButtonSize } from '../../../elements/button/button-type';
 import { StyledTableAction } from './table-action-style';
 import { ITableAction, ITableActionProps } from './table-action-type';
 

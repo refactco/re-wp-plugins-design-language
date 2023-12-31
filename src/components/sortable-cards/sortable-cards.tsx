@@ -1,9 +1,9 @@
-import { DragContainer } from '@components/drag-container/drag-container';
-import { DraggableBox } from '@components/drag-container/draggable-box/draggable-box';
-import { IconManager } from '@elements/icon/icon';
-import { IconId } from '@elements/icon/icon-type';
 import { DropdownMenu } from '@wordpress/components';
 import { ReactElement, useState } from 'react';
+import { Icon } from '../../elements/icon/icon';
+import { IconName } from '../../elements/icon/icon-type';
+import { DragContainer } from '../drag-container/drag-container';
+import { DraggableBox } from '../drag-container/draggable-box/draggable-box';
 import { StyledListContainer, StyledListItem, StyledListItemBadge, StyledListItemTitle } from './sortable-cards-style';
 import { ISortableCardItem, ISortableCardsProps } from './sortable-cards-type';
 
@@ -40,11 +40,11 @@ export function SortableCards(props: ISortableCardsProps): ReactElement {
                   onSelectedItemChange?.(id);
                 }}
               >
-                <IconManager id={IconId.DRAG} />
+                <Icon iconName={IconName.DRAG} />
                 <StyledListItemTitle>{title}</StyledListItemTitle>
                 {badge ? <StyledListItemBadge selected={isSelected}>{badge}</StyledListItemBadge> : null}
                 {menuItems ? (
-                  <DropdownMenu {...menuItems} icon={<IconManager id={IconId.MORE_VERTICAL} />} on></DropdownMenu>
+                  <DropdownMenu {...menuItems} icon={<Icon iconName={IconName.MORE_VERTICAL} />} on></DropdownMenu>
                 ) : null}
               </StyledListItem>
             </DraggableBox>

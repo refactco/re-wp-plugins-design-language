@@ -1,17 +1,15 @@
 {
   "name": "@refactco/ui-kit",
-  "version": "1.0.3",
+  "version": "1.0.9",
   "description": "UI kit is a sets of react components which is going to be used in the wordpress plugins",
   "main": "./dist/ui-kit-expose.js",
   "types": "./dist/ui-kit-types.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "wp": "wp-scripts build",
     "cp:assets": "cp -r ./src/elements/icon/sprites/ ./dist/elements/icon",
     "tsc": "rm -rf dist && tsc --project ./tsconfig.publish.json",
-    "dts:bundle": "dts-bundle-generator --external-imports react @wordpress/components -o ./dist/ui-kit-types.d.ts ./src/ui-kit-expose.ts",
+    "dts:bundle": "dts-bundle-generator --external-imports react @wordpress/components @szhsin/react-accordion -o ./dist/ui-kit-types.d.ts ./src/ui-kit-expose.ts",
     "dts:publish": "npm run tsc && npm run cp:assets && npm run dts:bundle",
     "prepublishOnly": "npm run dts:publish",
     "dev": "webpack-dev-server --watch",
@@ -31,11 +29,7 @@
       "url": "http://hramini.ir"
     }
   ],
-  "keywords": [
-    "react",
-    "typescript",
-    "wordpress"
-  ],
+  "keywords": ["react", "typescript", "wordpress"],
   "license": "MIT",
   "dependencies": {
     "@szhsin/react-accordion": "1.2.3",

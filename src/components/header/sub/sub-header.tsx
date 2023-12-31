@@ -1,8 +1,8 @@
-import { TabPanelMenu } from '@components/tab-panel-menu/tab-panel-menu';
-import { ITabPanelItem } from '@components/tab-panel-menu/tab-panel-menu-type';
-import { Button } from '@elements/button/button';
-import { ButtonSize } from '@elements/button/button-type';
 import { ReactElement, ReactNode } from 'react';
+import { Button } from '../../../elements/button/button';
+import { ButtonSize } from '../../../elements/button/button-type';
+import { TabPanelMenu } from '../../tab-panel-menu/tab-panel-menu';
+import { ITabPanelItem } from '../../tab-panel-menu/tab-panel-menu-type';
 import { ITitleButtonItem, SubHeaderType, TitleButtonItemButtonProps } from '../menu/header-menu-type';
 import { StyledSubHeader, StyledTitleButtonItem, StyledTitleButtonItemTitle } from './sub-header-style';
 import { ISubHeaderProps } from './sub-header-type';

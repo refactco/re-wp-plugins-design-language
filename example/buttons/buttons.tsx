@@ -1,8 +1,8 @@
-import { Button } from '@elements/button/button';
-import { ButtonColor, ButtonIconPosition, ButtonSize, ButtonVariant } from '@elements/button/button-type';
-import { IconManager } from '@elements/icon/icon';
-import { IconId, IconSize } from '@elements/icon/icon-type';
 import { ReactElement } from 'react';
+import { Button } from '../../src/elements/button/button';
+import { ButtonColor, ButtonIconPosition, ButtonSize, ButtonVariant } from '../../src/elements/button/button-type';
+import { Icon } from '../../src/elements/icon/icon';
+import { IconName, IconSize } from '../../src/elements/icon/icon-type';
 import Layout from '../layout/layout';
 
 export default function Buttons(): ReactElement {
@@ -19,7 +19,7 @@ export default function Buttons(): ReactElement {
         <Button
           size={ButtonSize.LARGE}
           color={ButtonColor.GREEN}
-          icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
           iconPosition={ButtonIconPosition.END}
           onClick={() => {
             console.log('here');
@@ -30,20 +30,20 @@ export default function Buttons(): ReactElement {
         <Button
           size={ButtonSize.MEDIUM}
           color={ButtonColor.GREEN}
-          icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
           iconPosition={ButtonIconPosition.END}
         >
           hello world
         </Button>
-        <Button size={ButtonSize.SMALL} icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}>
+        <Button size={ButtonSize.SMALL} icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}>
           hello world
         </Button>
-        <Button size={ButtonSize.X_SMALL} icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}>
+        <Button size={ButtonSize.X_SMALL} icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}>
           hello world
         </Button>
         <Button
           size={ButtonSize.XX_SMALL}
-          icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
           iconPosition={ButtonIconPosition.END}
         >
           hello world
@@ -60,7 +60,7 @@ export default function Buttons(): ReactElement {
         <Button
           size={ButtonSize.LARGE}
           color={ButtonColor.GREEN}
-          icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
           iconPosition={ButtonIconPosition.END}
           disabled
         >
@@ -69,21 +69,21 @@ export default function Buttons(): ReactElement {
         <Button
           size={ButtonSize.MEDIUM}
           color={ButtonColor.GREEN}
-          icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
           iconPosition={ButtonIconPosition.END}
           disabled
         >
           hello world
         </Button>
-        <Button size={ButtonSize.SMALL} icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />} disabled>
+        <Button size={ButtonSize.SMALL} icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />} disabled>
           hello world
         </Button>
-        <Button size={ButtonSize.X_SMALL} icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />} disabled>
+        <Button size={ButtonSize.X_SMALL} icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />} disabled>
           hello world
         </Button>
         <Button
           size={ButtonSize.XX_SMALL}
-          icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
           iconPosition={ButtonIconPosition.END}
           disabled
         >
@@ -103,7 +103,7 @@ export default function Buttons(): ReactElement {
           variant={ButtonVariant.SECONDARY}
           size={ButtonSize.LARGE}
           color={ButtonColor.GREEN}
-          icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
           iconPosition={ButtonIconPosition.END}
         >
           hello world
@@ -112,7 +112,7 @@ export default function Buttons(): ReactElement {
           variant={ButtonVariant.SECONDARY}
           size={ButtonSize.MEDIUM}
           color={ButtonColor.GREEN}
-          icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
           iconPosition={ButtonIconPosition.END}
         >
           hello world
@@ -120,21 +120,21 @@ export default function Buttons(): ReactElement {
         <Button
           variant={ButtonVariant.SECONDARY}
           size={ButtonSize.SMALL}
-          icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
         >
           hello world
         </Button>
         <Button
           variant={ButtonVariant.SECONDARY}
           size={ButtonSize.X_SMALL}
-          icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
         >
           hello world
         </Button>
         <Button
           variant={ButtonVariant.SECONDARY}
           size={ButtonSize.XX_SMALL}
-          icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
           iconPosition={ButtonIconPosition.END}
         >
           hello world
@@ -152,7 +152,7 @@ export default function Buttons(): ReactElement {
           variant={ButtonVariant.SECONDARY}
           size={ButtonSize.LARGE}
           color={ButtonColor.RED}
-          icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
           iconPosition={ButtonIconPosition.END}
         >
           hello world
@@ -161,7 +161,7 @@ export default function Buttons(): ReactElement {
           variant={ButtonVariant.SECONDARY}
           size={ButtonSize.MEDIUM}
           color={ButtonColor.RED}
-          icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
           iconPosition={ButtonIconPosition.END}
         >
           hello world
@@ -170,7 +170,7 @@ export default function Buttons(): ReactElement {
           variant={ButtonVariant.SECONDARY}
           color={ButtonColor.RED}
           size={ButtonSize.SMALL}
-          icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
         >
           hello world
         </Button>
@@ -178,7 +178,7 @@ export default function Buttons(): ReactElement {
           variant={ButtonVariant.SECONDARY}
           color={ButtonColor.RED}
           size={ButtonSize.X_SMALL}
-          icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
         >
           hello world
         </Button>
@@ -186,7 +186,7 @@ export default function Buttons(): ReactElement {
           variant={ButtonVariant.SECONDARY}
           size={ButtonSize.XX_SMALL}
           color={ButtonColor.RED}
-          icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
           iconPosition={ButtonIconPosition.END}
         >
           hello world
@@ -204,7 +204,7 @@ export default function Buttons(): ReactElement {
           variant={ButtonVariant.SECONDARY}
           size={ButtonSize.LARGE}
           color={ButtonColor.RED}
-          icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
           iconPosition={ButtonIconPosition.END}
           disabled
         >
@@ -214,7 +214,7 @@ export default function Buttons(): ReactElement {
           variant={ButtonVariant.SECONDARY}
           size={ButtonSize.MEDIUM}
           color={ButtonColor.RED}
-          icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
           iconPosition={ButtonIconPosition.END}
           disabled
         >
@@ -224,7 +224,7 @@ export default function Buttons(): ReactElement {
           variant={ButtonVariant.SECONDARY}
           color={ButtonColor.RED}
           size={ButtonSize.SMALL}
-          icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
           disabled
         >
           hello world
@@ -233,7 +233,7 @@ export default function Buttons(): ReactElement {
           variant={ButtonVariant.SECONDARY}
           color={ButtonColor.RED}
           size={ButtonSize.X_SMALL}
-          icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
           disabled
         >
           hello world
@@ -242,7 +242,7 @@ export default function Buttons(): ReactElement {
           variant={ButtonVariant.SECONDARY}
           size={ButtonSize.XX_SMALL}
           color={ButtonColor.RED}
-          icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
           iconPosition={ButtonIconPosition.END}
           disabled
         >
@@ -261,32 +261,32 @@ export default function Buttons(): ReactElement {
         <Button
           variant={ButtonVariant.PRIMARY}
           size={ButtonSize.LARGE}
-          icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
         />
         <Button
           variant={ButtonVariant.SECONDARY}
           size={ButtonSize.MEDIUM}
           color={ButtonColor.RED}
-          icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
         />
         <Button
           variant={ButtonVariant.SECONDARY}
           color={ButtonColor.GREEN}
           size={ButtonSize.SMALL}
-          icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
         />
         <Button
           variant={ButtonVariant.PRIMARY}
           color={ButtonColor.RED}
           size={ButtonSize.X_SMALL}
-          icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
           disabled
         />
         <Button
           variant={ButtonVariant.SECONDARY}
           size={ButtonSize.XX_SMALL}
           color={ButtonColor.RED}
-          icon={<IconManager id={IconId.NOTIFICATION_ON} size={IconSize.TINY} />}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
           disabled
         />
       </div>

@@ -1,5 +1,5 @@
-import { IBaseVoidProps } from '@base/base-interface';
 import { ReactNode } from 'react';
+import { IBaseVoidProps } from '../../base/base-interface';
 import { ITableAction } from './action/table-action-type';
 
 export interface IStyledTableProps {}

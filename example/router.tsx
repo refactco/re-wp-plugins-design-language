@@ -2,7 +2,9 @@ import { ReactElement } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Accordions from './accordions/accordions';
 import Alerts from './alerts/alerts';
+import Blocks from './blocks/blocks';
 import Buttons from './buttons/buttons';
+import Containers from './containers/containers';
 import Icons from './icons/icons';
 import { Inputs } from './inputs/inputs';
 import Sections from './sections/sections';
@@ -24,6 +26,8 @@ export default function Router(): ReactElement {
         <Route path="/sortable-cards" Component={SortableCardsPage} />
         <Route path="/accordions" Component={Accordions} />
         <Route path="/tables" Component={Tables} />
+        <Route path="/blocks" Component={Blocks} />
+        <Route path="/containers" Component={Containers} />
       </Routes>
     </BrowserRouter>
   );

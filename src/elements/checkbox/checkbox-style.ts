@@ -1,8 +1,8 @@
-import { elementTransition } from '@styles/animation';
-import { border } from '@styles/border';
-import { fontSizeCalc, sizeCalc } from '@utils/size-calculator';
 import { CheckboxControl } from '@wordpress/components';
 import { styled } from 'styled-components';
+import { elementTransition } from '../../styles/animation';
+import { border } from '../../styles/border';
+import { fontSizeCalc, sizeCalc } from '../../utils/size-calculator';
 import { ICheckboxProps } from './checkbox-type';
 
 export const StyledCheckbox = styled(CheckboxControl)<ICheckboxProps>`

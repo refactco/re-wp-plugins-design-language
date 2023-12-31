@@ -8,8 +8,8 @@ import sprite32 from './sprites/sprite-32.svg';
 import sprite48 from './sprites/sprite-48.svg';
 import sprite72 from './sprites/sprite-72.svg';
 
-export function IconManager(props: IIconProps) {
-  const { id, size = IconSize.SMALL, fill = 'black', className } = props;
+export function Icon(props: IIconProps) {
+  const { iconName: id, size = IconSize.SMALL, fill = 'black', className } = props;
 
   let spriteUrl: string = sprite24;
 

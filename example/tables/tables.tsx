@@ -1,8 +1,8 @@
-import { ITableAction } from '@components/table/action/table-action-type';
-import { MobileTable } from '@components/table/mobile-table/mobile-table';
-import { Table } from '@components/table/table';
-import { ButtonColor } from '@elements/button/button-type';
 import { ReactElement, ReactNode } from 'react';
+import { ITableAction } from '../../src/components/table/action/table-action-type';
+import { MobileTable } from '../../src/components/table/mobile-table/mobile-table';
+import { Table } from '../../src/components/table/table';
+import { ButtonColor } from '../../src/elements/button/button-type';
 import Layout from '../layout/layout';
 
 export default function Tables(): ReactElement {

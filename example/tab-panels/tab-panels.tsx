@@ -1,6 +1,6 @@
-import { TabPanelMenu } from '@components/tab-panel-menu/tab-panel-menu';
-import { TabItemSize } from '@components/tab-panel-menu/tab-panel-menu-type';
 import { ReactElement, useState } from 'react';
+import { TabPanelMenu } from '../../src/components/tab-panel-menu/tab-panel-menu';
+import { TabItemSize } from '../../src/components/tab-panel-menu/tab-panel-menu-type';
 import Layout from '../layout/layout';
 
 export default function TabPanels(): ReactElement {

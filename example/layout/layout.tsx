@@ -1,14 +1,14 @@
-import { Header } from '@components/header/header';
-import { IHeaderItemProps, SubHeaderType } from '@components/header/menu/header-menu-type';
-import { ButtonColor, ButtonVariant } from '@elements/button/button-type';
-import { IconManager } from '@elements/icon/icon';
-import { IconId } from '@elements/icon/icon-type';
 import { ReactElement, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Header } from '../../src/components/header/header';
+import { IHeaderItemProps, SubHeaderType } from '../../src/components/header/menu/header-menu-type';
+import { ButtonColor, ButtonVariant } from '../../src/elements/button/button-type';
+import { Icon } from '../../src/elements/icon/icon';
+import { IconName } from '../../src/elements/icon/icon-type';
 import { ILayoutProps } from './layout-type';
 
 export default function Layout(props: ILayoutProps): ReactElement {
-  const { children, backgroundColor = '#fff' } = props;
+  const { children, backgroundColor = '#fff', padding = '10px' } = props;
   const navigate = useNavigate();
   const [activeItemIndex, setActiveItemIndex] = useState<number>(-1);
 
@@ -39,13 +39,13 @@ export default function Layout(props: ILayoutProps): ReactElement {
         buttons: [
           {
             text: 'Add new',
-            icon: <IconManager id={IconId.PLUS} />
+            icon: <Icon iconName={IconName.PLUS} />
           },
           {
             text: 'Delete',
             color: ButtonColor.RED,
             variant: ButtonVariant.SECONDARY,
-            icon: <IconManager id={IconId.DELETE} />
+            icon: <Icon iconName={IconName.DELETE} />
           }
         ]
       },
@@ -111,6 +111,20 @@ export default function Layout(props: ILayoutProps): ReactElement {
       onClick: () => {
         navigate('/tables');
       }
+    },
+    {
+      item: 'blocks',
+      title: 'Block',
+      onClick: () => {
+        navigate('/blocks');
+      }
+    },
+    {
+      item: 'containers',
+      title: 'Container',
+      onClick: () => {
+        navigate('/containers');
+      }
     }
   ];
 
@@ -126,7 +140,7 @@ export default function Layout(props: ILayoutProps): ReactElement {
   return (
     <div style={{ backgroundColor, minHeight: '100vh' }}>
       <Header activeItemIndex={activeItemIndex} items={items} logoSource="LOGO" />
-      <div style={{ paddingInline: '10px' }}>{children}</div>
+      <div style={{ paddingInline: padding }}>{children}</div>
     </div>
   );
 }

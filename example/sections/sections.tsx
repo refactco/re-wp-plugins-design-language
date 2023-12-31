@@ -1,9 +1,9 @@
-import { SectionHeader } from '@components/section/header/section-header';
-import { Section } from '@components/section/section';
-import { Button } from '@elements/button/button';
-import { ButtonVariant } from '@elements/button/button-type';
-import { Input } from '@elements/input/input';
 import { ReactElement } from 'react';
+import { SectionHeader } from '../../src/components/section/header/section-header';
+import { Section } from '../../src/components/section/section';
+import { Button } from '../../src/elements/button/button';
+import { ButtonVariant } from '../../src/elements/button/button-type';
+import { Input } from '../../src/elements/input/input';
 import Layout from '../layout/layout';
 
 export default function Sections(): ReactElement {

@@ -1,6 +1,6 @@
-import { fontSizeCalc, sizeCalc } from '@utils/size-calculator';
 import { Button } from '@wordpress/components';
 import styled from 'styled-components';
+import { fontSizeCalc, sizeCalc } from '../../utils/size-calculator';
 import {
   ButtonColor,
   ButtonIconPosition,

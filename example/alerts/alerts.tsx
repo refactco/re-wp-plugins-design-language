@@ -1,12 +1,12 @@
-import { AlertList } from '@components/alert-list/alert-list';
-import { Alert } from '@components/alert/alert';
-import { AlertStatus } from '@components/alert/alert-type';
-import { Tooltip } from '@components/tooltip/tooltip';
-import { TooltipMode, TooltipPlace } from '@components/tooltip/tooltip-type';
-import { IconManager } from '@elements/icon/icon';
-import { IconId } from '@elements/icon/icon-type';
-import { Select } from '@elements/select/select';
 import { ReactElement, useState } from 'react';
+import { AlertList } from '../../src/components/alert-list/alert-list';
+import { Alert } from '../../src/components/alert/alert';
+import { AlertStatus } from '../../src/components/alert/alert-type';
+import { Tooltip } from '../../src/components/tooltip/tooltip';
+import { TooltipMode, TooltipPlace } from '../../src/components/tooltip/tooltip-type';
+import { Icon } from '../../src/elements/icon/icon';
+import { IconName } from '../../src/elements/icon/icon-type';
+import { Select } from '../../src/elements/select/select';
 import Layout from '../layout/layout';
 
 export default function Alerts(): ReactElement {
@@ -121,7 +121,7 @@ export default function Alerts(): ReactElement {
             content: 'Alert with custom icon',
             status: AlertStatus.ERROR,
             explicitDismiss: true,
-            icon: <IconManager id={IconId.DELETE} />
+            icon: <Icon iconName={IconName.DELETE} />
           },
           {
             id: '3',

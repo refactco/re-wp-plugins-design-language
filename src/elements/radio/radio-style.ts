@@ -1,6 +1,6 @@
-import { elementTransition } from '@styles/animation';
 import { RadioControl } from '@wordpress/components';
 import { styled } from 'styled-components';
+import { elementTransition } from '../../styles/animation';
 import { IRadioProps } from './radio-type';
 
 export const StyledRadio = styled(RadioControl)<IRadioProps>`

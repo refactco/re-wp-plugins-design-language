@@ -1,8 +1,8 @@
-import { DragContainer } from '@components/drag-container/drag-container';
-import { DraggableBox } from '@components/drag-container/draggable-box/draggable-box';
-import { IconManager } from '@elements/icon/icon';
-import { IconId } from '@elements/icon/icon-type';
 import { ReactElement } from 'react';
+import { Icon } from '../../elements/icon/icon';
+import { IconName } from '../../elements/icon/icon-type';
+import { DragContainer } from '../drag-container/drag-container';
+import { DraggableBox } from '../drag-container/draggable-box/draggable-box';
 import { StyledAccordion, StyledAccordionItem } from './accordion-style';
 import { IAccordionItem, IAccordionProps } from './accordion-type';
 
@@ -29,7 +29,7 @@ export function Accordion(props: IAccordionProps): ReactElement {
                     transitionTimeout={(transitionTimeout as number) / 1000}
                     header={
                       <>
-                        {header} <IconManager id={IconId.CHEVRON_DOWN} className="chevron-down" />
+                        {header} <Icon iconName={IconName.CHEVRON_DOWN} className="chevron-down" />
                       </>
                     }
                   >

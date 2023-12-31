@@ -1,4 +1,4 @@
-import { IBaseVoidProps } from '@base/base-interface';
+import { IBaseVoidProps } from '../../base/base-interface';
 
 export enum IconSize {
   TINY = '16',
@@ -8,7 +8,7 @@ export enum IconSize {
   X_LARGE = '72'
 }
 
-export enum IconId {
+export enum IconName {
   CARET_RIGHT = 'caret_right',
   CARET_UP = 'caret_up',
   CARET_DOWN = 'caret_down',
@@ -39,7 +39,7 @@ export enum IconId {
 }
 
 export interface IIconProps extends IBaseVoidProps {
-  id: IconId;
+  iconName: IconName;
   className?: string;
   size?: IconSize;
   fill?: string;

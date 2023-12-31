@@ -1,9 +1,10 @@
-import { Accordion } from '@components/accordion/accordion';
-import { Button } from '@elements/button/button';
-import { ButtonVariant } from '@elements/button/button-type';
-import { Input } from '@elements/input/input';
-import { InputType } from '@elements/input/input-type';
+import { Accordion } from '../../src/components/accordion/accordion';
+
 import { ReactElement, useState } from 'react';
+import { Button } from '../../src/elements/button/button';
+import { ButtonVariant } from '../../src/elements/button/button-type';
+import { Input } from '../../src/elements/input/input';
+import { InputType } from '../../src/elements/input/input-type';
 import Layout from '../layout/layout';
 
 export default function Accordions(): ReactElement {

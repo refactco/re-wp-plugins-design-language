@@ -1,4 +1,4 @@
-import { IBaseProps } from '@base/base-interface';
+import { IBaseProps } from '../../base/base-interface';
 
 export enum TooltipMode {
   LIGHT,

@@ -37,14 +37,14 @@ module.exports = {
   },
   // watch: true,
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx'],
-    alias: {
-      '@elements': join(__dirname, './src/elements'),
-      '@base': join(__dirname, './src/base'),
-      '@components': join(__dirname, './src/components'),
-      '@styles': join(__dirname, './src/styles'),
-      '@utils': join(__dirname, './src/utils')
-    }
+    extensions: ['.ts', '.tsx', '.js', '.jsx']
+    // alias: {
+    //   '@elements': join(__dirname, './src/elements'),
+    //   '@base': join(__dirname, './src/base'),
+    //   '@components': join(__dirname, './src/components'),
+    //   '@styles': join(__dirname, './src/styles'),
+    //   '@utils': join(__dirname, './src/utils')
+    // }
   },
   plugins: [
     new ProvidePlugin({

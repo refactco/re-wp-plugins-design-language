@@ -1,6 +1,38 @@
 import { FormTokenField } from '@wordpress/components';
-import { styled } from 'styled-components';
+import { createGlobalStyle, styled } from 'styled-components';
 import { IMultiSelectProps } from './multi-select-type';
+
+export const StyledGlobalMultiSelect = createGlobalStyle`
+  .components-form-token-field {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  .components-form-token-field .components-spacer {
+    display: none;
+  }
+
+  .components-form-token-field__label {
+    font-size: 13px !important;
+    line-height: 24px !important;
+    font-weight: 600 !important;
+    color: #002729 !important;
+    margin: 0 !important;
+    text-transform: capitalize !important;
+    display: block !important;
+    width: 100%;
+  }
+
+  .components-form-token-field__help {
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    margin: 0 !important;
+    width: 100%;
+  }
+`;
 
 export const StyledMultiSelect = styled(FormTokenField)<IMultiSelectProps>`
   &&& {

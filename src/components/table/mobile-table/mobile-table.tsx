@@ -1,7 +1,7 @@
-import { IAccordionItem } from '@components/accordion/accordion-type';
-import { IconManager } from '@elements/icon/icon';
-import { IconId } from '@elements/icon/icon-type';
 import { ReactElement, ReactNode } from 'react';
+import { Icon } from '../../../elements/icon/icon';
+import { IconName } from '../../../elements/icon/icon-type';
+import { IAccordionItem } from '../../accordion/accordion-type';
 import { TableCell } from '../cell/table-cell';
 import { ITableProps } from '../table-type';
 import {
@@ -34,7 +34,7 @@ export function MobileTable(props: ITableProps): ReactElement {
             return {
               header: (
                 <>
-                  {noDraggable ? null : <IconManager id={IconId.DRAG} fill="#798686" />} {firstRow}
+                  {noDraggable ? null : <Icon iconName={IconName.DRAG} fill="#798686" />} {firstRow}
                 </>
               ),
               content: (

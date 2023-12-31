@@ -1,15 +1,15 @@
-import { Checkbox } from '@elements/checkbox/checkbox';
-import { IconManager } from '@elements/icon/icon';
-import { IconId } from '@elements/icon/icon-type';
-import { Input } from '@elements/input/input';
-import { InputType } from '@elements/input/input-type';
-import { MultiSelect } from '@elements/multi-select/multi-select';
-import { Radio } from '@elements/radio/radio';
-import { Range } from '@elements/range/range';
-import { RangeHelpPosition } from '@elements/range/range-type';
-import { Select } from '@elements/select/select';
-import { Toggle } from '@elements/toggle/toggle';
 import { ReactElement, useState } from 'react';
+import { Checkbox } from '../../src/elements/checkbox/checkbox';
+import { Icon } from '../../src/elements/icon/icon';
+import { IconName } from '../../src/elements/icon/icon-type';
+import { Input } from '../../src/elements/input/input';
+import { InputType } from '../../src/elements/input/input-type';
+import { MultiSelect } from '../../src/elements/multi-select/multi-select';
+import { Radio } from '../../src/elements/radio/radio';
+import { Range } from '../../src/elements/range/range';
+import { RangeHelpPosition } from '../../src/elements/range/range-type';
+import { Select } from '../../src/elements/select/select';
+import { Toggle } from '../../src/elements/toggle/toggle';
 import Layout from '../layout/layout';
 
 export function Inputs(): ReactElement {
@@ -29,8 +29,8 @@ export function Inputs(): ReactElement {
         label="this is label"
         placeholder="this is placeholder"
         type={InputType.COLOR}
-        suffix={<IconManager id={IconId.CHECK_MARK_CIRCLE_FILLED} />}
-        prefix={<IconManager id={IconId.CHECK_MARK_CIRCLE_FILLED} />}
+        suffix={<Icon iconName={IconName.CHECK_MARK_CIRCLE_FILLED} />}
+        prefix={<Icon iconName={IconName.CHECK_MARK_CIRCLE_FILLED} />}
       />
       <Input
         disabled
@@ -38,8 +38,8 @@ export function Inputs(): ReactElement {
         help="this is help"
         label="this is a disabled input"
         placeholder="this is placeholder"
-        suffix={<IconManager id={IconId.CHECK_MARK_CIRCLE_FILLED} />}
-        prefix={<IconManager id={IconId.CHECK_MARK_CIRCLE_FILLED} />}
+        suffix={<Icon iconName={IconName.CHECK_MARK_CIRCLE_FILLED} />}
+        prefix={<Icon iconName={IconName.CHECK_MARK_CIRCLE_FILLED} />}
       />
       <Input
         hasError
@@ -47,8 +47,8 @@ export function Inputs(): ReactElement {
         help="this is help"
         label="this is an input with error"
         placeholder="this is placeholder"
-        suffix={<IconManager id={IconId.CHECK_MARK_CIRCLE_FILLED} />}
-        prefix={<IconManager id={IconId.CHECK_MARK_CIRCLE_FILLED} />}
+        suffix={<Icon iconName={IconName.CHECK_MARK_CIRCLE_FILLED} />}
+        prefix={<Icon iconName={IconName.CHECK_MARK_CIRCLE_FILLED} />}
       />
       <hr />
       <h1>Checkboxes (horizontal)</h1>

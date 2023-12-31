@@ -1,11 +1,11 @@
-import { IBaseVoidProps } from '@base/base-interface';
-import { ITabPanelItem } from '@components/tab-panel-menu/tab-panel-menu-type';
-import { IButtonProps } from '@elements/button/button-type';
 import {
   NavigationGroupProps,
   NavigationItemBaseProps,
   NavigationMenuProps
 } from '@wordpress/components/build-types/navigation/types';
+import { IBaseVoidProps } from '../../../base/base-interface';
+import { IButtonProps } from '../../../elements/button/button-type';
+import { ITabPanelItem } from '../../tab-panel-menu/tab-panel-menu-type';
 
 export enum SubHeaderType {
   TAB_PANEL,

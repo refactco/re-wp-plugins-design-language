@@ -1,8 +1,8 @@
-import { DragContainer } from '@components/drag-container/drag-container';
-import { DraggableBox } from '@components/drag-container/draggable-box/draggable-box';
-import { IconManager } from '@elements/icon/icon';
-import { IconId } from '@elements/icon/icon-type';
 import { ReactElement, ReactNode } from 'react';
+import { Icon } from '../../../elements/icon/icon';
+import { IconName } from '../../../elements/icon/icon-type';
+import { DragContainer } from '../../drag-container/drag-container';
+import { DraggableBox } from '../../drag-container/draggable-box/draggable-box';
 import { TableAction } from '../action/table-action';
 import { TableCell } from '../cell/table-cell';
 import { TableRow } from '../row/table-row';
@@ -40,7 +40,7 @@ export function DesktopTable(props: IDesktopTableProps): ReactElement {
                   {row.map((cell: ReactNode, cellIndex: number): ReactElement => {
                     return (
                       <TableCell key={cellIndex}>
-                        {cellIndex === 0 && !noDraggable ? <IconManager id={IconId.DRAG} fill="#798686" /> : null} {cell}
+                        {cellIndex === 0 && !noDraggable ? <Icon iconName={IconName.DRAG} fill="#798686" /> : null} {cell}
                       </TableCell>
                     );
                   })}

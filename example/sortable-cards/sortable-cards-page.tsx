@@ -1,5 +1,5 @@
-import { SortableCards } from '@components/sortable-cards/sortable-cards';
 import { ReactElement, useState } from 'react';
+import { SortableCards } from '../../src/components/sortable-cards/sortable-cards';
 import Layout from '../layout/layout';
 
 export default function SortableCardsPage(): ReactElement {

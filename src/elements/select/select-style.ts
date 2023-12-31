@@ -1,6 +1,6 @@
-import { commonInputStyles } from '@elements/input/input-style';
 import { SelectControl } from '@wordpress/components';
 import { styled } from 'styled-components';
+import { commonInputStyles } from '../input/input-style';
 import { ISelectProps } from './select-type';
 
 export const StyledSelect = styled(SelectControl)<ISelectProps>`

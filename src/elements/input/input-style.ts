@@ -1,6 +1,6 @@
-import { elementTransition } from '@styles/animation';
 import { __experimentalInputControl as WordpressInput } from '@wordpress/components';
 import { css, styled } from 'styled-components';
+import { elementTransition } from '../../styles/animation';
 import { IInputProps } from './input-type';
 
 export const commonInputStyles = css<any>`

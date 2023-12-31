@@ -4,7 +4,6 @@ import { ButtonSize, ButtonVariant, IButtonProps } from './button-type';
 
 export function Button(props: IButtonProps): ReactElement {
   const { variant = ButtonVariant.PRIMARY, size = ButtonSize.MEDIUM, children, className = '', text, ...restProps } = props;
-  // const { size = ButtonSize.MEDIUM } = props;
 
   return (
     <StyledButton {...restProps} size={size} variant={variant} className={['ripple', className].join(' ')}>

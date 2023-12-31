@@ -1,6 +1,6 @@
-import { IconManager } from '@elements/icon/icon';
-import { IconId, IconSize } from '@elements/icon/icon-type';
 import { ReactElement } from 'react';
+import { Icon } from '../../src/elements/icon/icon';
+import { IconName, IconSize } from '../../src/elements/icon/icon-type';
 import Layout from '../layout/layout';
 
 export default function Icons(): ReactElement {
@@ -8,19 +8,19 @@ export default function Icons(): ReactElement {
     <Layout>
       <div>
         <h1>Drag</h1>
-        <IconManager id={IconId.DRAG} fill="green" size={IconSize.X_LARGE} />
-        <IconManager id={IconId.DRAG} fill="green" size={IconSize.LARGE} />
-        <IconManager id={IconId.DRAG} fill="green" size={IconSize.MEDIUM} />
-        <IconManager id={IconId.DRAG} fill="green" size={IconSize.SMALL} />
-        <IconManager id={IconId.DRAG} fill="green" size={IconSize.TINY} />
+        <Icon iconName={IconName.DRAG} fill="green" size={IconSize.X_LARGE} />
+        <Icon iconName={IconName.DRAG} fill="green" size={IconSize.LARGE} />
+        <Icon iconName={IconName.DRAG} fill="green" size={IconSize.MEDIUM} />
+        <Icon iconName={IconName.DRAG} fill="green" size={IconSize.SMALL} />
+        <Icon iconName={IconName.DRAG} fill="green" size={IconSize.TINY} />
       </div>
       <div>
         <h1>Notifications Outlined</h1>
-        <IconManager id={IconId.NOTIFICATIONS_OUTLINED} fill="green" size={IconSize.X_LARGE} />
-        <IconManager id={IconId.NOTIFICATIONS_OUTLINED} fill="blue" size={IconSize.LARGE} />
-        <IconManager id={IconId.NOTIFICATIONS_OUTLINED} fill="red" size={IconSize.MEDIUM} />
-        <IconManager id={IconId.NOTIFICATIONS_OUTLINED} fill="black" size={IconSize.SMALL} />
-        <IconManager id={IconId.NOTIFICATIONS_OUTLINED} fill="pink" size={IconSize.TINY} />
+        <Icon iconName={IconName.NOTIFICATIONS_OUTLINED} fill="green" size={IconSize.X_LARGE} />
+        <Icon iconName={IconName.NOTIFICATIONS_OUTLINED} fill="blue" size={IconSize.LARGE} />
+        <Icon iconName={IconName.NOTIFICATIONS_OUTLINED} fill="red" size={IconSize.MEDIUM} />
+        <Icon iconName={IconName.NOTIFICATIONS_OUTLINED} fill="black" size={IconSize.SMALL} />
+        <Icon iconName={IconName.NOTIFICATIONS_OUTLINED} fill="pink" size={IconSize.TINY} />
       </div>
     </Layout>
   );

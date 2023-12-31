@@ -9,7 +9,7 @@ const helpPositionBottom = css`
 const helpPositionInside = css`
   position: absolute;
   margin: 0;
-  bottom: 4px;
+  bottom: 12px;
   left: 78px;
   background-color: #fff;
   width: 20px;
@@ -43,6 +43,7 @@ export const StyledRange = styled(RangeControl)<IRangeProps>`
     & .components-input-control__input {
       border: 1px solid #003233;
       border-radius: 8px;
+      height: 48px;
 
       &:focus {
         border: 1px solid #2e9e62;

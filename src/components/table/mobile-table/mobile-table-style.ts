@@ -1,5 +1,5 @@
-import { Accordion } from '@components/accordion/accordion';
 import styled from 'styled-components';
+import { Accordion } from '../../accordion/accordion';
 import { TableAction } from '../action/table-action';
 import { StyledTable, StyledTableHeader } from '../table-style';
 import { IStyledTableProps } from '../table-type';
