@@ -1,13 +1,12 @@
 import { ReactElement, useState } from 'react';
 import { TabPanelMenu } from '../../src/components/tab-panel-menu/tab-panel-menu';
 import { TabItemSize } from '../../src/components/tab-panel-menu/tab-panel-menu-type';
-import Layout from '../layout/layout';
 
 export default function TabPanels(): ReactElement {
   const [activeIndex, setActiveIndex] = useState<number>(1);
 
   return (
-    <Layout>
+    <>
       <h3>Tab Panel Menu with fit-content item size</h3>
       <TabPanelMenu
         tabItemSize={TabItemSize.FIT_CONTENT}
@@ -72,6 +71,6 @@ export default function TabPanels(): ReactElement {
           {/* {(tab) => null} */}
         </TabPanelMenu>
       </div>
-    </Layout>
+    </>
   );
 }

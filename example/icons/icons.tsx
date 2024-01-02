@@ -1,11 +1,10 @@
 import { ReactElement } from 'react';
 import { Icon } from '../../src/elements/icon/icon';
 import { IconName, IconSize } from '../../src/elements/icon/icon-type';
-import Layout from '../layout/layout';
 
 export default function Icons(): ReactElement {
   return (
-    <Layout>
+    <>
       <div>
         <h1>Drag</h1>
         <Icon iconName={IconName.DRAG} fill="green" size={IconSize.X_LARGE} />
@@ -22,6 +21,6 @@ export default function Icons(): ReactElement {
         <Icon iconName={IconName.NOTIFICATIONS_OUTLINED} fill="black" size={IconSize.SMALL} />
         <Icon iconName={IconName.NOTIFICATIONS_OUTLINED} fill="pink" size={IconSize.TINY} />
       </div>
-    </Layout>
+    </>
   );
 }

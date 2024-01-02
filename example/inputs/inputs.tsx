@@ -10,7 +10,6 @@ import { Range } from '../../src/elements/range/range';
 import { RangeHelpPosition } from '../../src/elements/range/range-type';
 import { Select } from '../../src/elements/select/select';
 import { Toggle } from '../../src/elements/toggle/toggle';
-import Layout from '../layout/layout';
 
 export function Inputs(): ReactElement {
   const [checkboxState, setCheckboxState] = useState(false);
@@ -20,7 +19,7 @@ export function Inputs(): ReactElement {
   const [multiSelectState, setMultiSelectState] = useState<string[]>([]);
 
   return (
-    <Layout>
+    <>
       <h1>Inputs</h1>
       <Input help="this is help" label="this is a simple input" placeholder="this is placeholder" />
       <Input label="this is a simple input without hint" placeholder="this is placeholder" />
@@ -157,6 +156,6 @@ export function Inputs(): ReactElement {
       />
       <br />
       <br />
-    </Layout>
+    </>
   );
 }

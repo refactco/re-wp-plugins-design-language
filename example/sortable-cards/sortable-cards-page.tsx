@@ -1,12 +1,11 @@
 import { ReactElement, useState } from 'react';
 import { SortableCards } from '../../src/components/sortable-cards/sortable-cards';
-import Layout from '../layout/layout';
 
 export default function SortableCardsPage(): ReactElement {
   const [selectedItemId, setSelectedItemId] = useState<string>('item2');
 
   return (
-    <Layout>
+    <>
       <SortableCards
         items={[
           { id: 'item1', title: 'Item title 1', badge: 'Item badge 1' },
@@ -32,6 +31,6 @@ export default function SortableCardsPage(): ReactElement {
           ]
         }}
       />
-    </Layout>
+    </>
   );
 }

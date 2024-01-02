@@ -3,7 +3,6 @@ import { ITableAction } from '../../src/components/table/action/table-action-typ
 import { MobileTable } from '../../src/components/table/mobile-table/mobile-table';
 import { Table } from '../../src/components/table/table';
 import { ButtonColor } from '../../src/elements/button/button-type';
-import Layout from '../layout/layout';
 
 export default function Tables(): ReactElement {
   const headers: string[] = ['name', 'status', 'action'];
@@ -35,7 +34,7 @@ export default function Tables(): ReactElement {
   });
 
   return (
-    <Layout>
+    <>
       <h2>Draggable Responsive Table</h2>
       <Table headers={headers} actions={actions} dataRows={dataRows} />
       <br />
@@ -45,6 +44,6 @@ export default function Tables(): ReactElement {
       <MobileTable headers={headers} actions={actions} dataRows={dataRows} noDraggable />
       <br />
       <br />
-    </Layout>
+    </>
   );
 }

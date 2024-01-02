@@ -59,6 +59,9 @@ export const StyledHeaderItem = styled(NavigationItem)<IHeaderItemProps>`
 
     & > .components-button {
       padding: 8px 16px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
 
       & svg {
         width: 16px;

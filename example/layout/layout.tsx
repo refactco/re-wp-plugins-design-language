@@ -14,23 +14,6 @@ export default function Layout(props: ILayoutProps): ReactElement {
 
   const items: IHeaderItemProps[] = [
     {
-      item: 'icons',
-      title: 'Icon',
-      subHeaderItems: [
-        {
-          name: 'data',
-          title: 'my-data'
-        },
-        {
-          name: 'data-box',
-          title: 'my-data-box'
-        }
-      ],
-      onClick: () => {
-        navigate('/icons');
-      }
-    },
-    {
       item: 'buttons',
       title: 'Button',
       subHeaderType: SubHeaderType.TITLE_BUTTON,
@@ -51,6 +34,23 @@ export default function Layout(props: ILayoutProps): ReactElement {
       },
       onClick: () => {
         navigate('/buttons');
+      }
+    },
+    {
+      item: 'icons',
+      title: 'Icon',
+      subHeaderItems: [
+        {
+          name: 'data',
+          title: 'my-data'
+        },
+        {
+          name: 'data-box',
+          title: 'my-data-box'
+        }
+      ],
+      onClick: () => {
+        navigate('/icons');
       }
     },
     {
@@ -139,8 +139,11 @@ export default function Layout(props: ILayoutProps): ReactElement {
 
   return (
     <div style={{ backgroundColor, minHeight: '100vh' }}>
-      <Header activeItemIndex={activeItemIndex} items={items} logoSource="LOGO" />
-      <div style={{ paddingInline: padding }}>{children}</div>
+      <Header items={items} logoSource="LOGO" />
+      <div style={{ paddingInline: padding }}>
+        <br />
+        {children}
+      </div>
     </div>
   );
 }

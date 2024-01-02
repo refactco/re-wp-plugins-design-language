@@ -4,11 +4,11 @@ import { Section } from '../../src/components/section/section';
 import { Button } from '../../src/elements/button/button';
 import { ButtonVariant } from '../../src/elements/button/button-type';
 import { Input } from '../../src/elements/input/input';
-import Layout from '../layout/layout';
 
 export default function Sections(): ReactElement {
   return (
-    <Layout backgroundColor="lightgray">
+    <div style={{ backgroundColor: 'lightgray', marginInline: '-10px', padding: '10px' }}>
+      <br />
       <SectionHeader title="Title of section" description="Description goes here" infoText="Hello Man" />
       <br />
       <Section
@@ -28,6 +28,6 @@ export default function Sections(): ReactElement {
         </div>
       </Section>
       <br />
-    </Layout>
+    </div>
   );
 }

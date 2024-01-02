@@ -5,13 +5,12 @@ import { Button } from '../../src/elements/button/button';
 import { ButtonVariant } from '../../src/elements/button/button-type';
 import { Input } from '../../src/elements/input/input';
 import { InputType } from '../../src/elements/input/input-type';
-import Layout from '../layout/layout';
 
 export default function Accordions(): ReactElement {
   const [transitionTimeout, setTransitionTimeout] = useState<number>(500);
 
   return (
-    <Layout>
+    <>
       <Input
         label="Accordion Animation Speed (milliseconds)"
         type={InputType.NUMBER}
@@ -69,6 +68,6 @@ export default function Accordions(): ReactElement {
           }
         ]}
       />
-    </Layout>
+    </>
   );
 }

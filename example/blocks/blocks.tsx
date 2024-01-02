@@ -2,13 +2,12 @@ import { ReactElement, useState } from 'react';
 import { Block } from '../../src/components/block/block';
 import { IconName } from '../../src/elements/icon/icon-type';
 import { Range } from '../../src/elements/range/range';
-import Layout from '../layout/layout';
 
 export default function Blocks(): ReactElement {
   const [adjustGap, setAdjustGap] = useState<number>(25);
 
   return (
-    <Layout>
+    <>
       <Block iconName={IconName.GAP} title="This is title">
         <Range
           label="Adjust Gap"
@@ -34,6 +33,6 @@ export default function Blocks(): ReactElement {
           </Block>
         </div>
       </div>
-    </Layout>
+    </>
   );
 }

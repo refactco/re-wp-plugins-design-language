@@ -3,11 +3,10 @@ import { Button } from '../../src/elements/button/button';
 import { ButtonColor, ButtonIconPosition, ButtonSize, ButtonVariant } from '../../src/elements/button/button-type';
 import { Icon } from '../../src/elements/icon/icon';
 import { IconName, IconSize } from '../../src/elements/icon/icon-type';
-import Layout from '../layout/layout';
 
 export default function Buttons(): ReactElement {
   return (
-    <Layout>
+    <>
       <h1>Primary</h1>
       <div
         style={{
@@ -290,6 +289,6 @@ export default function Buttons(): ReactElement {
           disabled
         />
       </div>
-    </Layout>
+    </>
   );
 }

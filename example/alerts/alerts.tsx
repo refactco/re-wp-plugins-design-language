@@ -7,13 +7,12 @@ import { TooltipMode, TooltipPlace } from '../../src/components/tooltip/tooltip-
 import { Icon } from '../../src/elements/icon/icon';
 import { IconName } from '../../src/elements/icon/icon-type';
 import { Select } from '../../src/elements/select/select';
-import Layout from '../layout/layout';
 
 export default function Alerts(): ReactElement {
   const [tooltipPlacement, setTooltipPlacement] = useState<TooltipPlace>(TooltipPlace.TOP);
 
   return (
-    <Layout backgroundColor="lightgray">
+    <div style={{ backgroundColor: 'lightgray' }}>
       <div style={{ display: 'flex' }}>
         <div style={{ width: '33%' }}></div>
         <div style={{ width: '33%', display: 'flex', flexWrap: 'nowrap', gap: '12px', flexDirection: 'column' }}>
@@ -130,6 +129,6 @@ export default function Alerts(): ReactElement {
           }
         ]}
       />
-    </Layout>
+    </div>
   );
 }

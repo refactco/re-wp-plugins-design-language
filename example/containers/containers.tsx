@@ -1,20 +1,19 @@
 import { ReactElement } from 'react';
 import { Container } from '../../src/components/container/container';
 import { ContainerType } from '../../src/components/container/container-type';
-import Layout from '../layout/layout';
 
 export default function Containers(): ReactElement {
   return (
-    <Layout backgroundColor="gray" padding="0">
+    <div style={{ backgroundColor: 'gray', marginInline: '-10px' }}>
       <br />
       <h1>Containers:</h1>
-      <Container type={ContainerType.FULL_WIDTH}>Hello world</Container>
+      <Container type={ContainerType.FULL_WIDTH}>Full Width</Container>
       <br />
-      <Container>Hello world</Container>
+      <Container>Margin 32px</Container>
       <br />
       <Container type={ContainerType.MARGIN_AUTO} width="120px">
-        Hello world
+        Margin auto
       </Container>
-    </Layout>
+    </div>
   );
 }
