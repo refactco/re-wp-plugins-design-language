@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 
 export enum TabItemSize {
-  FIT_CONTENT,
-  WITH_MIN_WIDTH
+  FIT_CONTENT = 'fit-content',
+  WITH_MIN_WIDTH = 'with-min-width'
 }
 
 export interface ITabPanelItem {

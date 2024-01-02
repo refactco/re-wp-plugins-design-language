@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { Fragment, ReactElement } from 'react';
 import { SubHeader } from '../sub/sub-header';
 import { StyledHeaderGroup, StyledHeaderItem, StyledHeaderMenu } from './header-menu-style';
 import { IHeaderItemProps, IHeaderMenuProps } from './header-menu-type';
@@ -11,18 +11,20 @@ export function HeaderMenu(props: IHeaderMenuProps): ReactElement {
     <StyledHeaderMenu title="">
       <StyledHeaderGroup>
         {items.map((item: IHeaderItemProps, index: number): ReactElement => {
+          const { subHeaderItems, subHeaderType, ...restItems } = item;
+
           return (
-            <>
+            <Fragment key={index}>
               <StyledHeaderItem
                 key={index}
-                {...item}
+                {...restItems}
                 onClick={(event: any): void => {
                   console.log('clicked');
                   onSelectItem?.(index);
                   item.onClick?.(event);
                 }}
               />
-            </>
+            </Fragment>
           );
         })}
         <SubHeader

@@ -6,7 +6,7 @@ export function TabPanelMenu(props: ITabPanelMenuProps): ReactElement {
   const { tabItemMinWidth = '80px', tabItemSize = TabItemSize.WITH_MIN_WIDTH, tabs, activeIndex = 0, onTabClick } = props;
 
   return (
-    <StyledTabPanel {...props} tabItemSize={tabItemSize} tabItemMinWidth={tabItemMinWidth}>
+    <StyledTabPanel tabItemSize={tabItemSize} tabItemMinWidth={tabItemMinWidth}>
       <div className="components-tab-panel__tabs">
         {tabs.map((tab: ITabPanelItem, index: number): ReactElement => {
           const { icon, onClick } = tab;
@@ -15,6 +15,7 @@ export function TabPanelMenu(props: ITabPanelMenuProps): ReactElement {
 
           return (
             <div
+              key={index}
               className={className}
               onClick={(): void => {
                 onTabClick?.(index);

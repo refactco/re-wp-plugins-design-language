@@ -17,8 +17,8 @@ export function SubHeader(props: ISubHeaderProps): ReactNode {
       return (
         <StyledTitleButtonItem>
           <StyledTitleButtonItemTitle>{title}</StyledTitleButtonItemTitle>
-          {buttons.map((buttonProps: TitleButtonItemButtonProps): ReactElement => {
-            return <Button {...buttonProps} size={ButtonSize.X_SMALL} />;
+          {buttons.map((buttonProps: TitleButtonItemButtonProps, index: number): ReactElement => {
+            return <Button {...buttonProps} size={ButtonSize.X_SMALL} key={index} />;
           })}
         </StyledTitleButtonItem>
       );

@@ -1,13 +1,13 @@
 import { IBaseProps } from '../../base/base-interface';
 
 export enum TooltipMode {
-  LIGHT,
-  DARK
+  LIGHT = 'light',
+  DARK = 'dark'
 }
 
 export enum TooltipPlace {
   TOP = 'top',
-  TOP_END = 'top_end',
+  TOP_END = 'top-end',
   TOP_START = 'top-start',
   BOTTOM = 'bottom',
   BOTTOM_END = 'bottom-end',

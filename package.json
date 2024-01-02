@@ -1,6 +1,6 @@
 {
   "name": "@refactco/ui-kit",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "UI kit is a sets of react components which is going to be used in the wordpress plugins",
   "main": "./dist/ui-kit-expose.js",
   "types": "./dist/ui-kit-types.d.ts",

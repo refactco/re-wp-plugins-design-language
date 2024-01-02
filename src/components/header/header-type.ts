@@ -4,9 +4,9 @@ import { IBaseVoidProps } from '../../base/base-interface';
 import { IHeaderItemProps } from './menu/header-menu-type';
 
 export enum HeaderLogoType {
-  SVG,
-  IMAGE,
-  TEXT
+  SVG = 'svg',
+  IMAGE = 'image',
+  TEXT = 'text'
 }
 
 export interface IStyledHeaderProps extends NavigationProps, IBaseVoidProps {}

@@ -5,6 +5,7 @@ import Layout from '../layout/layout';
 
 export default function TabPanels(): ReactElement {
   const [activeIndex, setActiveIndex] = useState<number>(1);
+
   return (
     <Layout>
       <h3>Tab Panel Menu with fit-content item size</h3>

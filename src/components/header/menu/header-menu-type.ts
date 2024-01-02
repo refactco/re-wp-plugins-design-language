@@ -8,8 +8,8 @@ import { IButtonProps } from '../../../elements/button/button-type';
 import { ITabPanelItem } from '../../tab-panel-menu/tab-panel-menu-type';
 
 export enum SubHeaderType {
-  TAB_PANEL,
-  TITLE_BUTTON
+  TAB_PANEL = 'tab-panel',
+  TITLE_BUTTON = 'title-button'
 }
 
 export type TitleButtonItemButtonProps = Omit<IButtonProps, 'size'>;

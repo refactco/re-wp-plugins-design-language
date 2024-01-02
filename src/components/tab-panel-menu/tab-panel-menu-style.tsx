@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { ITabPanelMenuProps, TabItemSize } from './tab-panel-menu-type';
+import { TabItemSize } from './tab-panel-menu-type';
 
-export const StyledTabPanel = styled.div<ITabPanelMenuProps>`
+export const StyledTabPanel = styled(({ tabItemSize, tabItemMinWidth, ...restProps }: any) => <div {...restProps} />)<any>`
   &&& {
     & > .components-tab-panel__tabs {
       display: flex;
