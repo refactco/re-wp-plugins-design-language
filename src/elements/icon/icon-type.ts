@@ -38,10 +38,12 @@ export enum IconName {
   INFO_FILLED = 'info_filled'
 }
 
-export interface IIconProps extends IBaseVoidProps {
-  iconName: IconName;
-  // baseUrl: string;
+export interface ISvgProps extends IBaseVoidProps {
   className?: string;
   size?: IconSize;
   fill?: string;
+}
+
+export interface IIconProps extends ISvgProps {
+  iconName: IconName;
 }
