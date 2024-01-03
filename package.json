@@ -1,6 +1,6 @@
 {
   "name": "@refactco/ui-kit",
-  "version": "1.0.15",
+  "version": "1.0.17",
   "description": "UI kit is a sets of react components which is going to be used in the wordpress plugins",
   "main": "./dist/ui-kit-expose.js",
   "types": "./dist/ui-kit-types.d.ts",
@@ -10,7 +10,7 @@
     "cp:assets": "cp -r ./src/elements/icon/sprites/ ./dist/elements/icon",
     "tsc": "rm -rf dist && tsc --project ./tsconfig.publish.json",
     "dts:bundle": "dts-bundle-generator --external-imports react @wordpress/components @szhsin/react-accordion -o ./dist/ui-kit-types.d.ts ./src/ui-kit-expose.ts",
-    "dts:publish": "npm run tsc && npm run cp:assets && npm run dts:bundle",
+    "dts:publish": "npm run tsc && npm run dts:bundle",
     "prepublishOnly": "npm run dts:publish",
     "dev": "webpack-dev-server --watch",
     "prod": "webpack-cli",

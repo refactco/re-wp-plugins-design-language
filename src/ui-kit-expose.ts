@@ -22,6 +22,7 @@ export { SortableCards } from './components/sortable-cards/sortable-cards';
 export { TabPanelMenu } from './components/tab-panel-menu/tab-panel-menu';
 export { Table } from './components/table/table';
 export { Tooltip } from './components/tooltip/tooltip';
+export { StyledWordpressComponent } from './styles/wordpress-components-style';
 
 //enums
 export { AlertStatus } from './components/alert/alert-type';

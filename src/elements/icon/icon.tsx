@@ -1,5 +1,3 @@
-/// <reference path="../../../types.d.ts" />
-
 import { IIconProps, ISvgProps, IconName, IconSize } from './icon-type';
 import { CaretDown } from './sprites/caret-down';
 import { CaretLeft } from './sprites/caret-left';

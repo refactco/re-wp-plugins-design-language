@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode } from 'react';
+import { Fragment, ReactElement, ReactNode } from 'react';
 import { Icon } from '../../../elements/icon/icon';
 import { IconName } from '../../../elements/icon/icon-type';
 import { IAccordionItem } from '../../accordion/accordion-type';
@@ -33,9 +33,9 @@ export function MobileTable(props: ITableProps): ReactElement {
 
             return {
               header: (
-                <>
+                <Fragment key={rowIndex}>
                   {noDraggable ? null : <Icon iconName={IconName.DRAG} fill="#798686" />} {firstRow}
-                </>
+                </Fragment>
               ),
               content: (
                 <>
