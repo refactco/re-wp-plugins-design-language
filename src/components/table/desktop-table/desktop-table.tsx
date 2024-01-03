@@ -16,7 +16,7 @@ export function DesktopTable(props: IDesktopTableProps): ReactElement {
     <StyledTable className="desktop-table">
       <StyledTableHeader>
         {headers.map((header: string, index: number): ReactElement => {
-          return <TableCell>{header}</TableCell>;
+          return <TableCell key={index}>{header}</TableCell>;
         })}
         {actions ? <TableCell>{''}</TableCell> : null}
       </StyledTableHeader>

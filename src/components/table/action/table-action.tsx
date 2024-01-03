@@ -15,6 +15,7 @@ export function TableAction(props: ITableActionProps): ReactNode {
     <StyledTableAction {...restProps}>
       {actions.map((action: ITableAction, actionIndex: number): ReactElement => {
         const { text, size = ButtonSize.XX_SMALL, color, variant, href, onClick } = action;
+
         return (
           <Button
             key={actionIndex}
