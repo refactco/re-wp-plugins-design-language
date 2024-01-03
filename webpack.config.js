@@ -25,10 +25,15 @@ module.exports = {
         ]
       },
       {
-        test: /\.(svg|ttf)/,
+        test: /\.(ttf|svg)/,
         exclude: /node_modules/,
         use: [{ loader: 'file-loader' }]
       },
+      // {
+      //   test: /\.(ttf)/,
+      //   exclude: /node_modules/,
+      //   use: [{ loader: 'file-loader' }]
+      // },
       {
         test: /\.(css)/,
         use: [{ loader: 'style-loader' }, { loader: 'css-loader' }]

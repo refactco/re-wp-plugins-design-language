@@ -57,6 +57,8 @@ export const AlertStyle = css`
       height: 24px;
     }
   }
+
+  &
 `;
 
 export const StyledSnackbar = styled(Snackbar)`

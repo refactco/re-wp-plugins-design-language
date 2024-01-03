@@ -8,5 +8,13 @@ export const StyledSnackbarList = styled(SnackbarList)<IAlertListProps>`
     & .components-snackbar {
       ${AlertStyle}
     }
+
+    & > div {
+      &:not(:first-of-type) {
+        & > .components-snackbar-list__notice-container {
+          padding-top: 8px;
+        }
+      }
+    }
   }
 `;
