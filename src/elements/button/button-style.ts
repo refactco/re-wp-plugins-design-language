@@ -133,7 +133,8 @@ export const StyledButton = styled(Button)<IButtonProps>`
     }
 
     &:hover {
-      box-shadow: none;
+      box-shadow: none !important;
+
       color: #fff;
 
       & > svg {
@@ -142,7 +143,7 @@ export const StyledButton = styled(Button)<IButtonProps>`
     }
 
     &:focus {
-      box-shadow: none;
+      box-shadow: none !important;
     }
 
     &[disabled] {

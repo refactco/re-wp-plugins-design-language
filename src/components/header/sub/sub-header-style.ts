@@ -6,7 +6,6 @@ export const StyledSubHeader = styled.div`
   bottom: -70px;
   left: 0;
   width: 100%;
-  z-index: 100;
   background: #fff;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
   padding: 0px 45px;
