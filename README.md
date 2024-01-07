@@ -62,3 +62,75 @@ The type of this property is `ButtonIconPosition` and these are the possible cho
 ```tsx
 <Button iconPosition={ButtonIconPosition.END} />
 ```
+
+### Input Fields
+This package supports different types of input fields collected in 7 components.
+
+#### Input
+Most common input field is `Input`. You can use `Input` when the type of your inputs are "text", "number", "date", "date time local", "color", "email", "month", "password", and "hidden".
+The `Input` component is a wrapper to `__experimentalInputControl` of `@wordpress/components` package. So in addition to properties of the main component, just a property is added, and another one has type change.
+
+1. **type**
+The type of `type` property is changed to `InputType` which is an `enum` with the following choices:
+
+- TEXT
+- DATE
+- DATE_TIME_LOCAL
+- COLOR
+- EMAIL
+- HIDDEN
+- MONTH
+- NUMBER
+- PASSWORD
+
+The default value for input `type`, is `TEXT`:
+```tsx
+<Input help="this is help" label="this is a simple input" placeholder="this is placeholder" />
+```
+
+With specified type and icons for the start and end of input:
+```tsx
+<Input
+  help="this is help"
+  label="this is label"
+  placeholder="this is placeholder"
+  type={InputType.NUMBER}
+  suffix={<Icon iconName={IconName.CHECK_MARK_CIRCLE_FILLED} />}
+  prefix={<Icon iconName={IconName.CHECK_MARK_CIRCLE_FILLED} />}
+/>
+```
+
+2. **hasError**
+The `hasError` property is a `boolean` that you can pass `true` to it when the input field is faced with an error.
+
+#### Checkbox
+The `Checkbox` input is a wrapper component for `CheckboxControl` component of `@wordpress/components`, and all of properties of the main component is the same for our customized component.
+
+Usage:
+```tsx
+<Checkbox
+  onChange={(value: boolean) => {
+    // handle the on change function
+  }}
+  label="Checkbox Label"
+  checked={/*true or false*/}
+/>
+```
+
+#### Radio
+The `Radio` input is also a wrapper component for `RadioControl` which is a component of `@wordpress/components`. So all of the properties of `Radio` is the same as `RadioControl`.
+
+For using the `Radio` component, you need to pass the `options` property and it will add a radio button for each option:
+```tsx
+<Radio
+  onChange={(value: string) => {
+    // handle the on change function
+  }}
+  label="Radio Label"
+  options={[
+    { label: 'Radio option 1 label', value: '1' },
+    { label: 'Radio option 2 label', value: '2' }
+  ]}
+  selected={radioState}
+/>
+```
