@@ -189,21 +189,25 @@ The `MultiSelect` input field is a wrapper for [FormTokenField](https://develope
 The `Icon` component has 4 properties.
 
 1. **iconName** `required`
+
 Type: `IconName`
 
 You can find the possible choices for this enum in the `/src/elements/icon/icon-type.ts` path.
 
 2. **size** `optional`
+
 Type: `IconSize`
 
 The options you can use for this enum are: `TINY`, `SMALL`, `MEDIUM`, `LARGE`, and `X_LARGE`. The default value of this property is: `SMALL`.
 
 3. **fill** `optional`
+
 Type: `string`
 
 You can use this property to customize the color of the icon you're using. The default value for this property is `black`.
 
 4. **className** `optional`
+
 Type: `string`
 
 If you need to add a specific css class to the `Icon` component, you can pass the `className`.
