@@ -31,18 +31,6 @@ export function Icon(props: IIconProps) {
   const { iconName, size = IconSize.SMALL, fill = 'black', ...restProps } = props;
   const commonProps: ISvgProps = { size, fill, ...restProps };
 
-  // let spriteUrl: string = sprite24;
-
-  // if (size === IconSize.TINY) {
-  //   spriteUrl = sprite16;
-  // } else if (size === IconSize.MEDIUM) {
-  //   spriteUrl = sprite32;
-  // } else if (size === IconSize.LARGE) {
-  //   spriteUrl = sprite48;
-  // } else if (size === IconSize.X_LARGE) {
-  //   spriteUrl = sprite72;
-  // }
-
   if (iconName === IconName.CARET_DOWN) {
     return <CaretDown {...commonProps} />;
   }

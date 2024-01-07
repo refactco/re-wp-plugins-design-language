@@ -68,20 +68,10 @@ This package supports different types of input fields collected in 7 components.
 
 #### Input
 Most common input field is `Input`. You can use `Input` when the type of your inputs are "text", "number", "date", "date time local", "color", "email", "month", "password", and "hidden".
-The `Input` component is a wrapper to `__experimentalInputControl` of `@wordpress/components` package. So in addition to properties of the main component, just a property is added, and another one has type change.
+The `Input` component is a wrapper to [__experimentalInputControl](https://developer.wordpress.org/block-editor/reference-guides/components/input-control/) of `@wordpress/components` package. So in addition to properties of the main component, just a property is added, and another one has type change.
 
 1. **type**
-The type of `type` property is changed to `InputType` which is an `enum` with the following choices:
-
-- TEXT
-- DATE
-- DATE_TIME_LOCAL
-- COLOR
-- EMAIL
-- HIDDEN
-- MONTH
-- NUMBER
-- PASSWORD
+The type of `type` property is changed to `InputType` which is an `enum` with the following choices: `TEXT`, `DATE`, `DATE_TIME_LOCAL`, `COLOR`, `EMAIL`, `HIDDEN`, `MONTH`, `NUMBER`, and `PASSWORD`.
 
 The default value for input `type`, is `TEXT`:
 ```tsx
@@ -104,7 +94,7 @@ With specified type and icons for the start and end of input:
 The `hasError` property is a `boolean` that you can pass `true` to it when the input field is faced with an error.
 
 #### Checkbox
-The `Checkbox` input is a wrapper component for `CheckboxControl` component of `@wordpress/components`, and all of properties of the main component is the same for our customized component.
+The `Checkbox` input is a wrapper component for [CheckboxControl](https://developer.wordpress.org/block-editor/reference-guides/components/checkbox-control/) component of `@wordpress/components`, and all of properties of the main component is the same for our customized component.
 
 Usage:
 ```tsx
@@ -118,7 +108,7 @@ Usage:
 ```
 
 #### Radio
-The `Radio` input is also a wrapper component for `RadioControl` which is a component of `@wordpress/components`. So all of the properties of `Radio` is the same as `RadioControl`.
+The `Radio` input is also a wrapper component for [RadioControl](https://developer.wordpress.org/block-editor/reference-guides/components/radio-control/) which is a component of `@wordpress/components`. So all of the properties of `Radio` is the same as `RadioControl`.
 
 For using the `Radio` component, you need to pass the `options` property and it will add a radio button for each option:
 ```tsx
@@ -133,4 +123,95 @@ For using the `Radio` component, you need to pass the `options` property and it 
   ]}
   selected={radioState}
 />
+```
+
+#### Range
+The `Range` input field is a wrapper for [RangeControl](https://developer.wordpress.org/block-editor/reference-guides/components/range-control/) of `@wordpress/components`. The only property that is added to this component is `helpPosition` which is responsible to determine the position of help text. This is an optional property with two choices: `INSIDE` (default value), and `BOTTOM`.
+
+
+```tsx
+<Range
+  label="Adjust Gap"
+  value={/* range value */}
+  max={100}
+  helpPosition={RangeHelpPosition.BOTTOM} // or RangeHelpPosition.INSIDE
+  onChange={(value?: number) => {
+    setRangeState(value ?? 0);
+  }}
+  help="px data"
+/>
+```
+
+#### Toggle
+The `Toggle` input field is a wrapper for [ToggleControl](https://developer.wordpress.org/block-editor/reference-guides/components/toggle-control/) of `@wordpress/components`. There is no new property for this component.
+
+```tsx
+<Toggle
+  label="Toggle Label"
+  help="Toggle Hint"
+  onChange={(value: boolean) => {
+    // handle change
+  }}
+  checked={/* boolean value */}
+/>
+```
+
+#### Select
+The `Select` input field is also a wrapper for [SelectControl](https://developer.wordpress.org/block-editor/reference-guides/components/select-control/) of `@wordpress/components`. There is only a `hasError` property added to this component, which is getting a boolean value and add a error style to this component.
+This is how to use this component:
+
+```tsx
+<Select
+  label="Select one"
+  help="This is the help text"
+  options={[
+    {
+      value: 'value1',
+      label: 'First Label'
+    },
+    {
+      value: 'value2',
+      label: 'Second Label'
+    }
+  ]}
+/>
+```
+
+#### Multi Select
+The `MultiSelect` input field is a wrapper for [FormTokenField](https://developer.wordpress.org/block-editor/reference-guides/components/form-token-field/) of `@wordpress/components`. Some new optional properties is added to the `MultiSelect` component such as: `hasError`, `showHelp`, and `renderItem`. Also some properties of the main component (FormTokenField) are forced with a static value. Below you can see these properties with their static values:
+
+- `__experimentalAutoSelectFirstMatch` --> true
+- `__experimentalExpandOnFocus` --> true
+- `__experimentalShowHowTo` --> The `showHelp` property is passed to this property
+- `__experimentalRenderItem` --> If you need a customized render view for the selected items, you can use the `renderItem` which is calling in the body of `__experimentalRenderItem` property.
+
+### Icon
+The `Icon` component has 4 properties.
+
+1. **iconName** `required`
+Type: `IconName`
+
+You can find the possible choices for this enum in the `/src/elements/icon/icon-type.ts` path.
+
+2. **size** `optional`
+Type: `IconSize`
+
+The options you can use for this enum are: `TINY`, `SMALL`, `MEDIUM`, `LARGE`, and `X_LARGE`. The default value of this property is: `SMALL`.
+
+3. **fill** `optional`
+Type: `string`
+
+You can use this property to customize the color of the icon you're using. The default value for this property is `black`.
+
+4. **className** `optional`
+Type: `string`
+
+If you need to add a specific css class to the `Icon` component, you can pass the `className`.
+
+```tsx
+<Icon iconName={IconName.CARET_RIGHT} fill="green" size={IconSize.X_LARGE} />
+<Icon iconName={IconName.NOTIFICATIONS_OUTLINED} fill="blue" size={IconSize.LARGE} />
+<Icon iconName={IconName.DRAG} fill="red" size={IconSize.MEDIUM} />
+<Icon iconName={IconName.ERROR_OUTLINED} fill="black" size={IconSize.SMALL} />
+<Icon iconName={IconName.GAP} fill="pink" size={IconSize.TINY} />
 ```
