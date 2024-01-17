@@ -1,5 +1,5 @@
 import { DropdownMenu } from '@wordpress/components';
-import { ReactElement, useState } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import { Icon } from '../../elements/icon/icon';
 import { IconName } from '../../elements/icon/icon-type';
 import { DragContainer } from '../drag-container/drag-container';
@@ -9,7 +9,7 @@ import { ISortableCardItem, ISortableCardsProps } from './sortable-cards-type';
 
 export function SortableCards(props: ISortableCardsProps): ReactElement {
   const { items, selectedItemId, menuItems, onSelectedItemChange } = props;
-  const [stateItems, setStateItems] = useState<ISortableCardItem[]>(items);
+  const [stateItems, setStateItems] = useState<ISortableCardItem[]>([]);
 
   const onDragEnd = (result: any) => {
     const { source, destination } = result;
@@ -24,6 +24,10 @@ export function SortableCards(props: ISortableCardsProps): ReactElement {
 
     setStateItems(newItems);
   };
+
+  useEffect((): void => {
+    setStateItems(items);
+  }, [items]);
 
   return (
     <DragContainer droppableId="droppable" onDragEnd={onDragEnd}>
