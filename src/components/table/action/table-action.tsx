@@ -5,7 +5,7 @@ import { StyledTableAction } from './table-action-style';
 import { ITableAction, ITableActionProps } from './table-action-type';
 
 export function TableAction(props: ITableActionProps): ReactNode {
-  const { actions, rowIndex, ...restProps } = props;
+  const { actions, rowIndex, row, ...restProps } = props;
 
   if (!actions) {
     return null;
@@ -24,7 +24,7 @@ export function TableAction(props: ITableActionProps): ReactNode {
             variant={variant}
             href={href}
             onClick={(): void => {
-              onClick?.(rowIndex);
+              onClick?.(rowIndex, row);
             }}
           >
             {text}

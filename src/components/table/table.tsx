@@ -1,4 +1,4 @@
-import { ReactElement, useState } from 'react';
+import { ReactElement, ReactNode, useEffect, useState } from 'react';
 import { DesktopTable } from './desktop-table/desktop-table';
 import { MobileTable } from './mobile-table/mobile-table';
 import { StyledMediaTable } from './table-style';
@@ -6,7 +6,7 @@ import { ITableProps } from './table-type';
 
 export function Table(props: ITableProps): ReactElement {
   const { dataRows, onDragItemEnd } = props;
-  const [stateItems, setStateItems] = useState(dataRows);
+  const [stateItems, setStateItems] = useState<ReactNode[][]>([]);
 
   const onDragEnd = (result: any) => {
     const { source, destination } = result;
@@ -23,6 +23,10 @@ export function Table(props: ITableProps): ReactElement {
 
     onDragItemEnd?.(result);
   };
+
+  useEffect((): void => {
+    setStateItems(dataRows);
+  }, [dataRows]);
 
   return (
     <StyledMediaTable>

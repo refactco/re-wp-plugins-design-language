@@ -46,7 +46,7 @@ export function DesktopTable(props: IDesktopTableProps): ReactElement {
                   })}
                   {actions ? (
                     <TableCell>
-                      <TableAction actions={actions} rowIndex={rowIndex} />
+                      <TableAction actions={actions} rowIndex={rowIndex} row={row} />
                     </TableCell>
                   ) : null}
                 </TableRow>

@@ -39,7 +39,7 @@ export function MobileTable(props: ITableProps): ReactElement {
               ),
               content: (
                 <>
-                  <StyledMobileTableAction actions={actions} rowIndex={rowIndex} />
+                  <StyledMobileTableAction actions={actions} rowIndex={rowIndex} row={row} />
                   {restRow.map((cell: ReactNode, cellIndex: number): ReactElement => {
                     return (
                       <StyledMobileTableCellItem key={cellIndex}>
