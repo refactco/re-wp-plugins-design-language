@@ -1,8 +1,9 @@
 import { Accordion } from '../../src/components/accordion/accordion';
 
 import { ReactElement, useState } from 'react';
+import { IAccordionItemButtonClickParams } from '../../src/components/accordion/accordion-type';
 import { Button } from '../../src/elements/button/button';
-import { ButtonVariant } from '../../src/elements/button/button-type';
+import { ButtonColor, ButtonVariant } from '../../src/elements/button/button-type';
 import { Input } from '../../src/elements/input/input';
 import { InputType } from '../../src/elements/input/input-type';
 
@@ -49,10 +50,35 @@ export default function Accordions(): ReactElement {
         items={[
           {
             header: 'Please open me',
-            content: 'lorem ipsum'
+            content: 'lorem ipsum',
+            buttons: [
+              {
+                text: 'Edit',
+                onClick(params: IAccordionItemButtonClickParams): void {
+                  const { itemIndex, item, event } = params;
+
+                  console.log({ itemIndex, item, event });
+                }
+              },
+              {
+                text: 'Delete',
+                variant: ButtonVariant.SECONDARY,
+                color: ButtonColor.RED
+              }
+            ]
           },
           {
             header: 'Please open me 2',
+            buttons: [
+              {
+                text: 'Edit'
+              },
+              {
+                text: 'Delete',
+                variant: ButtonVariant.SECONDARY,
+                color: ButtonColor.RED
+              }
+            ],
             content: (
               <>
                 <p>this is body</p>

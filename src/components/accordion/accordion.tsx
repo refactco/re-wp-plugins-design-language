@@ -1,13 +1,22 @@
-import { ReactElement } from 'react';
+import { MouseEvent, ReactElement } from 'react';
+import { Button } from '../../elements/button/button';
+import { ButtonSize } from '../../elements/button/button-type';
 import { Icon } from '../../elements/icon/icon';
 import { IconName } from '../../elements/icon/icon-type';
 import { DragContainer } from '../drag-container/drag-container';
 import { DraggableBox } from '../drag-container/draggable-box/draggable-box';
-import { StyledAccordion, StyledAccordionItem } from './accordion-style';
-import { IAccordionItem, IAccordionProps } from './accordion-type';
+import { StyledAccordion, StyledAccordionButtons, StyledAccordionItem } from './accordion-style';
+import { IAccordionItem, IAccordionItemButtonProps, IAccordionProps } from './accordion-type';
 
 export function Accordion(props: IAccordionProps): ReactElement {
-  const { items, transitionTimeout = 500, dragId = '', noDraggable, onDragItemEnd, ...restProps } = props;
+  const {
+    items,
+    transitionTimeout = 500,
+    dragId = '',
+    noDraggable,
+    onDragItemEnd,
+    ...restProps
+  } = props;
 
   return (
     <StyledAccordion {...restProps} transition transitionTimeout={transitionTimeout}>
@@ -20,11 +29,34 @@ export function Accordion(props: IAccordionProps): ReactElement {
       >
         <div>
           {items.map((item: IAccordionItem, index: number): ReactElement => {
-            const { header, content } = item;
+            const { header, content, buttons } = item;
 
             return (
-              <DraggableBox key={index} draggableId={`${dragId}-${index}`} index={index} notDraggable={noDraggable}>
+              <DraggableBox
+                key={index}
+                draggableId={`${dragId}-${index}`}
+                index={index}
+                notDraggable={noDraggable}
+              >
                 <div className="draggable-container">
+                  {buttons ? (
+                    <StyledAccordionButtons>
+                      {buttons.map(
+                        (button: IAccordionItemButtonProps, buttonIndex: number): ReactElement => {
+                          return (
+                            <Button
+                              {...button}
+                              size={ButtonSize.SMALL}
+                              key={buttonIndex}
+                              onClick={(event: MouseEvent<HTMLButtonElement>): void => {
+                                button.onClick?.({ itemIndex: index, item, event });
+                              }}
+                            />
+                          );
+                        }
+                      )}
+                    </StyledAccordionButtons>
+                  ) : null}
                   <StyledAccordionItem
                     transitionTimeout={(transitionTimeout as number) / 1000}
                     header={

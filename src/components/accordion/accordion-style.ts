@@ -4,6 +4,8 @@ import { IAccordionItemProps, IAccordionProps } from './accordion-type';
 
 export const StyledAccordion = styled(Accordion)<IAccordionProps>`
   & .draggable-container {
+    position: relative;
+
     &:not(:last-of-type) {
       & > .szh-accordion__item {
         border-bottom: none;
@@ -63,5 +65,16 @@ export const StyledAccordionItem = styled(AccordionItem)<IAccordionItemProps>`
     .chevron-down {
       transform: rotate(180deg);
     }
+  }
+`;
+
+export const StyledAccordionButtons = styled.div`
+  position: absolute;
+  right: 88px;
+  top: 17.5px;
+  // transform: translateY(-50%);
+
+  & > button:not(:first-of-type) {
+    margin-inline-start: 12px;
   }
 `;
