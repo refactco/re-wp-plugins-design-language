@@ -9,7 +9,6 @@ export interface IFieldMapHeader {
 }
 
 export interface IFieldMapProps extends IBaseVoidProps {
-  // fields: IFieldMapItemType[];
   headers: IFieldMapHeader[];
   children: ReactNode[];
   gap?: string;

@@ -21,9 +21,6 @@ export function FieldMap(props: IFieldMapProps): ReactElement {
     onAddItemClick,
     onRemoveItemClick
   } = props;
-  // const [items, setItems] = useState<any[]>([{}]);
-
-  // console.log({ items });
 
   return (
     <StyledFieldMapContainer>
@@ -43,27 +40,6 @@ export function FieldMap(props: IFieldMapProps): ReactElement {
         return (
           <StyledFieldMapRow key={rowIndex} gap={gap}>
             {row}
-            {/* {fields.map((field: IFieldMapItemType, fieldIndex: number): ReactElement => {
-              const { title, customWidth, component } = field;
-
-              return (
-                <StyledFieldMapCell customWidth={customWidth}>
-                  {component}
-                  <Field
-                    {...fieldOption}
-                    key={fieldIndex}
-                    value={items[itemIndex][fieldIndex]}
-                    onChange={(value: any): void => {
-                      console.log({ value });
-
-                      items[itemIndex][fieldIndex] = value;
-
-                      setItems([...items]);
-                    }}
-                  />
-                </StyledFieldMapCell>
-              );
-            })} */}
             <StyledFieldMapDeleteCell>
               <Button
                 variant={ButtonVariant.SECONDARY}
