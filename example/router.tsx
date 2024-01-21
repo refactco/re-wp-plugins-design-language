@@ -5,6 +5,7 @@ import Alerts from './alerts/alerts';
 import Blocks from './blocks/blocks';
 import Buttons from './buttons/buttons';
 import Containers from './containers/containers';
+import FieldMaps from './field-maps/field-maps';
 import Icons from './icons/icons';
 import { Inputs } from './inputs/inputs';
 import Layout from './layout/layout';
@@ -30,6 +31,7 @@ export default function Router(): ReactElement {
           <Route path="/tables" Component={Tables} />
           <Route path="/blocks" Component={Blocks} />
           <Route path="/containers" Component={Containers} />
+          <Route path="/field-maps" Component={FieldMaps} />
         </Routes>
       </Layout>
     </MemoryRouter>

@@ -2,5 +2,7 @@ import { CheckboxControlProps } from '@wordpress/components/build-types/checkbox
 import { InputHTMLAttributes } from 'react';
 
 export interface ICheckboxProps
-  extends CheckboxControlProps,
-    Omit<InputHTMLAttributes<HTMLInputElement>, 'checked' | 'indeterminate' | 'onChange'> {}
+  extends Omit<CheckboxControlProps, 'onChange'>,
+    Omit<InputHTMLAttributes<HTMLInputElement>, 'checked' | 'indeterminate' | 'onChange'> {
+  onChange?(value: boolean): void;
+}

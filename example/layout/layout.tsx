@@ -125,6 +125,13 @@ export default function Layout(props: ILayoutProps): ReactElement {
       onClick: () => {
         navigate('/containers');
       }
+    },
+    {
+      item: 'field-maps',
+      title: 'Field Maps',
+      onClick: () => {
+        navigate('/field-maps');
+      }
     }
   ];
 

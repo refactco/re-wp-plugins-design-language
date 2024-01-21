@@ -1014,6 +1014,10 @@ export const StyledWordpressComponent = createGlobalStyle`
     margin-bottom: 0;
   }
 
+  .components-base-control__field {
+    margin-bottom: 0 !important;
+  }
+
   .block-editor-dimension-control .components-base-control__field {
     display: flex;
     align-items: center;

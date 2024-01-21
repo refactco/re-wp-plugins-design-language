@@ -1,12 +1,39 @@
 import { ReactElement } from 'react';
 import { Button } from '../../src/elements/button/button';
-import { ButtonColor, ButtonIconPosition, ButtonSize, ButtonVariant } from '../../src/elements/button/button-type';
+import {
+  ButtonColor,
+  ButtonIconPosition,
+  ButtonSize,
+  ButtonVariant
+} from '../../src/elements/button/button-type';
 import { Icon } from '../../src/elements/icon/icon';
 import { IconName, IconSize } from '../../src/elements/icon/icon-type';
 
 export default function Buttons(): ReactElement {
   return (
     <>
+      {/* <FieldMap
+        onAddItemClick={(): void => {}}
+        onRemoveItemClick={(rowIndex): void => {
+          console.log({ rowIndex });
+        }}
+        headers={[
+          {
+            title: 'Data'
+          },
+          {
+            title: 'Data Type',
+            customWidth: '220px'
+          },
+          {
+            title: 'Data Type',
+            customWidth: '120px'
+          }
+        ]}
+      >
+        <>s</>
+        <>d</>
+      </FieldMap> */}
       <h1>Primary</h1>
       <div
         style={{
@@ -34,10 +61,16 @@ export default function Buttons(): ReactElement {
         >
           hello world
         </Button>
-        <Button size={ButtonSize.SMALL} icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}>
+        <Button
+          size={ButtonSize.SMALL}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
+        >
           hello world
         </Button>
-        <Button size={ButtonSize.X_SMALL} icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}>
+        <Button
+          size={ButtonSize.X_SMALL}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
+        >
           hello world
         </Button>
         <Button
@@ -74,10 +107,18 @@ export default function Buttons(): ReactElement {
         >
           hello world
         </Button>
-        <Button size={ButtonSize.SMALL} icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />} disabled>
+        <Button
+          size={ButtonSize.SMALL}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
+          disabled
+        >
           hello world
         </Button>
-        <Button size={ButtonSize.X_SMALL} icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />} disabled>
+        <Button
+          size={ButtonSize.X_SMALL}
+          icon={<Icon iconName={IconName.NOTIFICATION_ON} size={IconSize.TINY} />}
+          disabled
+        >
           hello world
         </Button>
         <Button
