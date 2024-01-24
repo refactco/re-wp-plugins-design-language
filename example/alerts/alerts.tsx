@@ -12,7 +12,7 @@ export default function Alerts(): ReactElement {
   const [tooltipPlacement, setTooltipPlacement] = useState<TooltipPlace>(TooltipPlace.TOP);
 
   return (
-    <div style={{ backgroundColor: 'lightgray' }}>
+    <div style={{ backgroundColor: 'lightgray', position: 'relative' }}>
       <div style={{ display: 'flex' }}>
         <div style={{ width: '33%' }}></div>
         <div

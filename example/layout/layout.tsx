@@ -2,9 +2,6 @@ import { ReactElement, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Header } from '../../src/components/header/header';
 import { IHeaderItemProps, SubHeaderType } from '../../src/components/header/menu/header-menu-type';
-import { ButtonColor, ButtonVariant } from '../../src/elements/button/button-type';
-import { Icon } from '../../src/elements/icon/icon';
-import { IconName } from '../../src/elements/icon/icon-type';
 import { ILayoutProps } from './layout-type';
 
 export default function Layout(props: ILayoutProps): ReactElement {
@@ -14,103 +11,102 @@ export default function Layout(props: ILayoutProps): ReactElement {
 
   const items: IHeaderItemProps[] = [
     {
-      item: 'buttons',
-      title: 'Button',
-      subHeaderType: SubHeaderType.TITLE_BUTTON,
-      subHeaderItems: {
-        title: 'Subtitle',
-        buttons: [
-          {
-            text: 'Add new',
-            icon: <Icon iconName={IconName.PLUS} />
-          },
-          {
-            text: 'Delete',
-            color: ButtonColor.RED,
-            variant: ButtonVariant.SECONDARY,
-            icon: <Icon iconName={IconName.DELETE} />
+      item: 'buttonsAndInputs',
+      title: 'Button & Input',
+      subHeaderType: SubHeaderType.TAB_PANEL,
+      subHeaderItems: [
+        {
+          name: 'buttons',
+          title: 'Button',
+          onClick: () => {
+            navigate('/buttons');
           }
-        ]
-      },
-      onClick: () => {
-        navigate('/buttons');
-      }
+        },
+        {
+          name: 'inputs',
+          title: 'Input',
+          onClick: () => {
+            navigate('/inputs');
+          }
+        },
+        {
+          name: 'field-maps',
+          title: 'Field Maps',
+          onClick: () => {
+            navigate('/field-maps');
+          }
+        }
+      ]
+    },
+    {
+      item: 'sections',
+      title: 'Sections',
+      subHeaderType: SubHeaderType.TAB_PANEL,
+      subHeaderItems: [
+        {
+          name: 'sections',
+          title: 'Section',
+          onClick: () => {
+            navigate('/sections');
+          }
+        },
+        {
+          name: 'tab-panel-menu',
+          title: 'Tab Panels',
+          onClick: () => {
+            navigate('/tab-panel-menu');
+          }
+        },
+        {
+          name: 'sortable-cards',
+          title: 'Sortable Card',
+          onClick: () => {
+            navigate('/sortable-cards');
+          }
+        },
+        {
+          name: 'accordions',
+          title: 'Accordion',
+          onClick: () => {
+            navigate('/accordions');
+          }
+        },
+        {
+          name: 'tables',
+          title: 'Table',
+          onClick: () => {
+            navigate('/tables');
+          }
+        }
+      ]
     },
     {
       item: 'icons',
       title: 'Icon',
-      subHeaderItems: [
-        {
-          name: 'data',
-          title: 'my-data'
-        },
-        {
-          name: 'data-box',
-          title: 'my-data-box'
-        }
-      ],
       onClick: () => {
         navigate('/icons');
       }
     },
     {
-      item: 'inputs',
-      title: 'Input',
-      subHeaderItems: [
-        {
-          name: 'text',
-          title: 'Text Input'
-        },
-        {
-          name: 'number',
-          title: 'Number Input'
-        }
-      ],
-      onClick: () => {
-        navigate('/inputs');
-      }
-    },
-    {
       item: 'alerts',
       title: 'Alert & Tooltip',
-      onClick: () => {
-        navigate('/alerts');
-      }
-    },
-    {
-      item: 'sections',
-      title: 'Section',
-      onClick: () => {
-        navigate('/sections');
-      }
-    },
-    {
-      item: 'tab-panel-menu',
-      title: 'Tab Panel',
-      onClick: () => {
-        navigate('/tab-panel-menu');
-      }
-    },
-    {
-      item: 'sortable-cards',
-      title: 'Sortable Card',
-      onClick: () => {
-        navigate('/sortable-cards');
-      }
-    },
-    {
-      item: 'accordions',
-      title: 'Accordion',
-      onClick: () => {
-        navigate('/accordions');
-      }
-    },
-    {
-      item: 'tables',
-      title: 'Table',
-      onClick: () => {
-        navigate('/tables');
-      }
+      subHeaderType: SubHeaderType.TAB_PANEL,
+      subHeaderItems: [
+        {
+          name: 'alerts',
+          title: 'Alerts',
+          onClick: () => {
+            navigate('/alerts');
+          }
+        },
+        {
+          name: 'tooltips',
+          title: 'Tooltips',
+          onClick: () => {
+            navigate('/tooltips');
+          }
+        }
+      ]
     },
     {
       item: 'blocks',
@@ -124,13 +120,6 @@ export default function Layout(props: ILayoutProps): ReactElement {
       title: 'Container',
       onClick: () => {
         navigate('/containers');
-      }
-    },
-    {
-      item: 'field-maps',
-      title: 'Field Maps',
-      onClick: () => {
-        navigate('/field-maps');
       }
     }
   ];
