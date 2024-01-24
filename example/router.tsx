@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { MemoryRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Accordions from './accordions/accordions';
 import Alerts from './alerts/alerts';
 import Blocks from './blocks/blocks';
@@ -16,7 +16,7 @@ import Tables from './tables/tables';
 
 export default function Router(): ReactElement {
   return (
-    <MemoryRouter>
+    <BrowserRouter>
       <Layout>
         <Routes>
           <Route path="/" Component={Buttons} />
@@ -34,6 +34,6 @@ export default function Router(): ReactElement {
           <Route path="/field-maps" Component={FieldMaps} />
         </Routes>
       </Layout>
-    </MemoryRouter>
+    </BrowserRouter>
   );
 }

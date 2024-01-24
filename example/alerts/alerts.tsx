@@ -15,7 +15,15 @@ export default function Alerts(): ReactElement {
     <div style={{ backgroundColor: 'lightgray' }}>
       <div style={{ display: 'flex' }}>
         <div style={{ width: '33%' }}></div>
-        <div style={{ width: '33%', display: 'flex', flexWrap: 'nowrap', gap: '12px', flexDirection: 'column' }}>
+        <div
+          style={{
+            width: '33%',
+            display: 'flex',
+            flexWrap: 'nowrap',
+            gap: '12px',
+            flexDirection: 'column'
+          }}
+        >
           <Alert status={AlertStatus.SUCCESS} explicitDismiss>
             Hello guys
           </Alert>
@@ -89,14 +97,25 @@ export default function Alerts(): ReactElement {
             ]}
           />
           <br />
-          <Tooltip content="Hello from inside the tooltip" id="my-tooltip-1" place={tooltipPlacement} mode={TooltipMode.DARK}>
+          <Tooltip
+            content="Hello from inside the tooltip"
+            id="my-tooltip-1"
+            place={tooltipPlacement}
+            mode={TooltipMode.DARK}
+          >
             <div style={{ backgroundColor: 'green' }}>dark mode tooltip (hover me)</div>
           </Tooltip>
           <br />
           <br />
           <br />
-          <Tooltip content="Hello from inside the tooltip" id="my-tooltip-2" place={tooltipPlacement}>
-            <div style={{ backgroundColor: 'green', display: 'inline-block' }}>light mode tooltip (hover me)</div>
+          <Tooltip
+            content="Hello from inside the tooltip"
+            id="my-tooltip-2"
+            place={tooltipPlacement}
+          >
+            <div style={{ backgroundColor: 'green', display: 'inline-block' }}>
+              light mode tooltip (hover me)
+            </div>
           </Tooltip>
         </div>
       </div>

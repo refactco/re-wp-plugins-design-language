@@ -1,5 +1,6 @@
 import { __experimentalNavigation as Navigation } from '@wordpress/components';
 import styled from 'styled-components';
+import { mediaStyle } from '../../styles/media';
 import { IStyledHeaderProps } from './header-type';
 
 export const StyledHeader = styled(Navigation)<IStyledHeaderProps>`
@@ -7,6 +8,10 @@ export const StyledHeader = styled(Navigation)<IStyledHeaderProps>`
     position: relative;
     overflow: unset;
     padding: 0;
+
+    ${mediaStyle()`
+      overflow: hidden;
+    `}
 
     & > div {
       display: flex;

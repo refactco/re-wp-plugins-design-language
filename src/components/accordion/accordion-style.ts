@@ -1,5 +1,6 @@
 import { Accordion, AccordionItem } from '@szhsin/react-accordion';
 import styled from 'styled-components';
+import { mediaStyle } from '../../styles/media';
 import { IAccordionItemProps, IAccordionProps } from './accordion-type';
 
 export const StyledAccordion = styled(Accordion)<IAccordionProps>`
@@ -38,6 +39,10 @@ export const StyledAccordionItem = styled(AccordionItem)<IAccordionItemProps>`
       background-color: transparent;
       border: none;
 
+      ${mediaStyle()`
+        padding: 12px 16px;
+      `}
+
       &:hover {
         background-color: #f3f3f3;
       }
@@ -72,9 +77,20 @@ export const StyledAccordionButtons = styled.div`
   position: absolute;
   right: 88px;
   top: 17.5px;
-  // transform: translateY(-50%);
 
   & > button:not(:first-of-type) {
     margin-inline-start: 12px;
   }
+
+  ${mediaStyle()`
+    top: 10px;
+
+    &&& > button {
+      height: 32px;
+
+      & > span {
+        line-height: 32px;
+      }
+    }
+  `}
 `;

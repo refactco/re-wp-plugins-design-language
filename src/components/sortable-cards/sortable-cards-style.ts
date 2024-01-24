@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledListContainer = styled.div`
   background: #fff;
   padding: 8px;
-  width: fit-content;
+  width: calc(100% - 8px);
 `;
 
 export const StyledListItem = styled.div<any>`
@@ -19,7 +19,7 @@ export const StyledListItem = styled.div<any>`
 `;
 
 export const StyledListItemTitle = styled.span`
-  min-width: 283px;
+  flex: 1;
 `;
 
 export const StyledListItemBadge = styled.span<any>`

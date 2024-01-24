@@ -25,12 +25,12 @@ export default function FieldMaps(): ReactElement {
             title: 'Data'
           },
           {
-            title: 'Data Type',
-            customWidth: '220px'
+            title: 'Data Type'
+            // customWidth: '220px'
           },
           {
-            title: 'Data Type',
-            customWidth: '120px'
+            title: 'Data Type'
+            // customWidth: '120px'
           }
         ]}
       >
@@ -50,7 +50,7 @@ export default function FieldMaps(): ReactElement {
                   }}
                 />
               </FieldMapCell>
-              <FieldMapCell customWidth="220px">
+              <FieldMapCell>
                 <Select
                   options={[{ label: 'my data', value: '1' }]}
                   value={items[itemIndex][1] as string}
@@ -61,7 +61,7 @@ export default function FieldMaps(): ReactElement {
                   }}
                 />
               </FieldMapCell>
-              <FieldMapCell customWidth="120px">
+              <FieldMapCell>
                 <Checkbox
                   checked={items[itemIndex][2] as boolean}
                   onChange={(value: boolean): void => {

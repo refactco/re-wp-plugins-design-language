@@ -8,36 +8,22 @@ import {
 } from '../../src/elements/button/button-type';
 import { Icon } from '../../src/elements/icon/icon';
 import { IconName, IconSize } from '../../src/elements/icon/icon-type';
+import { MediaScreenSize, mediaStyle } from '../../src/styles/media';
 
 export default function Buttons(): ReactElement {
+  const result = mediaStyle(MediaScreenSize.MOBILE)`
+    color: red;
+  `;
+
+  console.log({ result });
+
   return (
     <>
-      {/* <FieldMap
-        onAddItemClick={(): void => {}}
-        onRemoveItemClick={(rowIndex): void => {
-          console.log({ rowIndex });
-        }}
-        headers={[
-          {
-            title: 'Data'
-          },
-          {
-            title: 'Data Type',
-            customWidth: '220px'
-          },
-          {
-            title: 'Data Type',
-            customWidth: '120px'
-          }
-        ]}
-      >
-        <>s</>
-        <>d</>
-      </FieldMap> */}
       <h1>Primary</h1>
       <div
         style={{
           display: 'flex',
+          flexWrap: 'wrap',
           gap: '5px',
           alignItems: 'center'
         }}
@@ -85,6 +71,7 @@ export default function Buttons(): ReactElement {
       <div
         style={{
           display: 'flex',
+          flexWrap: 'wrap',
           gap: '5px',
           alignItems: 'center'
         }}
@@ -135,6 +122,7 @@ export default function Buttons(): ReactElement {
       <div
         style={{
           display: 'flex',
+          flexWrap: 'wrap',
           gap: '5px',
           alignItems: 'center'
         }}
@@ -184,6 +172,7 @@ export default function Buttons(): ReactElement {
       <div
         style={{
           display: 'flex',
+          flexWrap: 'wrap',
           gap: '5px',
           alignItems: 'center'
         }}
@@ -236,6 +225,7 @@ export default function Buttons(): ReactElement {
       <div
         style={{
           display: 'flex',
+          flexWrap: 'wrap',
           gap: '5px',
           alignItems: 'center'
         }}
@@ -294,6 +284,7 @@ export default function Buttons(): ReactElement {
       <div
         style={{
           display: 'flex',
+          flexWrap: 'wrap',
           gap: '5px',
           alignItems: 'center'
         }}
