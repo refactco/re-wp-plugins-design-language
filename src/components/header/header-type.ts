@@ -1,7 +1,7 @@
 import { NavigationProps } from '@wordpress/components/build-types/navigation/types';
 import { ReactNode } from 'react';
 import { IBaseVoidProps } from '../../base/base-interface';
-import { IHeaderItemProps } from './menu/header-menu-type';
+import { IHeaderItemProps } from './menu/items/header-menu-items-type';
 
 export enum HeaderLogoType {
   SVG = 'svg',

@@ -1,7 +1,8 @@
 import { ReactElement, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Header } from '../../src/components/header/header';
-import { IHeaderItemProps, SubHeaderType } from '../../src/components/header/menu/header-menu-type';
+import { SubHeaderType } from '../../src/components/header/menu/header-menu-type';
+import { IHeaderItemProps } from '../../src/components/header/menu/items/header-menu-items-type';
 import { ILayoutProps } from './layout-type';
 
 export default function Layout(props: ILayoutProps): ReactElement {
@@ -83,6 +84,15 @@ export default function Layout(props: ILayoutProps): ReactElement {
     {
       item: 'icons',
       title: 'Icon',
+      subHeaderType: SubHeaderType.TITLE_BUTTON,
+      subHeaderItems: {
+        title: 'Actions',
+        buttons: [
+          {
+            text: 'Click me!'
+          }
+        ]
+      },
       onClick: () => {
         navigate('/icons');
       }

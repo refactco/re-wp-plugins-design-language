@@ -1,12 +1,30 @@
 import styled from 'styled-components';
+import { MediaScreenSize, mediaStyle } from '../../styles/media';
 import { TabItemSize } from './tab-panel-menu-type';
 
-export const StyledTabPanel = styled(({ tabItemSize, tabItemMinWidth, ...restProps }: any) => <div {...restProps} />)<any>`
+export const StyledTabPanel = styled(({ tabItemSize, tabItemMinWidth, ...restProps }: any) => (
+  <div {...restProps} />
+))<any>`
   &&& {
     & > .components-tab-panel__tabs {
-      display: flex;
       align-items: center;
       gap: 32px;
+
+      &.show-on-desktop {
+        display: flex;
+
+        ${mediaStyle(MediaScreenSize.TABLET)`
+          display: none;
+        `}
+      }
+
+      &.show-on-mobile {
+        display: none;
+
+        ${mediaStyle(MediaScreenSize.TABLET)`
+          display: flex;
+        `}
+      }
     }
 
     & .components-tab-panel__tabs-item {
@@ -21,17 +39,20 @@ export const StyledTabPanel = styled(({ tabItemSize, tabItemMinWidth, ...restPro
       color: #798686;
       font-size: 14px;
       font-weight: 600;
-      min-width: ${(props) => (props.tabItemSize === TabItemSize.WITH_MIN_WIDTH ? props.tabItemMinWidth : undefined)};
+      min-width: ${(props) =>
+        props.tabItemSize === TabItemSize.WITH_MIN_WIDTH ? props.tabItemMinWidth : undefined};
       line-height: 22px;
+
+      & > .components-dropdown > button {
+        height: unset;
+        padding: 0;
+        color: #002729;
+        opacity: 1;
+      }
 
       &::before {
         content: unset;
       }
-
-      // & > span {
-      //   display: inline-flex;
-      //   line-height: 22px;
-      // }
 
       &.is-active {
         color: #002729;

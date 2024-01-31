@@ -1153,6 +1153,21 @@ export const StyledWordpressComponent = createGlobalStyle`
     right: 0;
     height: 1px;
   }
+
+  .components-dropdown-menu__menu .components-dropdown-menu__menu-item.is-active {
+    border-radius: 12px;
+    background-color: #2e9e62;
+    color: #fff;
+  }
+  
+  .components-dropdown-menu__menu .components-dropdown-menu__menu-item:not(.is-active):hover {
+    color: #2e9e62;
+  }
+  
+  .components-dropdown-menu__menu .components-dropdown-menu__menu-item:focus {
+    box-shadow: none;
+  }
+
   .components-dropdown-menu__menu .components-dropdown-menu__menu-item.is-active svg,
   .components-dropdown-menu__menu .components-dropdown-menu__menu-item.is-active .dashicon,
   .components-dropdown-menu__menu .components-menu-item.is-active svg,
