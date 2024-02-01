@@ -1111,8 +1111,9 @@ export const StyledWordpressComponent = createGlobalStyle`
   }
 
   .components-dropdown__content .components-popover__content {
-    padding: 8px;
+    padding: 0;
   }
+
   .components-dropdown__content [role=menuitem] {
     white-space: nowrap;
   }
@@ -1130,7 +1131,8 @@ export const StyledWordpressComponent = createGlobalStyle`
   .components-dropdown-menu__menu .components-dropdown-menu__menu-item,
   .components-dropdown-menu__menu .components-menu-item {
     width: 100%;
-    padding: 6px;
+    padding-block: 6px;
+    padding-inline: 14px;
     outline: none;
     cursor: pointer;
     white-space: nowrap;
@@ -1155,9 +1157,9 @@ export const StyledWordpressComponent = createGlobalStyle`
   }
 
   .components-dropdown-menu__menu .components-dropdown-menu__menu-item.is-active {
-    border-radius: 12px;
-    background-color: #2e9e62;
-    color: #fff;
+    // border-radius: 12px;
+    background-color: #D7DBDB;
+    // color: #798686;
   }
   
   .components-dropdown-menu__menu .components-dropdown-menu__menu-item:not(.is-active):hover {
@@ -2420,10 +2422,11 @@ export const StyledWordpressComponent = createGlobalStyle`
   .components-popover__content {
     background: #fff;
     box-shadow: 0 0 0 1px #ccc, 0 0.7px 1px rgba(0, 0, 0, 0.1), 0 1.2px 1.7px -0.2px rgba(0, 0, 0, 0.1), 0 2.3px 3.3px -0.5px rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
+    border-radius: 8px;
     box-sizing: border-box;
     width: min-content;
   }
+
   .is-alternate .components-popover__content {
     box-shadow: 0 0 0 1px #1e1e1e;
   }

@@ -40,7 +40,6 @@ module.exports = {
       }
     ]
   },
-  // watch: true,
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx']
     // alias: {
