@@ -6,7 +6,15 @@ import { ITabPanelMenuItemsProps } from '../tab-panel-menu-items-type';
 export function TabPanelMenuItemsMobile(props: ITabPanelMenuItemsProps): ReactElement {
   const { tabs, activeIndex = 0, onTabClick } = props;
   const [firstTab, secondTab, ...restTabs] = tabs;
-  const firstTabs = [firstTab, secondTab];
+  const firstTabs = [];
+
+  if (firstTab) {
+    firstTabs.push(firstTab);
+  }
+
+  if (secondTab) {
+    firstTabs.push(secondTab);
+  }
 
   const getItemClassName = (index: number): string =>
     ['components-tab-panel__tabs-item', index === activeIndex ? 'is-active' : ''].join(' ');

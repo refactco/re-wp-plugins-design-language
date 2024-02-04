@@ -219,3 +219,96 @@ The `Icon` component has 4 properties.
 <Icon iconName={IconName.ERROR_OUTLINED} fill="black" size={IconSize.SMALL} />
 <Icon iconName={IconName.GAP} fill="pink" size={IconSize.TINY} />
 ```
+
+## Components
+
+We have implemented some reusable components using the elements, defined in the `/components` directory. We will review each one to see how to use them.
+
+### Accordion
+The `Accordion` is a component to show contents animatedly that could be draggable or fixed.
+This component is actually a wrapper for the [@szhsin/react-accordion](https://www.npmjs.com/package/@szhsin/react-accordion) library.
+
+All the properties of the main component, is available for this component too (See the [documentation](https://szhsin.github.io/react-accordion/docs/getting-started)), but there are also some specific properties:
+
+1. **items** `required`
+The `items` property is an array that each item has a `header`, `content` and `buttons`.
+
+2. **noDraggable** `optional`
+By default the accordion is draggable and you can move the items with each other, but if you don't need this feature, you can pass the `true` value to this property.
+
+3. **dragId** `optional`
+Draggable components, need a unique dragId. So if you are using the draggable accordion, you should pass a `string` value to this property.
+
+4. **onDragItemEnd** `optional`
+If you need to control when the dragging process is ended, you can use this function. It gets a `result` parameter which is an object that includes the information of the source and destination of the dragging process.
+
+Below you can see an example of using the `Accordion` component:
+
+```tsx
+<Accordion
+  transitionTimeout={/* determine the speed of opening and closing the items */}
+  noDraggable={/* true/false */}
+  items={[
+    {
+      header: 'Please open me',
+      content: 'lorem ipsum',
+      buttons: [
+        {
+          text: 'Edit',
+          onClick(params: IAccordionItemButtonClickParams): void {
+            /* some functionalities */
+          }
+        },
+        {
+          text: 'Delete',
+          variant: ButtonVariant.SECONDARY,
+          color: ButtonColor.RED,
+          onClick(params: IAccordionItemButtonClickParams): void {
+            /* some functionalities */
+          }
+        }
+      ]
+    },
+    {
+      header: 'Please open me 2',
+      content: (
+        <>
+          <p>this is body</p>
+          <br />
+          <Input placeholder="Placeholder" label="Sample Label" help="This is hint" />
+          <br />
+          <div style={{ display: 'flex', gap: '4px' }}>
+            <Button>Submit</Button>
+            <Button variant={ButtonVariant.SECONDARY}>Cancel</Button>
+          </div>
+        </>
+      )
+    }
+  ]}
+/>
+```
+
+### Alert
+
+#### Single Alert
+This is the wrapper component for the [Snackbar](https://developer.wordpress.org/block-editor/reference-guides/components/snackbar/) component of `@wordpress/components`.
+
+All the properties of the main component is accessible for this component too, and there is only one more property:
+
+**status** `optional`
+The status property will show how the Alert component looks like. It's type is an enum with 4 different choices: `SUCCESS`, `ERROR`, `INFO`, and `WARNING`.
+
+Here is an example of using `Alert` component:
+
+```tsx
+<Alert status={AlertStatus.SUCCESS}>
+  Example Text
+</Alert>
+```
+
+#### Alert List
+Alert list is a wrapper to the [SnackbarList]() component of the `@wordpress/components` library.
+It can handle multiple alerts in one component.
+The component will be displayed as a fixed element in the HTML page.
+
+All the properties are the same as the main component.
