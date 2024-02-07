@@ -188,25 +188,25 @@ The `MultiSelect` input field is a wrapper for [FormTokenField](https://develope
 ### Icon
 The `Icon` component has 4 properties.
 
-1. **iconName** `required`
+- **iconName** `required`
 
   Type: `IconName`
 
   You can find the possible choices for this enum in the `/src/elements/icon/icon-type.ts` path.
 
-2. **size** `optional`
+- **size** `optional`
 
   Type: `IconSize`
 
   The options you can use for this enum are: `TINY`, `SMALL`, `MEDIUM`, `LARGE`, and `X_LARGE`. The default value of this property is: `SMALL`.
 
-3. **fill** `optional`
+- **fill** `optional`
 
   Type: `string`
 
   You can use this property to customize the color of the icon you're using. The default value for this property is `black`.
 
-4. **className** `optional`
+- **className** `optional`
 
   Type: `string`
 
@@ -230,16 +230,16 @@ This component is actually a wrapper for the [@szhsin/react-accordion](https://w
 
 All the properties of the main component, is available for this component too (See the [documentation](https://szhsin.github.io/react-accordion/docs/getting-started)), but there are also some specific properties:
 
-1. **items** `required`
+- **items** `required`
 The `items` property is an array that each item has a `header`, `content` and `buttons`.
 
-2. **noDraggable** `optional`
+- **noDraggable** `optional`
 By default the accordion is draggable and you can move the items with each other, but if you don't need this feature, you can pass the `true` value to this property.
 
-3. **dragId** `optional`
+- **dragId** `optional`
 Draggable components, need a unique dragId. So if you are using the draggable accordion, you should pass a `string` value to this property.
 
-4. **onDragItemEnd** `optional`
+- **onDragItemEnd** `optional`
 If you need to control when the dragging process is ended, you can use this function. It gets a `result` parameter which is an object that includes the information of the source and destination of the dragging process.
 
 Below you can see an example of using the `Accordion` component:
