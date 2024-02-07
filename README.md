@@ -307,8 +307,405 @@ Here is an example of using `Alert` component:
 ```
 
 #### Alert List
-Alert list is a wrapper to the [SnackbarList]() component of the `@wordpress/components` library.
+Alert list is a wrapper to the `SnackbarList` component of the `@wordpress/components` library.
 It can handle multiple alerts in one component.
 The component will be displayed as a fixed element in the HTML page.
 
 All the properties are the same as the main component.
+
+Here is an example of using `AlertList` component:
+
+```tsx
+<AlertList
+  onRemove={() => {}}
+  notices={[
+    {
+      id: '1',
+      content: 'Hello guys',
+      status: AlertStatus.SUCCESS,
+      explicitDismiss: true
+    },
+    {
+      id: '2',
+      content: 'Hello guys 2',
+      status: AlertStatus.ERROR,
+      explicitDismiss: true
+    },
+    {
+      id: '3',
+      content: 'Alert with custom icon',
+      status: AlertStatus.ERROR,
+      // show a dismiss icon
+      explicitDismiss: true,
+      // with icon
+      icon: <Icon iconName={IconName.DELETE} />
+    },
+    {
+      id: '3',
+      content: 'Alert without dismiss icon',
+      status: AlertStatus.ERROR
+    }
+  ]}
+/>
+```
+
+### Block
+This component is a container component.
+The component is divided to two sides, the left side is included an `icon` with a title, and the right side could be included with any component required.
+
+`Block` component will get the following properties:
+
+- **title** `required`
+This is a `string` property that shows the title of the `Block` component.
+
+- **iconName** `required`
+The type of this property is `IconName` which is an enum. This property will use for showing the icon of the `Block` component.
+
+Below, you can see an example of `Block` component:
+
+```tsx
+<Block iconName={IconName.GAP} title="This is title">
+  <Range
+    label="Adjust Gap"
+    value={/* range value */}
+    help="px"
+    onChange={(value: number | undefined): void => {
+      /* on change functionality */
+    }}
+  />
+</Block>
+```
+
+### Container
+The `Container` component is a versatile wrapper that can be used to encapsulate other components or content with specific styling constraints such as width and margin behavior. It leverages styled components for efficient and flexible styling. This document outlines the properties available for the `Container` component and provides an example of how to use it.
+
+#### Properties
+
+The component accepts the following properties:
+
+- **type** `optional`
+Defines the container's margin behavior. It accepts one of three values from the `ContainerType` enum:
+  1. `FULL_WIDTH`: The container takes up the full width of its parent.
+  2. `MARGIN_AUTO`: Automatically applies margins to center the container within its parent.
+  3. `STATIC_MARGIN`: Uses predefined margin values specified in the container's styling. This is the default value if `type` is not specified.
+- **width** `optional`
+Specifies the width of the container. It accepts any valid CSS width value (e.g., `100px`, `50%`, `auto`). The default value is `unset`, allowing the container to adapt based on its content and the specified `type`.
+
+- **children** `required`
+The content to be rendered within the container. This can be any React nodes.
+
+#### Example Usage
+
+Below is an example of how to use the `Container` component within a React application. This example demonstrates how to create a centered container with a fixed width.
+
+```tsx
+import { Container, ContainerType } from './path/to/Container';
+
+function App() {
+  return (
+    <Container type={ContainerType.MARGIN_AUTO} width="960px">
+      <h1>Hello World</h1>
+      <p>This is a simple example of using the Container component.</p>
+    </Container>
+  );
+}
+```
+
+### FieldMap
+
+`FieldMap` is a complex component used for rendering a dynamic list of items with the capability to add or remove rows. It utilizes the `FieldMapCell` for individual cells and provides a structured layout for item lists, including headers and customizable add/remove functionality.
+
+#### Properties
+
+- **headers** `required`
+  - Description: An array of objects defining the headers of the field map. Each header object must include a `title` (string) and can optionally specify a `customWidth` (string) for the header cell.
+
+- **children** `required`
+  - Description: An array of `ReactNode[]`, representing the rows to be rendered within the field map. Each child corresponds to a row in the field map.
+
+- **gap** `optional`
+  - Description: Specifies the gap between rows and cells within the field map. Accepts any valid CSS size value (e.g., `20px`). Defaults to `20px` if not specified.
+
+- **removeIcon** `optional`
+  - Description: Defines the icon used for the remove button in each row. Can accept an `IconType` from the `@wordpress/components` or an `IconName` enum value. Defaults to `IconName.DELETE`.
+
+- **addItemText** `optional`
+  - Description: The text displayed on the button used to add new rows. Defaults to `'Add a new row'`.
+
+- **onAddItemClick** `required`
+  - Description: A function to be called when the add item button is clicked. It does not accept any parameters and does not return anything.
+
+- **onRemoveItemClick** `required`
+  - Description: A function to be called when the remove item button is clicked for a specific row. It accepts one parameter, `rowIndex` (number), indicating the index of the row to be removed.
+
+#### Example Usage
+
+```jsx
+import React from 'react';
+import { FieldMap, IFieldMapHeader } from './path/to/FieldMap';
+
+const headers: IFieldMapHeader[] = [
+  { title: 'Column 1', customWidth: '150px' },
+  { title: 'Column 2' },
+  // Add more headers as needed
+];
+
+function MyComponent() {
+  const handleAdd = () => {
+    // Logic to add a new row
+  };
+
+  const handleRemove = (index: number) => {
+    // Logic to remove a row at a specific index
+  };
+
+  return (
+    <FieldMap
+      headers={headers}
+      onAddItemClick={handleAdd}
+      onRemoveItemClick={handleRemove}
+    >
+      {/* Row components or elements go here */}
+    </FieldMap>
+  );
+}
+```
+
+This documentation outlines the structure and usage of the `FieldMapCell` and `FieldMap` components, including their properties and a practical example for implementing a dynamic field mapping interface.
+
+
+### Section
+
+The `Section` component encapsulates a section of content, complete with a customizable header and an optional body. It leverages the `SectionHeader` component for the header part, allowing for a consistent layout across different sections of an application.
+
+#### Properties
+
+- **headerProps** `required`
+  - Description: An object containing properties to be passed to the `SectionHeader` component. This includes all properties supported by `SectionHeader` such as `title`, `description`, and `infoText`. It ensures that each section can have a customized header.
+
+- **children** `optional`
+  - Description: The content to be displayed within the body of the section. This can include any React nodes, allowing for flexible content rendering within each section.
+
+#### Example Usage
+
+```tsx
+import React from 'react';
+import { Section } from './path/to/Section';
+import { ISectionHeaderProps } from './path/to/header/section-header-type';
+
+const headerProps: ISectionHeaderProps = {
+  title: "Section Title",
+  description: "Description of this section",
+  infoText: "Additional info about this section"
+};
+
+function MySection() {
+  return (
+    <Section headerProps={headerProps}>
+      <p>This is the content of the section.</p>
+    </Section>
+  );
+}
+```
+
+### SortableCards
+These examples demonstrate how to implement the `Section` components, showcasing the ability to provide detailed headers with additional information via tooltips and to structure content within distinct sections.
+
+The `SortableCards` component provides a flexible and interactive way to display a list of items that can be sorted through drag-and-drop. It integrates with `@wordpress/components` for dropdown menus and includes custom styling for list items.
+
+#### Properties
+
+- **items** `required`
+  - Description: An array of `ISortableCardItem` objects, each representing an item in the list. Each object must include `id`, `title`, and `badge` properties.
+
+- **selectedItemId** `optional`
+  - Description: The `id` of the item that is currently selected. This is used to apply a different style to the selected item to distinguish it from others.
+
+- **menuItems** `optional`
+  - Description: Properties to pass to the `DropdownMenu` component, excluding the `icon` property. This allows for the addition of a dropdown menu to each sortable card with customizable options.
+
+- **onSelectedItemChange** `optional`
+  - Description: A callback function that is called when a new item is selected. It receives the `id` of the newly selected item as its parameter.
+
+#### Example Usage
+
+
+```tsx
+import React from 'react';
+import { SortableCards } from './path/to/SortableCards';
+import { IconName } from './path/to/icon/icon-type';
+
+const items = [
+  { id: '1', title: 'Item 1', badge: 'Badge 1' },
+  { id: '2', title: 'Item 2', badge: 'Badge 2' },
+  // Add more items as needed
+];
+
+function MyComponent() {
+  const handleSelectedItemChange = (id) => {
+    console.log(`Selected item id: ${id}`);
+  };
+
+  return (
+    <SortableCards
+      items={items}
+      onSelectedItemChange={handleSelectedItemChange}
+      menuItems={{
+        label: 'Options',
+        controls: [
+          { title: 'Action 1', onClick: () => console.log('Action 1 clicked') },
+          { title: 'Action 2', onClick: () => console.log('Action 2 clicked') },
+          // Add more actions as needed
+        ],
+      }}
+    />
+  );
+}
+```
+
+### Tooltip
+This component allows for the creation of a dynamic, sortable list with integrated dropdown menus for additional actions, enhancing the interactivity of list displays.
+
+The `Tooltip` component is designed to display a tooltip in various placements around a target element. It supports light and dark modes for different visual presentations.
+
+#### Properties
+
+- **mode** `optional`
+  - Description: Sets the theme of the tooltip. It accepts two values from the `TooltipMode` enum: `LIGHT` or `DARK`. The default mode is `LIGHT`, which applies a light-themed background with dark text.
+
+- **id** `required`
+  - Description: A unique identifier for the tooltip. This ID is used to link the tooltip with its target element using the `data-tooltip-id` attribute.
+
+- **place** `required`
+  - Description: Specifies the position of the tooltip relative to its target element. It accepts values from the `TooltipPlace` enum, including positions like `TOP`, `BOTTOM`, `RIGHT`, `LEFT`, and their variations (`TOP_START`, `TOP_END`, etc.).
+
+- **content** `required`
+  - Description: The text or content to be displayed within the tooltip. This can be a simple text string or more complex HTML content.
+
+- **children** `required`
+  - Description: The target element around which the tooltip will be displayed. The tooltip is activated when the user hovers over or focuses on this element.
+
+#### Example Usage
+
+```tsx
+import React from 'react';
+import { Tooltip, TooltipMode, TooltipPlace } from './path/to/Tooltip';
+
+function MyComponent() {
+  return (
+    <Tooltip
+      id="myTooltip"
+      mode={TooltipMode.DARK}
+      place={TooltipPlace.BOTTOM}
+      content="This is a tooltip example."
+    >
+      <button>This button has a tooltip</button>
+    </Tooltip>
+  );
+}
+```
+
+### Table
+
+The `Table` component is a responsive table solution designed to display data in both desktop and mobile layouts. It supports draggable rows for reordering and can be customized with actions for each row.
+
+## Properties
+
+- **headers** `required`
+  - Description: An array of strings representing the column headers of the table.
+
+- **dataRows** `required`
+  - Description: A two-dimensional array of `ReactNode` items, representing the data for each cell of the table by rows.
+
+- **actions** `optional`
+  - Description: An array of `ITableAction` objects, each representing an action that can be performed on the rows of the table. These actions are typically represented as buttons or icons at the end of each row.
+
+- **noDraggable** `optional`
+  - Description: A boolean that, when set to true, disables the draggable functionality for reordering rows. Defaults to false, allowing rows to be reordered.
+
+- **onDragItemEnd** `optional`
+  - Description: A callback function that is called when a drag-and-drop operation is completed. It receives the result of the operation, which includes the source and destination indices.
+
+## Example Usage
+
+```tsx
+import React from 'react';
+import { Table } from './path/to/Table';
+import { ReactNode } from 'react';
+
+function MyTableComponent() {
+  const headers = ['Column 1', 'Column 2', 'Column 3'];
+  const dataRows: ReactNode[][] = [
+    [<div>Row 1, Cell 1</div>, 'Cell 2', 'Cell 3'],
+    ['Row 2, Cell 1', <span>Cell 2</span>, 'Cell 3'],
+    // Add more rows as needed
+  ];
+
+  const handleDragEnd = (result: any) => {
+    // Handle the drag end event, such as updating the order of data
+    console.log(result);
+  };
+
+  return (
+    <Table
+      headers={headers}
+      dataRows={dataRows}
+      onDragItemEnd={handleDragEnd}
+    />
+  );
+}
+```
+
+This component provides a flexible and responsive table layout, adapting seamlessly from desktop to mobile views. It allows for interactive data presentation, with support for custom row actions and reordering capabilities.
+
+### Header
+
+The `Header` component is designed to serve as the top part of a UI, containing a logo and a navigation menu. The component is highly customizable, allowing for different types of logos (text, SVG, or image) and a dynamic menu based on the provided items.
+
+## Properties
+
+- **items** `required`
+  - Description: An array of `IHeaderItemProps` objects, each representing an item in the navigation menu. These items are used to render the menu and handle item selection.
+
+- **logoSource** `required`
+  - Description: The source for the logo, which can be a text string, an SVG React component, or an image source URL, depending on the `logoType`.
+
+- **logoType** `optional`
+  - Description: Specifies the type of the logo to be rendered. It accepts values from the `HeaderLogoType` enum: `SVG`, `IMAGE`, or `TEXT`. Defaults to `TEXT`.
+
+- **activeItemIndex** `optional`
+  - Description: The index of the currently active (selected) item in the navigation menu. This is used to highlight the active item.
+
+- **onSelectItem** `optional`
+  - Description: A callback function that is called when a new item in the navigation menu is selected. Receives the index of the selected item as its parameter.
+
+## Example Usage
+
+```tsx
+import React from 'react';
+import { Header, HeaderLogoType } from './path/to/Header';
+import { Icon } from './path/to/Icon';
+
+function MyAppHeader() {
+  const items = [
+    { label: 'Home', href: '/' },
+    { label: 'About', href: '/about' },
+    // Add more menu items as needed
+  ];
+
+  const handleSelectItem = (index) => {
+    console.log('Selected item index:', index);
+  };
+
+  return (
+    <Header
+      items={items}
+      logoSource={<Icon name="MyAppLogo" />}
+      logoType={HeaderLogoType.SVG}
+      onSelectItem={handleSelectItem}
+    />
+  );
+}
+```
+
+This documentation outlines how to implement the Header component, offering flexibility in logo presentation and navigation menu configuration for a cohesive and functional user interface.
