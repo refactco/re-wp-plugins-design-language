@@ -1,6 +1,13 @@
 # Getting Start
 
-Before getting start to develop in this repository, you need to set a variable in your `.bashrc` file (The `.bashrc` is located in the home directory of your linux distribution).
+First of all you need to create a file in the root of your project, named `.npmrc`, and put the below content in it:
+
+```
+@refactco:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${GITHUB_ACCESS_TOKEN}
+```
+
+Then, before getting start to develop in this repository, you need to set a variable in your `.bashrc` file (The `.bashrc` is located in the home directory of your linux distribution).
 So open the `.bashrc` file and add the following line at the end.
 
 ```bash
