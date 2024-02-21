@@ -29,7 +29,7 @@ export function Accordion(props: IAccordionProps): ReactElement {
       >
         <div>
           {items.map((item: IAccordionItem, index: number): ReactElement => {
-            const { header, content, buttons } = item;
+            const { header, content, buttons, initialEntered = false } = item;
 
             return (
               <DraggableBox
@@ -58,6 +58,7 @@ export function Accordion(props: IAccordionProps): ReactElement {
                     </StyledAccordionButtons>
                   ) : null}
                   <StyledAccordionItem
+                    initialEntered={initialEntered}
                     transitionTimeout={(transitionTimeout as number) / 1000}
                     header={
                       <>

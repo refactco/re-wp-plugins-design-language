@@ -51,6 +51,7 @@ export default function Accordions(): ReactElement {
           {
             header: 'Please open me',
             content: 'lorem ipsum',
+            initialEntered: true,
             buttons: [
               {
                 text: 'Edit',

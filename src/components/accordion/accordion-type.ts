@@ -15,6 +15,7 @@ export interface IAccordionItemButtonProps extends Omit<IButtonProps, 'size' | '
 export interface IAccordionItem {
   header: ReactNode;
   content: ReactNode;
+  initialEntered?: boolean;
   buttons?: IAccordionItemButtonProps[];
 }
 
