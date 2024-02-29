@@ -9,6 +9,7 @@ import FieldMaps from './field-maps/field-maps';
 import Icons from './icons/icons';
 import { Inputs } from './inputs/inputs';
 import Layout from './layout/layout';
+import ProgressBars from './progress-bars/progress-bars';
 import Sections from './sections/sections';
 import SortableCardsPage from './sortable-cards/sortable-cards-page';
 import TabPanels from './tab-panels/tab-panels';
@@ -31,6 +32,7 @@ export default function Router(): ReactElement {
           <Route path="/tables" Component={Tables} />
           <Route path="/blocks" Component={Blocks} />
           <Route path="/containers" Component={Containers} />
+          <Route path="/progress-bars" Component={ProgressBars} />
           <Route path="/field-maps" Component={FieldMaps} />
         </Routes>
       </Layout>

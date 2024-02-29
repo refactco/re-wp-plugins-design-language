@@ -131,6 +131,13 @@ export default function Layout(props: ILayoutProps): ReactElement {
       onClick: () => {
         navigate('/containers');
       }
+    },
+    {
+      item: 'progress-bars',
+      title: 'Progress Bar',
+      onClick: () => {
+        navigate('/progress-bars');
+      }
     }
   ];
 
