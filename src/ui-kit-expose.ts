@@ -3,6 +3,7 @@ export { Checkbox } from './elements/checkbox/checkbox';
 export { Icon } from './elements/icon/icon';
 export { Input } from './elements/input/input';
 export { MultiSelect } from './elements/multi-select/multi-select';
+export { Progress } from './elements/progress/progress';
 export { Radio } from './elements/radio/radio';
 export { Range } from './elements/range/range';
 export { Select } from './elements/select/select';
