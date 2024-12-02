@@ -58,8 +58,6 @@ export default function Accordions(): ReactElement {
                 text: 'Edit',
                 onClick(params: IAccordionItemButtonClickParams): void {
                   const { itemIndex, item, event } = params;
-
-                  console.log({ itemIndex, item, event });
                 }
               },
               {
