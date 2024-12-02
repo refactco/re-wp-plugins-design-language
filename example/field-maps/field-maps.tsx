@@ -44,8 +44,6 @@ export default function FieldMaps(): ReactElement {
                   onChange={(value: string | undefined): void => {
                     items[itemIndex][0] = value ?? '';
 
-                    console.log({ changed: true, items });
-
                     setItems([...items]);
                   }}
                 />
