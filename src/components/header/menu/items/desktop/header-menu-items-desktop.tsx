@@ -26,14 +26,16 @@ export function HeaderMenuItemsDesktop(props: IHeaderMenuItemsProps): ReactEleme
           </Fragment>
         );
       })}
-      <SubHeader
-        subHeaderItems={subHeaderItems}
-        subHeaderType={subHeaderType}
-        activeItemIndex={activeSubItemIndex}
-        onSubItemClick={(index: number): void => {
-          onSelectSubItem?.(index);
-        }}
-      />
+      {subHeaderItems ? (
+        <SubHeader
+          subHeaderItems={subHeaderItems}
+          subHeaderType={subHeaderType}
+          activeItemIndex={activeSubItemIndex}
+          onSubItemClick={(index: number): void => {
+            onSelectSubItem?.(index);
+          }}
+        />
+      ) : null}
     </StyledHeaderMenuItemsDesktop>
   );
 }
